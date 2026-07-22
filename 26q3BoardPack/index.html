@@ -4,10 +4,14 @@
   "schemaVersion": 1,
   "description": "26Q3 Board Pack — carbon copy of the live TQ EBR (view-truth). Six tabs: YTD, 26Q2(A), Demand Gen Insert, 26Q3(P), Pipeline, Renewal Book. EBR-DERIVED tabs (YTD, 26Q2(A)=EBR QTD, Renewal Book=EBR pipe) are copied verbatim from the tq-ebr live artifact and re-derived each morning by the board-pack-sync scheduled task so EBR changes propagate as logic. BOARD-OWNED tabs (Demand Gen Insert, 26Q3(P), Pipeline) are scaffolds Nimit designs and the sync never overwrites. Does not invoke any skills.",
   "mcpTools": [
-    "mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__search_crm_objects"
+    "mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__search_crm_objects",
+    "mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__get_crm_objects",
+    "mcp__b15bd21d-1712-4bd0-9ab8-f2005e5d598e__read_file_content"
   ],
   "mcpServerNames": [
-    "HubSpot"
+    "HubSpot",
+    "HubSpot",
+    "Google Drive"
   ]
 }
 </script>
@@ -1417,7 +1421,6 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
  if(document.readyState==="complete") main(); else window.addEventListener("load",main);
 })();
 </script>
-</div>
 <!-- BOARD-OWNED:q3p END -->
 
 <!-- BOARD-OWNED:pipeline START -->
