@@ -1168,7 +1168,7 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
  function renewals(comps){
    var rb=window.__RB;
    if(!Array.isArray(rb)){ set("q3-status","Renewal register not loaded \u2014 reload the pack."); return; }
-   rb.forEach(function(d){ if(!d.renewal_date){ var y=d.yr||(2000+(parseInt(String(d.qtr||"").slice(0,2),10)||26)); if(d.ann) d.renewal_date=y+"-"+d.ann; } });
+   rb.forEach(function(d){ if(!d.renewal_date){ var y=d.yr||(2000+(parseInt(String(d.qtr||"").slice(0,2),10)||26)); if(d.ann) d.renewal_date=y+"-"+d.ann; } if(d.arr_26p===undefined&&d.grr_26!==undefined) d.arr_26p=d.grr_26; });
    var compsByKey={};
    (comps||[]).forEach(function(c){ var p=c.properties||{}; var nm=String(p.name||"");
      var m=nm.match(/[A-Z0-9]{6}/); var key=m?m[0]:null;
