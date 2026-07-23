@@ -1153,7 +1153,7 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
    if(!c){ var an=String(d.account||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,12);
      for(var k in compsByKey){ var cn=compsByKey[k]._norm; if(an&&cn&&(cn.indexOf(an)>=0||an.indexOf(cn.slice(0,10))>=0)){ c=compsByKey[k]; break; } } }
    var rating=c?(c.rating||""):""; var prove=c?!!c.prove:false;
-   var lvl=rating==="Red"?"High":(rating==="Yellow"?"Medium":(rating==="Green"?"Low":"\u2014"));
+   var lvl=(d.risk==="High")?"High":((d.risk==="Medium")?"Medium":((d.risk==="Low")?"Low":(rating==="Red"?"High":(rating==="Yellow"?"Medium":(rating==="Green"?"Low":"\u2014")))));
    return { level:lvl, prove:prove, matched:!!c };
  }
  function riskPill(ri){
