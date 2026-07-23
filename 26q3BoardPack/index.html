@@ -1009,16 +1009,11 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
 
 <section class="ebr-section"><div class="eyebrow">Section 1</div>
 <h3 class="sec-title">Q3 2026 bookings</h3><hr class="section-rule">
-<div class="tile-row">
- <div class="tile"><div class="tile-label">Q3 Bookings (P)</div><div class="tile-value" id="q3s1-p">&mdash;</div><div class="tile-meta" id="q3s1-p-meta">&mdash;</div>
-  <div class="fc-stack-bar"><div class="fc-stack-fill" id="q3s1-p-fill" style="width:0%;"><div class="fc-stack-seg fc-seg-new" id="q3s1-p-new" style="width:0%;"></div><div class="fc-stack-seg fc-seg-upsell" id="q3s1-p-up" style="width:0%;"></div><div class="fc-stack-seg fc-seg-expansion" id="q3s1-p-ex" style="width:0%;"></div></div></div><div class="fc-stack-legend" id="q3s1-p-legend">&mdash;</div></div>
-  <div class="fc-stack-bar"><div class="fc-stack-fill" id="q3s1-p-fill" style="width:0%;"><div class="fc-stack-seg fc-seg-new" id="q3s1-p-new" style="width:0%;"></div><div class="fc-stack-seg fc-seg-upsell" id="q3s1-p-up" style="width:0%;"></div><div class="fc-stack-seg fc-seg-expansion" id="q3s1-p-ex" style="width:0%;"></div></div></div><div class="fc-stack-legend" id="q3s1-p-legend">&mdash;</div></div>
+<div class="tile-row tile-row-4">
+ <div class="tile"><div class="tile-label">Q3 Bookings (P)</div><div class="tile-value" id="q3s1-p">&mdash;</div><div class="tile-meta" id="q3s1-p-meta">&mdash;</div><div class="fc-stack-bar"><div class="fc-stack-fill" id="q3s1-p-fill" style="width:0%;"><div class="fc-stack-seg fc-seg-new" id="q3s1-p-new" style="width:0%;"></div><div class="fc-stack-seg fc-seg-upsell" id="q3s1-p-up" style="width:0%;"></div><div class="fc-stack-seg fc-seg-expansion" id="q3s1-p-ex" style="width:0%;"></div></div></div><div class="fc-stack-legend" id="q3s1-p-legend">&mdash;</div></div>
  <div class="tile"><div class="tile-label">Closed (A)</div><div class="tile-value" id="q3s1-a">&mdash;</div><div class="tile-meta" id="q3s1-a-meta">&mdash;</div></div>
  <div class="tile"><div class="tile-label">Weighted Pipeline (P)</div><div class="tile-value" id="q3s1-w">&mdash;</div><div class="tile-meta" id="q3s1-w-meta">&mdash;</div></div>
-
-<div class="tile-row">
- <div class="tile projected-tile"><div class="tile-label">Q3 Bookings (B)</div><div class="tile-value">$590K</div><div class="tile-meta">plan</div>
-  <div class="fc-stack-bar"><div class="fc-stack-fill" id="q3s1-b-fill" style="width:100%;"><div class="fc-stack-seg fc-seg-new" style="width:56.7%;"></div><div class="fc-stack-seg fc-seg-upsell" style="width:21.0%;"></div><div class="fc-stack-seg fc-seg-expansion" style="width:22.3%;"></div></div></div><div class="fc-stack-legend">New $334K &middot; Upsell $124K &middot; Expansion $132K</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Q3 Bookings (B)</div><div class="tile-value">$590K</div><div class="tile-meta">plan</div><div class="fc-stack-bar"><div class="fc-stack-fill" id="q3s1-b-fill" style="width:100%;"><div class="fc-stack-seg fc-seg-new" style="width:56.7%;"></div><div class="fc-stack-seg fc-seg-upsell" style="width:21.0%;"></div><div class="fc-stack-seg fc-seg-expansion" style="width:22.3%;"></div></div></div><div class="fc-stack-legend">New $334K &middot; Upsell $124K &middot; Expansion $132K</div></div>
 </div>
 <h4 class="subhead">Q3 forecast &middot; won + active pipeline by deal type</h4>
 <div class="fc-grid fc-grid-2">
@@ -1173,6 +1168,7 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
  function renewals(comps){
    var rb=window.__RB;
    if(!Array.isArray(rb)){ set("q3-status","Renewal register not loaded \u2014 reload the pack."); return; }
+   rb.forEach(function(d){ if(!d.renewal_date){ var y=d.yr||(2000+(parseInt(String(d.qtr||"").slice(0,2),10)||26)); if(d.ann) d.renewal_date=y+"-"+d.ann; } });
    var compsByKey={};
    (comps||[]).forEach(function(c){ var p=c.properties||{}; var nm=String(p.name||"");
      var m=nm.match(/[A-Z0-9]{6}/); var key=m?m[0]:null;
@@ -1375,7 +1371,7 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
      limit:200, chatInsights:ci() });
    var pMeet=call({ objectType:"meetings",
      properties:["hs_meeting_title","hs_timestamp","hs_meeting_outcome","hs_activity_type"],
-     filterGroups:[{filters:[{propertyName:"hs_timestamp",operator:"BETWEEN",value:Q3S,highValue:Q3E},{propertyName:"hs_activity_type",operator:"IN",values:["Disco - New Logo","Disco - Upsell","Disco - Expansion"]}]}],
+     filterGroups:[{filters:[{propertyName:"hs_timestamp",operator:"BETWEEN",value:Q3S,highValue:Q3E},{propertyName:"hs_meeting_outcome",operator:"IN",values:["SALES QUALIFIED LEAD (SQL)","SALES UNACCEPTED LEAD"]}]}],
      limit:200, chatInsights:ci() });
    var pComp=call({ objectType:"companies",
      properties:["name","csm_health_rating","prove_it_account"],
