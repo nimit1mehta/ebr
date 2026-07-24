@@ -492,19 +492,25 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
 @media print{.save-btn{display:none;}}
 </style><style>
 /* === BOARD PACK tab system (board-owned; 6 tabs) === */
-.bp-tabstate{display:none;}
+.bp-tabstate{display:none;}.bp-tab-group{display:flex;align-items:center;border-left:1px solid var(--rule);margin-left:4px;padding-left:4px;}.bp-tab-grouplbl{font-size:9px;text-transform:uppercase;letter-spacing:0.10em;color:var(--muted);padding:0 8px 0 6px;font-weight:700;opacity:0.7;}.bp-tab-nav label.bp-tab-solo{font-weight:600;}.rj-matrix td:not(:first-child){text-align:center;}.rj-matrix .rj-here{background:rgba(201,148,29,0.22);outline:2px solid var(--warn);font-weight:600;color:var(--ink);}
 .bp-tab-nav{display:flex;border-bottom:1px solid var(--rule);margin:18px 0 0;flex-wrap:wrap;}
 .bp-tab-nav label{padding:14px 22px;cursor:pointer;font-family:var(--font-sans);font-size:14px;color:var(--muted);white-space:nowrap;}
+#bt-exec:checked~.bp-tab-nav label[for=bt-exec],
 #bt-ytd:checked~.bp-tab-nav label[for=bt-ytd],
 #bt-q2a:checked~.bp-tab-nav label[for=bt-q2a],
 #bt-dgi:checked~.bp-tab-nav label[for=bt-dgi],
 #bt-q3p:checked~.bp-tab-nav label[for=bt-q3p],
+#bt-churn:checked~.bp-tab-nav label[for=bt-churn],
+#bt-roadmap:checked~.bp-tab-nav label[for=bt-roadmap],
 #bt-pipeline:checked~.bp-tab-nav label[for=bt-pipeline],
 #bt-rb:checked~.bp-tab-nav label[for=bt-rb]{border-bottom:2px solid var(--accent);color:var(--ink);font-weight:600;}
+#bt-exec:checked~#panel-exec,
 #bt-ytd:checked~#panel-ytd,
 #bt-q2a:checked~#panel-qtd,
 #bt-dgi:checked~#panel-dgi,
 #bt-q3p:checked~#panel-q3p,
+#bt-churn:checked~#panel-churn,
+#bt-roadmap:checked~#panel-roadmap,
 #bt-pipeline:checked~#panel-pipeline,
 #bt-rb:checked~#panel-pipe{display:block;}
 .board-note{background:rgba(155,44,44,0.05);border:1px solid var(--rule);border-radius:6px;padding:10px 16px;margin:14px 0 4px;font-size:12px;color:var(--muted);}
@@ -514,8 +520,8 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
 <div class="board-note">Tabs marked <b>EBR-derived</b> (YTD, 26Q2(A), Renewal Book) are copied verbatim from the live TQ EBR every morning by the <b>board-pack-sync</b> task, so any EBR change propagates as logic. Tabs marked <b>board-owned</b> (Demand Gen Insert, 26Q3(P), Pipeline) are yours to design and are never overwritten by the sync.</div>
 <div class="dl-controls"><button class="save-btn" onclick="saveBoardHtml()" title="Download a standalone copy">⬇ Save HTML</button></div>
 
-<input class="bp-tabstate" type="radio" name="bptab" id="bt-ytd" checked=""><input class="bp-tabstate" type="radio" name="bptab" id="bt-q2a"><input class="bp-tabstate" type="radio" name="bptab" id="bt-dgi"><input class="bp-tabstate" type="radio" name="bptab" id="bt-q3p"><input class="bp-tabstate" type="radio" name="bptab" id="bt-pipeline"><input class="bp-tabstate" type="radio" name="bptab" id="bt-rb">
-<nav class="bp-tab-nav"><label for="bt-ytd">YTD</label><label for="bt-q2a">26Q2(A)</label><label for="bt-dgi">Demand Gen Insert</label><label for="bt-q3p">26Q3(P)</label><label for="bt-pipeline">Pipeline</label><label for="bt-rb">Renewal Book</label></nav>
+<input class="bp-tabstate" type="radio" name="bptab" id="bt-exec" checked=""><input class="bp-tabstate" type="radio" name="bptab" id="bt-ytd"><input class="bp-tabstate" type="radio" name="bptab" id="bt-q2a"><input class="bp-tabstate" type="radio" name="bptab" id="bt-q3p"><input class="bp-tabstate" type="radio" name="bptab" id="bt-churn"><input class="bp-tabstate" type="radio" name="bptab" id="bt-dgi"><input class="bp-tabstate" type="radio" name="bptab" id="bt-roadmap"><input class="bp-tabstate" type="radio" name="bptab" id="bt-pipeline"><input class="bp-tabstate" type="radio" name="bptab" id="bt-rb">
+<nav class="bp-tab-nav"><label class="bp-tab-solo" for="bt-exec">Executive Summary</label><span class="bp-tab-group"><span class="bp-tab-grouplbl">Results</span><label for="bt-ytd">YTD</label><label for="bt-q2a">26Q2(A)</label><label for="bt-q3p">26Q3(P)</label></span><span class="bp-tab-group"><span class="bp-tab-grouplbl">Inserts</span><label for="bt-churn">Annual Churn</label><label for="bt-dgi">Demand Gen</label><label for="bt-roadmap">Product Roadmap</label></span><span class="bp-tab-group"><span class="bp-tab-grouplbl">Sources</span><label for="bt-pipeline">Pipeline</label><label for="bt-rb">Renewal Book</label></span></nav>
 
 <!-- EBR-DERIVED:ytd START -->
 <div class="tab-panel" id="panel-ytd"><div class="ytd-tab"><div class="ytd-sections"><section class="ebr-section overview"><div class="eyebrow">Leadoff</div><h2 class="sec-title">Overview</h2><div class="section-rule"></div><h4 class="subhead">Projected</h4><div class="tile-row tile-row-4 overview-projected-tiles"><div class="tile"><div class="tile-label">2026 ARR (P)</div><div class="tile-value" id="ov-arr">$7.43M</div><div class="tile-meta" id="ov-arr-d"><span class="delta-bad">-$290K vs plan</span></div></div><div class="tile"><div class="tile-label">Bookings (P)</div><div class="tile-value" id="ov-bk">$1.41M</div><div class="fc-stack-bar"><div class="fc-stack-fill" style="width:80.1%;"><div class="fc-stack-seg fc-seg-new" style="width:43.6%;"></div><div class="fc-stack-seg fc-seg-upsell" style="width:56.4%;"></div></div></div><div class="fc-stack-legend" id="ov-bk-leg">New $612K · Upsell + Expansion $793K</div><div class="tile-meta" id="ov-bk-d"><span class="delta-bad">-$349K vs plan</span></div></div><div class="tile"><div class="tile-label">GRR (P)</div><div class="tile-value" id="ov-grr">89.0%</div><div class="tile-meta" id="ov-grr-d"><span class="delta-bad">-2.2 pp vs plan</span></div></div><div class="tile"><div class="tile-label">NRR (P)</div><div class="tile-value" id="ov-nrr">108.7%</div><div class="tile-meta" id="ov-nrr-d"><span class="delta-good">+1.4 pp vs plan</span></div></div></div><h4 class="subhead">Plan · Budget (B)</h4><div class="tile-row tile-row-4 overview-plan-tiles"><div class="tile projected-tile"><div class="tile-label">2026 ARR (B)</div><div class="tile-value">$7.72M</div><div class="tile-meta">SW $6.61M + Partner $750K + Support $366K</div></div><div class="tile projected-tile"><div class="tile-label">Annual Bookings Plan</div><div class="tile-value">$1.75M</div><div class="fc-stack-bar"><div class="fc-stack-fill" style="width:100%;"><div class="fc-stack-seg fc-seg-new" style="width:60.0%;"></div><div class="fc-stack-seg fc-seg-upsell" style="width:23.3%;"></div><div class="fc-stack-seg fc-seg-expansion" style="width:16.7%;"></div></div></div><div class="fc-stack-legend">New $1,052K · Upsell $410K · Expansion $293K</div><div class="tile-meta">New + Upsell + Expansion (B)</div></div><div class="tile projected-tile"><div class="tile-label">GRR Plan</div><div class="tile-value">91.2%</div><div class="tile-meta">Renewal book (B)</div><div class="plan-progress" style="margin-top:8px;"><div class="plan-progress-fill" style="width:91.2%"></div></div></div><div class="tile projected-tile"><div class="tile-label">NRR Plan</div><div class="tile-value">107.3%</div><div class="tile-meta">Renewal base (B)</div></div></div><div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="year-pov-insights" data-regenerate="true"><div class="notes-title">Narrative <span class="edit-hint">click to edit</span></div><ul class="insights-list"><li>2026 ARR (P) $7.43M vs $7.72M plan (-$290K); ties the Consero board within $1.3K.</li><li>Bookings project $1.41M of a $1.75M plan (80%): closed at ARR software actuals + stage-weighted FY26 pipeline. New is the drag at 58% of plan; U+E runs at 113%.</li><li>GRR projects 89.0% (ties the Consero model exactly) and NRR 108.7% incl. stage-weighted open upsell/expansion (Consero model weights); new-logo generation is behind, which is where the ARR gap sits.</li></ul></div><details class="meta-toggle"><summary>Methodology</summary><div class="meta-section"><ul class="notes"><li><span class="label">GRR (P):</span> risk-weighted company renewed - resolved accounts at actual, in-flight accounts at 2025 ARR x retention(risk) [Low 100%, Medium 90%, High 75%], capped at prior; plus multi-year locked at 100% + partner at 100%, over the 2025 company base. We never assume 100% renewal on in-flight book accounts. Same engine call every section uses, so all GRR (P) tiles match.</li><li><span class="label">NRR (P):</span> (net renewal result on the book + multi-year locked 2026 + partner) / the same base. Bookings own Upsell/Expansion, so bookings U/E are NOT added into NRR (no double count).</li><li><span class="label">2026 ARR (P):</span> bottoms-up <b>$7,434,894</b> = EDG SW retained (ex-partner) $4,520,180 + uplift $225,416 + at-renewal upsell $471,867 + stage-weighted open U/E $441,500 (FY26 closes only) + New logos (P) $612,465 + partner $728,956 + services $434,510. Ties the Consero board ARR end $7,433,581 within $1,313. Policies: deals project on close date (2027 closes excluded from FY26, flagged 27+); closed bookings stated at ARR-Segment software actuals, deals are evidence.</li><li><span class="label">Plan:</span> budget anchors (end-2026 ARR, bookings plan, plan GRR/NRR).</li></ul></div></details></section><section class="ebr-section"><div class="eyebrow">Section 1</div>
@@ -949,11 +955,11 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
 <table style="max-width:640px;">
 <thead><tr><th>Funnel &middot; Q2</th><th class="num">Plan (P)</th><th class="num">Actual (A)</th><th class="num">% to goal</th></tr></thead>
 <tbody>
- <tr><td>Leads</td><td class="num">600</td><td class="num muted">&mdash;</td><td class="num muted">&mdash;</td></tr>
- <tr><td>MQLs</td><td class="num">50</td><td class="num muted">&mdash;</td><td class="num muted">&mdash;</td></tr>
- <tr><td>Meetings (SALs)</td><td class="num">53</td><td class="num muted">&mdash;</td><td class="num muted">&mdash;</td></tr>
- <tr><td>Opps (SQLs)</td><td class="num">31</td><td class="num muted">&mdash;</td><td class="num muted">&mdash;</td></tr>
- <tr><td>Pipeline</td><td class="num">$2.73M</td><td class="num muted">&mdash;</td><td class="num muted">&mdash;</td></tr>
+ <tr><td>Leads</td><td class="num">600</td><td class="num">411</td><td class="num warn">69%</td></tr>
+ <tr><td>MQLs</td><td class="num">50</td><td class="num">84 <span class="muted">(45 organic)</span></td><td class="num good">168% <span class="muted">(90%)</span></td></tr>
+ <tr><td>Meetings (SALs)</td><td class="num">53</td><td class="num">52</td><td class="num good">98%</td></tr>
+ <tr><td>Opps (SQLs)</td><td class="num">31</td><td class="num">23</td><td class="num warn">74%</td></tr>
+ <tr><td>Pipeline</td><td class="num">$2.73M</td><td class="num">$1.98M</td><td class="num warn">72%</td></tr>
 </tbody>
 </table>
 <p class="body-note muted small">MQLs = Marketing Qualified Leads; SALs = Sales Accepted Leads; SQLs = Sales Qualified Leads by Unique Accounts; Opps = Qualified Stage B Opportunities.</p>
@@ -1918,6 +1924,113 @@ setArrow();buildChips();rbRender();
 })();
 })();</script></div>
 <!-- EBR-DERIVED:pipe END -->
+
+<!-- BOARD-OWNED:exec START -->
+<div class="tab-panel" id="panel-exec"><div class="board-note">Executive Summary &mdash; board-owned. The morning EBR sync never overwrites this tab. State-of-the-business, the three live board conversations, and the go-to-market profile framework.</div>
+
+<section class="ebr-section"><div class="eyebrow">Board update &middot; Q3 2026</div><h2 class="sec-title">Executive Summary</h2><div class="section-rule"></div>
+<h4 class="subhead">State of the business</h4>
+<ul class="coaching-list">
+ <li><em><b>New-logo closes were slow</b> this period &mdash; top-of-funnel and net-new conversion remain the constraint.</em></li>
+ <li><em><b>Expansion / upsell carried bookings</b>, driven by the SaaS/TQDF conversion process and customers&rsquo; move toward AI-ready data foundations.</em></li>
+ <li><em><b>Demand focus has been high</b> &mdash; webinars, nurture, and intent-based outbound stood up with ZRev; strongest pipeline-generation month YTD in June.</em></li>
+ <li><em><b>Balance sheet strengthened</b> &mdash; debt refinanced and $1M raised from investors; cash dips but is modeled sustainable (~$250K trough in November).</em></li>
+</ul>
+</section>
+
+<section class="ebr-section"><div class="eyebrow">Conversation 1</div><h3 class="sec-title">Refinancing Debt</h3><hr class="section-rule">
+<ul class="coaching-list">
+ <li><em>Refinanced the outstanding facility and raised <b>$1M from investors</b>. Terms: <b>12-month term</b>, <b>6-month guarantee</b>, <b>17% rate</b>.</em></li>
+ <li><em>Appreciate the support from <b>Piyush</b> in getting this done.</em></li>
+ <li><em>Cash will dip but should be sustainable &mdash; trough of <b>~$250K in November</b>. Cash-flow model to be actively managed through the period.</em></li>
+</ul>
+</section>
+
+<section class="ebr-section"><div class="eyebrow">Conversation 2</div><h3 class="sec-title">Demand Generation</h3><hr class="section-rule">
+<p class="body-note muted small"><b>Flag:</b> confirm these points with Piyush before the board meeting &mdash; his input owns the demand narrative. Full detail in the Demand Gen insert.</p>
+<ul class="coaching-list">
+ <li><em>Demand is a high-focus workstream: standardized plays (webinars, email nurture, intent-based outbound) now running on a repeatable cadence with ZRev.</em></li>
+ <li><em>Webinars were under-used and are high-yield &mdash; moving to 2&ndash;3/month; nurture off the existing database is the highest-ROI motion.</em></li>
+ <li><em>Q2 funnel landed at 411 leads / 84 MQLs / 52 SALs / 23 opps / $1.98M pipeline against plan; new pipeline generation is the lever we are pushing hardest.</em></li>
+</ul>
+</section>
+
+<section class="ebr-section"><div class="eyebrow">Conversation 3</div><h3 class="sec-title">Sale Process &amp; Timeline</h3><hr class="section-rule">
+<h4 class="subhead">Where we stand</h4>
+<ul class="coaching-list">
+ <li><em>We <b>deferred sale conversations</b> this period to focus on the business profile. The lens: <b>revenue growth, EBITDA margin, Rule of 40, GRR, and NRR</b> &mdash; the metrics that drive SaaS valuation.</em></li>
+</ul>
+<h4 class="subhead">SaaS benchmarking &middot; where we come out (Raymond James framework)</h4>
+<p class="body-note muted small">Highlighted cell = TQ&rsquo;s current position on each factor. Executing the plan should move us right, into favorable multiple territory.</p>
+<table class="rj-matrix">
+<thead><tr><th>Factor</th><th>Moderate</th><th>Strong</th><th>Premium</th><th>Best-in-class</th></tr></thead>
+<tbody>
+ <tr><td>Implied ARR multiple</td><td class="rj-here">&lt; 4x&ndash;6x</td><td>6x&ndash;8x</td><td>8x&ndash;10x</td><td>10x&ndash;12x+</td></tr>
+ <tr><td>Revenue growth</td><td>&lt; 20%</td><td class="rj-here">20&ndash;30%</td><td>30&ndash;40%</td><td>&gt; 40%</td></tr>
+ <tr><td>EBITDA margin</td><td class="rj-here">&lt; 10%</td><td>10&ndash;20%</td><td>20&ndash;30%</td><td>&gt; 30%</td></tr>
+ <tr><td>Rule of 40</td><td class="rj-here">&lt; 30%</td><td>30&ndash;40%</td><td>40&ndash;50%</td><td>&gt; 50%</td></tr>
+ <tr><td>Gross revenue retention (incl. downsell)</td><td>&lt; 85%</td><td>85&ndash;90%</td><td class="rj-here">90&ndash;95%</td><td>&gt; 95%</td></tr>
+ <tr><td>Net revenue retention</td><td>&lt; 100%</td><td>100&ndash;105%</td><td class="rj-here">105&ndash;110%</td><td>&gt; 110%</td></tr>
+ <tr><td>GTM efficiency (LTV / CAC)</td><td>&lt; 4x</td><td>&larr;</td><td>&rarr;</td><td>&gt; 8x</td></tr>
+ <tr><td>Market cyclicality</td><td>High</td><td class="rj-here">&larr;</td><td>&rarr;</td><td>Low</td></tr>
+</tbody>
+</table>
+<p class="body-note muted small">Coming out <b>Premium on GRR (90&ndash;95%) and NRR (105&ndash;110%)</b> and <b>Strong on revenue growth</b>; Moderate on ARR multiple, EBITDA margin, and Rule of 40 &mdash; the areas the profile work targets.</p>
+
+<h4 class="subhead">Profile &amp; timeline</h4>
+<ul class="coaching-list">
+ <li><em>Profile is getting stronger and investments are in the right places; <b>target is still to go to market by end of year</b>.</em></li>
+ <li><em>Rationale to move: more market entrants on an important problem; TQ holds a valuable foothold today; risks of holding outweigh the benefits; and we are at the end of the hold period.</em></li>
+</ul>
+<h4 class="subhead">Process this quarter</h4>
+<ul class="coaching-list">
+ <li><em>First half: stay focused on strengthening the business profile.</em></li>
+ <li><em>Later half: restart conversations with the <b>6 bankers</b> we&rsquo;ve discussed previously.</em></li>
+ <li><em>Deliverable: a <b>short list of bankers by the next board meeting</b>.</em></li>
+</ul>
+<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="exec-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Nimit</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>The one decision this board meeting turns on.</strong></p><ul class="coaching-list"><li><em>Write it here.</em></li></ul></div>
+</section></div>
+<!-- BOARD-OWNED:exec END -->
+
+<!-- BOARD-OWNED:churn START -->
+<div class="tab-panel" id="panel-churn"><div class="board-note">Annual Churn Projection &mdash; board-owned. Summary of the 2026 renewal-book contraction/churn with a win-backable view. Smartlogic (SMRTXX) is a partner and is excluded, consistent with the renewal book. The morning EBR sync never overwrites this tab.</div>
+
+<section class="ebr-section"><div class="eyebrow">Board update &middot; 2026</div><h2 class="sec-title">Annual Churn Projection</h2><div class="section-rule"></div>
+<div class="tile-row tile-row-4">
+ <div class="tile"><div class="tile-label">2025 ARR at risk</div><div class="tile-value">$817K</div><div class="tile-meta">10 accounts &middot; excl. Smartlogic</div></div>
+ <div class="tile"><div class="tile-label">Projected churn / contraction</div><div class="tile-value bad">$486K</div><div class="tile-meta">renewing at $320K (39% GRR on this set)</div></div>
+ <div class="tile"><div class="tile-label">Resolved / In-flight</div><div class="tile-value">6 / 4</div><div class="tile-meta">$263K resolved &middot; $223K in flight</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Win-backable</div><div class="tile-value warn">$226K</div><div class="tile-meta">4 accounts with a live path</div></div>
+</div>
+
+<h4 class="subhead">Account detail</h4>
+<table>
+<thead><tr><th>Account</th><th>Code</th><th>Renew</th><th class="num">25 ARR (A)</th><th class="num">26 Renewal</th><th class="num">Contraction</th><th>Status</th><th>Win-backable</th></tr></thead>
+<tbody>
+ <tr><td>Amgen</td><td class="muted">AMGEXX</td><td>Jan (26Q1)</td><td class="num">$165K</td><td class="num">$77K</td><td class="num bad">&minus;$77K</td><td><span class="pill resolved">Resolved</span></td><td><span class="pill prove-it">Yes</span> selected closing contract for Q3</td></tr>
+ <tr><td>Elsevier (CN)</td><td class="muted">ELSECN</td><td>Jan (26Q1)</td><td class="num">$16K</td><td class="num">$0</td><td class="num bad">&minus;$16K</td><td><span class="pill resolved">Resolved</span></td><td><span class="pill prove-it">Yes</span> quote out for full retention</td></tr>
+ <tr><td>British Columbia</td><td class="muted">BCMEXX</td><td>Mar (27Q1)</td><td class="num">$39K</td><td class="num">$0</td><td class="num bad">&minus;$39K</td><td><span class="pill resolved">Resolved</span></td><td class="muted">&mdash;</td></tr>
+ <tr><td>Schlumberger</td><td class="muted">SLBDSG</td><td>Mar (26Q1)</td><td class="num">$87K</td><td class="num">$50K</td><td class="num bad">&minus;$37K</td><td><span class="pill resolved">Resolved</span></td><td class="muted">&mdash;</td></tr>
+ <tr><td>OECD</td><td class="muted">OECDXX</td><td>Sep (26Q3)</td><td class="num">$48K</td><td class="num">$24K</td><td class="num bad">&minus;$24K</td><td><span class="pill inflight">In flight</span></td><td class="muted">&mdash;</td></tr>
+ <tr><td>Iron Mountain</td><td class="muted">IRONXX</td><td>Sep (26Q3)</td><td class="num">$121K</td><td class="num">$20K</td><td class="num bad">&minus;$100K</td><td><span class="pill inflight">In flight</span></td><td class="muted">&mdash;</td></tr>
+ <tr><td>NBCUniversal</td><td class="muted">NBCUXX</td><td>Sep (26Q3)</td><td class="num">$70K</td><td class="num">$0</td><td class="num bad">&minus;$70K</td><td><span class="pill inflight">In flight</span></td><td><span class="pill prove-it">Yes</span> active Versant spinoff deal; joint presentation next week</td></tr>
+ <tr><td>Capital One</td><td class="muted">CAP1XX</td><td>Dec (26Q4)</td><td class="num">$153K</td><td class="num">$90K</td><td class="num bad">&minus;$63K</td><td><span class="pill resolved">Resolved</span></td><td><span class="pill prove-it">Yes</span> verbal commit not churning (low confidence)</td></tr>
+ <tr><td>Bayer CG</td><td class="muted">BAYRCG</td><td>Dec (26Q4)</td><td class="num">$29K</td><td class="num">$0</td><td class="num bad">&minus;$29K</td><td><span class="pill inflight">In flight</span></td><td class="muted">&mdash;</td></tr>
+ <tr><td>DPR Construction</td><td class="muted">DPRVDC</td><td>Dec (26Q4)</td><td class="num">$90K</td><td class="num">$59K</td><td class="num bad">&minus;$31K</td><td><span class="pill resolved">Resolved</span></td><td class="muted">&mdash;</td></tr>
+</tbody>
+<tfoot><tr><td colspan="3"><strong>Total</strong></td><td class="num"><strong>$817K</strong></td><td class="num"><strong>$320K</strong></td><td class="num bad"><strong>&minus;$486K</strong></td><td colspan="2"></td></tr></tfoot>
+</table>
+<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="churn-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">CS &middot; Nimit</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>The churn we can still win back, and the play behind each.</strong></p><ul class="coaching-list"><li><em>Amgen selected closing contract for Q3; Elsevier quote out; NBCU riding the Versant spinoff; Cap1 verbal (watch).</em></li></ul></div>
+</section></div>
+<!-- BOARD-OWNED:churn END -->
+
+<!-- BOARD-OWNED:roadmap START -->
+<div class="tab-panel" id="panel-roadmap"><div class="board-note">Product Roadmap insert &mdash; board-owned. The morning EBR sync never overwrites this tab.</div>
+<section class="ebr-section"><div class="eyebrow">Board update &middot; Product</div><h2 class="sec-title">Product Roadmap</h2><div class="section-rule"></div>
+<p class="body-note muted small"><b>Content pending.</b> Placeholder awaiting the roadmap material &mdash; paste the roadmap content and this tab will be populated (themes, milestones, timeline).</p>
+</section></div>
+<!-- BOARD-OWNED:roadmap END -->
+
 
 <div class="footer">26Q3 Board Pack · carbon copy of the TQ EBR live artifact (view-truth). EBR-derived tabs refreshed each morning by board-pack-sync; board-owned tabs authored by Nimit. This deck does not invoke any skills.</div>
 </div>
