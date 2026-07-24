@@ -492,7 +492,7 @@ tr.won-row td { background:rgba(74,124,78,0.10); } tr.lost-row td { background:r
 @media print{.save-btn{display:none;}}
 </style><style>
 /* === BOARD PACK tab system (board-owned; 6 tabs) === */
-.bp-tabstate{display:none;}.bp-tab-group{display:flex;align-items:center;border-left:1px solid var(--rule);margin-left:4px;padding-left:4px;}.bp-tab-grouplbl{font-size:9px;text-transform:uppercase;letter-spacing:0.10em;color:var(--muted);padding:0 8px 0 6px;font-weight:700;opacity:0.7;}.bp-tab-nav label.bp-tab-solo{font-weight:600;}.rj-matrix td:not(:first-child){text-align:center;}.rj-matrix .rj-here{background:rgba(201,148,29,0.22);outline:2px solid var(--warn);font-weight:600;color:var(--ink);}
+.bp-tabstate{display:none;}.bp-tab-group{display:flex;align-items:center;border-left:1px solid var(--rule);margin-left:4px;padding-left:4px;}.bp-tab-grouplbl{font-size:9px;text-transform:uppercase;letter-spacing:0.10em;color:var(--muted);padding:0 8px 0 6px;font-weight:700;opacity:0.7;}.bp-tab-nav label.bp-tab-solo{font-weight:600;}.rj-matrix td:not(:first-child){text-align:center;}.rj-matrix .rj-here{background:rgba(201,148,29,0.22);outline:2px solid var(--warn);font-weight:600;color:var(--ink);}.exec-state{background:var(--paper-2);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px;padding:16px 22px;margin:8px 0 4px;}.exec-state-title{font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--ink);margin:0 0 10px;}.exec-state-list{margin:0;padding-left:20px;}.exec-state-list li{font-size:14px;line-height:1.6;color:var(--ink);margin-bottom:9px;}.exec-bullets{margin:8px 0 0;padding-left:20px;}.exec-bullets li{font-size:13.5px;line-height:1.6;color:var(--ink);margin-bottom:10px;}.exec-subbullets{margin:8px 0 4px;padding-left:20px;}.exec-subbullets li{font-size:13px;line-height:1.55;color:var(--muted);margin-bottom:6px;}
 .bp-tab-nav{display:flex;border-bottom:1px solid var(--rule);margin:18px 0 0;flex-wrap:wrap;}
 .bp-tab-nav label{padding:14px 22px;cursor:pointer;font-family:var(--font-sans);font-size:14px;color:var(--muted);white-space:nowrap;}
 #bt-exec:checked~.bp-tab-nav label[for=bt-exec],
@@ -1926,42 +1926,47 @@ setArrow();buildChips();rbRender();
 <!-- EBR-DERIVED:pipe END -->
 
 <!-- BOARD-OWNED:exec START -->
-<div class="tab-panel" id="panel-exec"><div class="board-note">Executive Summary &mdash; board-owned. The morning EBR sync never overwrites this tab. State-of-the-business, the three live board conversations, and the go-to-market profile framework.</div>
+<div class="tab-panel" id="panel-exec"><div class="board-note">Executive Summary &mdash; board-owned. The morning EBR sync never overwrites this tab.</div>
 
 <section class="ebr-section"><div class="eyebrow">Board update &middot; Q3 2026</div><h2 class="sec-title">Executive Summary</h2><div class="section-rule"></div>
-<h4 class="subhead">State of the business</h4>
-<ul class="coaching-list">
- <li><em><b>New-logo closes were slow</b> this period &mdash; top-of-funnel and net-new conversion remain the constraint.</em></li>
- <li><em><b>Expansion / upsell carried bookings</b>, driven by the SaaS/TQDF conversion process and customers&rsquo; move toward AI-ready data foundations.</em></li>
- <li><em><b>Demand focus has been high</b> &mdash; webinars, nurture, and intent-based outbound stood up with ZRev; strongest pipeline-generation month YTD in June.</em></li>
- <li><em><b>Balance sheet strengthened</b> &mdash; debt refinanced and $1M raised from investors; cash dips but is modeled sustainable (~$250K trough in November).</em></li>
+
+<div class="exec-state">
+<h4 class="exec-state-title">State of the Business</h4>
+<ul class="exec-state-list">
+ <li>New-logo closes were slow this period &mdash; top-of-funnel and net-new conversion remain the constraint.</li>
+ <li>Expansion / upsell carried bookings, driven by the SaaS/TQDF conversion process and customers&rsquo; move toward AI-ready data foundations.</li>
+ <li>Demand focus has been high &mdash; webinars, nurture, and intent-based outbound stood up with ZRev; strongest pipeline-generation month YTD in June.</li>
+ <li>Balance sheet strengthened &mdash; debt refinanced and $1M raised; cash dips but is modeled sustainable (~$250K trough in November).</li>
+</ul>
+</div>
+</section>
+
+<section class="ebr-section"><div class="eyebrow">Topic</div><h3 class="sec-title">Refinancing Debt</h3><hr class="section-rule">
+<ul class="exec-bullets">
+ <li>Refinanced the outstanding facility and raised <b>$1M from investors</b>. Terms: <b>12-month term</b>, <b>6-month guarantee</b>, <b>17% rate</b>.</li>
+ <li>Appreciate the support from <b>Piyush</b> in getting this done.</li>
+ <li>Cash will dip but should be sustainable &mdash; trough of <b>~$250K in November</b>. Cash-flow model to be actively managed through the period.</li>
 </ul>
 </section>
 
-<section class="ebr-section"><div class="eyebrow">Conversation 1</div><h3 class="sec-title">Refinancing Debt</h3><hr class="section-rule">
-<ul class="coaching-list">
- <li><em>Refinanced the outstanding facility and raised <b>$1M from investors</b>. Terms: <b>12-month term</b>, <b>6-month guarantee</b>, <b>17% rate</b>.</em></li>
- <li><em>Appreciate the support from <b>Piyush</b> in getting this done.</em></li>
- <li><em>Cash will dip but should be sustainable &mdash; trough of <b>~$250K in November</b>. Cash-flow model to be actively managed through the period.</em></li>
+<section class="ebr-section"><div class="eyebrow">Topic</div><h3 class="sec-title">Smartlogic</h3><hr class="section-rule">
+<ul class="exec-bullets">
+ <li>Smartlogic is a <b>~$600K white-label partner</b> currently undergoing an <b>architectural review</b>.</li>
+ <li>We&rsquo;ve pushed our way into their process via <b>in-person meetings and weekly architectural touchpoints</b>.</li>
+ <li>Scheduling an <b>in-person brainstorming session with their chief architect</b> and have committed to them that we are looking to support.</li>
+ <li>Reaching out to their <b>CEO</b> and looking to set up a regular cadence with him in the coming quarter.</li>
 </ul>
 </section>
 
-<section class="ebr-section"><div class="eyebrow">Conversation 2</div><h3 class="sec-title">Demand Generation</h3><hr class="section-rule">
-<p class="body-note muted small"><b>Flag:</b> confirm these points with Piyush before the board meeting &mdash; his input owns the demand narrative. Full detail in the Demand Gen insert.</p>
-<ul class="coaching-list">
- <li><em>Demand is a high-focus workstream: standardized plays (webinars, email nurture, intent-based outbound) now running on a repeatable cadence with ZRev.</em></li>
- <li><em>Webinars were under-used and are high-yield &mdash; moving to 2&ndash;3/month; nurture off the existing database is the highest-ROI motion.</em></li>
- <li><em>Q2 funnel landed at 411 leads / 84 MQLs / 52 SALs / 23 opps / $1.98M pipeline against plan; new pipeline generation is the lever we are pushing hardest.</em></li>
+<section class="ebr-section"><div class="eyebrow">Topic</div><h3 class="sec-title">Sale Process &amp; Timeline</h3><hr class="section-rule">
+<h4 class="subhead">Two goals</h4>
+<ul class="exec-bullets">
+ <li><b>Improve the business profile</b> and <b>manage the banker process</b> &mdash; the two objectives driving this workstream.</li>
+ <li>Focus this quarter was the <b>business profile</b>.</li>
 </ul>
-</section>
 
-<section class="ebr-section"><div class="eyebrow">Conversation 3</div><h3 class="sec-title">Sale Process &amp; Timeline</h3><hr class="section-rule">
-<h4 class="subhead">Where we stand</h4>
-<ul class="coaching-list">
- <li><em>We <b>deferred sale conversations</b> this period to focus on the business profile. The lens: <b>revenue growth, EBITDA margin, Rule of 40, GRR, and NRR</b> &mdash; the metrics that drive SaaS valuation.</em></li>
-</ul>
-<h4 class="subhead">SaaS benchmarking &middot; where we come out (Raymond James framework)</h4>
-<p class="body-note muted small">Highlighted cell = TQ&rsquo;s current position on each factor. Executing the plan should move us right, into favorable multiple territory.</p>
+<h4 class="subhead">Business profile &middot; implied ARR multiple (Raymond James tracking)</h4>
+<p class="body-note muted small">Highlighted cell = TQ&rsquo;s current position on each factor. Executing the plan should move us right, into a more favorable multiple.</p>
 <table class="rj-matrix">
 <thead><tr><th>Factor</th><th>Moderate</th><th>Strong</th><th>Premium</th><th>Best-in-class</th></tr></thead>
 <tbody>
@@ -1971,24 +1976,25 @@ setArrow();buildChips();rbRender();
  <tr><td>Rule of 40</td><td class="rj-here">&lt; 30%</td><td>30&ndash;40%</td><td>40&ndash;50%</td><td>&gt; 50%</td></tr>
  <tr><td>Gross revenue retention (incl. downsell)</td><td>&lt; 85%</td><td>85&ndash;90%</td><td class="rj-here">90&ndash;95%</td><td>&gt; 95%</td></tr>
  <tr><td>Net revenue retention</td><td>&lt; 100%</td><td>100&ndash;105%</td><td class="rj-here">105&ndash;110%</td><td>&gt; 110%</td></tr>
- <tr><td>GTM efficiency (LTV / CAC)</td><td>&lt; 4x</td><td>&larr;</td><td>&rarr;</td><td>&gt; 8x</td></tr>
- <tr><td>Market cyclicality</td><td>High</td><td class="rj-here">&larr;</td><td>&rarr;</td><td>Low</td></tr>
+ <tr><td>GTM efficiency (LTV / CAC)</td><td>&lt; 4x</td><td>&larr;</td><td class="rj-here">&rarr;</td><td>&gt; 8x</td></tr>
+ <tr><td>Market cyclicality</td><td>High</td><td>&larr;</td><td class="rj-here">&rarr;</td><td>Low</td></tr>
 </tbody>
 </table>
-<p class="body-note muted small">Coming out <b>Premium on GRR (90&ndash;95%) and NRR (105&ndash;110%)</b> and <b>Strong on revenue growth</b>; Moderate on ARR multiple, EBITDA margin, and Rule of 40 &mdash; the areas the profile work targets.</p>
+<p class="body-note muted small">Coming out <b>Premium on GRR (90&ndash;95%), NRR (105&ndash;110%), GTM efficiency, and market cyclicality</b>; <b>Strong on revenue growth</b>; Moderate on ARR multiple, EBITDA margin, and Rule of 40 &mdash; the areas the profile work targets.</p>
 
-<h4 class="subhead">Profile &amp; timeline</h4>
-<ul class="coaching-list">
- <li><em>Profile is getting stronger and investments are in the right places; <b>target is still to go to market by end of year</b>.</em></li>
- <li><em>Rationale to move: more market entrants on an important problem; TQ holds a valuable foothold today; risks of holding outweigh the benefits; and we are at the end of the hold period.</em></li>
+<h4 class="subhead">Process</h4>
+<ul class="exec-bullets">
+ <li><b>Q2 sale close.</b></li>
+ <li><b>Select a banker by end of October</b> with a solid profile of closes by then &mdash; <b>$500&ndash;600K in Q3 closes</b>, taking ARR to <b>$7.2&ndash;7.3M</b>, and prep to go to market.</li>
+ <li>Short-run goals:
+  <ul class="exec-subbullets">
+   <li>Closes and close management for the pipeline.</li>
+   <li>Demand creation and management &mdash; sell the story through the sale, and sustain growth through it.</li>
+   <li>AI story &mdash; in-product, in-company, and embedded in AI pipelines.</li>
+   <li>Execute banker conversations and prepare for pitches to the board mid-October.</li>
+  </ul>
+ </li>
 </ul>
-<h4 class="subhead">Process this quarter</h4>
-<ul class="coaching-list">
- <li><em>First half: stay focused on strengthening the business profile.</em></li>
- <li><em>Later half: restart conversations with the <b>6 bankers</b> we&rsquo;ve discussed previously.</em></li>
- <li><em>Deliverable: a <b>short list of bankers by the next board meeting</b>.</em></li>
-</ul>
-<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="exec-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Nimit</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>The one decision this board meeting turns on.</strong></p><ul class="coaching-list"><li><em>Write it here.</em></li></ul></div>
 </section></div>
 <!-- BOARD-OWNED:exec END -->
 
