@@ -1014,439 +1014,120 @@ window.cowork={callMcpTool:function(){return Promise.resolve({structuredContent:
 </section></div>
 <!-- BOARD-OWNED:dgi END -->
 
-<!-- BOARD-OWNED:q3p START -->
+<!-- EBR-DERIVED:q3p START -->
 <div class="tab-panel" id="panel-q3p">
 
 <section class="ebr-section"><div class="eyebrow">Leadoff</div><h2 class="sec-title">Overview</h2><div class="section-rule"></div>
-<h4 class="subhead">Projected &middot; where we expect to end vs Q3 plan</h4>
+<h4 class="subhead">Projected · where we expect to end vs Q3 plan</h4>
 <div class="tile-row tile-row-4">
- <div class="tile projected-tile"><div class="tile-label">Bookings (P)</div><div class="tile-value" id="q3-book-p">&mdash;</div><div class="tile-meta" id="q3-book-goal">goal &mdash;</div></div>
- <div class="tile projected-tile"><div class="tile-label">GRR (P) &middot; Q3 book</div><div class="tile-value" id="q3-grr-p">&mdash;</div><div class="tile-meta" id="q3-grr-goal">plan &mdash;</div></div>
- <div class="tile projected-tile"><div class="tile-label">NRR plan</div><div class="tile-value" id="q3-nrr-p">&mdash;</div><div class="tile-meta">FY budget plan</div></div>
- <div class="tile projected-tile"><div class="tile-label">Pipeline gen goal</div><div class="tile-value" id="q3-pipe-goal">&mdash;</div><div class="tile-meta" id="q3-pipe-open">open Q3 pipeline &mdash;</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Bookings (P)</div><div class="tile-value" id="q3-book-p">$713,500</div><div class="tile-meta" id="q3-book-goal">goal $589,799 (B)</div></div>
+ <div class="tile projected-tile"><div class="tile-label">GRR (P) · Q3 book</div><div class="tile-value" id="q3-grr-p">100%</div><div class="tile-meta" id="q3-grr-goal">plan 91.2%</div></div>
+ <div class="tile projected-tile"><div class="tile-label">NRR plan</div><div class="tile-value" id="q3-nrr-p">107.3%</div><div class="tile-meta">FY budget plan</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Pipeline gen goal</div><div class="tile-value" id="q3-pipe-goal">$1,515,250</div><div class="tile-meta" id="q3-pipe-open">$1,335,000 open Q3-close</div></div>
 </div>
-<div class="pl-status" id="q3-status" style="font-size:12px;color:var(--muted);margin:6px 0;">Loading live forecast&hellip;</div>
+<h4 class="subhead">Bookings (P) · committed vs pipeline upside</h4>
+<div class="tile-row tile-row-4">
+ <div class="tile"><div class="tile-label">Committed (P)</div><div class="tile-value" id="q3-committed">$753,514</div><div class="tile-meta" id="q3-committed-m">Commit + Best Case + Closed · 128% of (B)</div></div>
+ <div class="tile"><div class="tile-label">Pipeline upside</div><div class="tile-value" id="q3-upside">$-40,014</div><div class="tile-meta" id="q3-upside-m">pipeline not yet forecast</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Weighted total (P)</div><div class="tile-value" id="q3-wtotal">$713,500</div><div class="tile-meta" id="q3-wtotal-m">committed + upside · 121% of (B)</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Q3 Bookings (B)</div><div class="tile-value" id="q3-planbk">$589,799</div><div class="tile-meta">budget plan</div></div>
+</div>
+<p class="body-note muted small" id="q3-gap-note">Committed forecast is <strong>$753,514</strong> (128% of the $589,799 plan). The weighted total of $713,500 (121%) exceeds plan only because it adds <strong>$-40,014</strong> of stage-weighted pipeline still in PIPELINE forecast category (not yet called Commit/Best Case). The gap to close is on committed bookings, not a surplus.</p>
+<div class="pl-status" id="q3-status" style="font-size:12px;color:var(--muted);margin:6px 0;">Live · won+open Q3-close bookings, RB Q3 renewals, Q3-created pipeline. Budget from tq-ebr-budget anchors.</div>
 <div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-pov-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Q3 outlook</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> a committed Q3 landing number, tied to the open deals and renewals below. <strong>At minimum:</strong> the one number Q3 turns on.</p><ul class="coaching-list"><li><em>Write the Q3 point of view here.</em></li></ul></div>
 </section>
 
 <section class="ebr-section"><div class="eyebrow">Section 1</div>
 <h3 class="sec-title">Q3 2026 Bookings &amp; Forecast</h3><hr class="section-rule">
-
-<h4 class="subhead">Budgeted target &middot; Q3 Bookings (B)</h4>
+<h4 class="subhead">Budgeted target · Q3 Bookings (B)</h4>
 <div class="tile-row" style="grid-template-columns:repeat(3,1fr);max-width:660px;">
- <div class="tile projected-tile"><div class="tile-label">Q3 Bookings (B)</div><div class="tile-value">$590K</div><div class="tile-meta">budget plan total</div></div>
- <div class="tile projected-tile"><div class="tile-label">New (B)</div><div class="tile-value">$334K</div><div class="tile-meta">budget plan</div></div>
- <div class="tile projected-tile"><div class="tile-label">Upsell + Expansion (B)</div><div class="tile-value">$255K</div><div class="tile-meta">Upsell $124K &middot; Expansion $132K</div></div>
-</div>
-<p class="body-note muted small">How we get there: the named Commit / Best-Case deals below are the leadership call against the $590K plan; open pipeline not yet forecast sits in &ldquo;Other open&rdquo; beneath each column. Won deals (e.g. Healthstream) are counted in the forecast. Smartlogic is a partner and is excluded from the renewal book and all renewal sections.</p>
-
-<div class="fc-grid fc-grid-2"><div class="fc-card new-logo"><div class="fc-card-head"><div class="fc-card-title">New Logo</div><div class="fc-card-meta">Q3 Bookings (B) <strong>$334K</strong></div></div><div class="fc-weighted-row"><div class="fc-weighted-lbl">Forecast &middot; Commit + Best Case</div><div class="fc-weighted-val">$365K</div></div><table class="fc-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody><tr><td>Healthstream &middot; Taxonomy Mgt (PoolParty replacement)</td><td><span class="stage-av">F</span></td><td class="fc-close">Jul 23</td><td class="num">$65K</td><td><span class="pill commit">Commit</span></td></tr><tr><td>Vanguard</td><td><span class="stage-av">E</span></td><td class="fc-close">Jul 31</td><td class="num">$100K</td><td><span class="pill commit">Commit</span></td></tr><tr><td>Versant Media</td><td><span class="stage-av">D</span></td><td class="fc-close">Jul 31</td><td class="num">$125K</td><td><span class="pill best-case">Best Case</span></td></tr><tr><td>Qnity Electronics <span class="muted small">(HS close Oct 29)</span></td><td><span class="stage-av">D</span></td><td class="fc-close">Q3 call</td><td class="num">$75K</td><td><span class="pill best-case">Best Case</span></td></tr></tbody></table><div class="fc-other-head">Other open &middot; New</div><table class="fc-table fc-other-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody><tr><td>KeyBank</td><td><span class="pill pipeline-stage">B</span></td><td class="fc-close">Sep 7</td><td class="num">$150K</td><td></td></tr><tr><td>HKS</td><td><span class="pill pipeline-stage">B</span></td><td class="fc-close">Aug 5</td><td class="num">$100K</td><td></td></tr></tbody></table></div><div class="fc-card upsell-expansion"><div class="fc-card-head"><div class="fc-card-title">Upsell + Expansion</div><div class="fc-card-meta">Q3 Bookings (B) <strong>$255K</strong></div></div><div class="fc-weighted-row"><div class="fc-weighted-lbl">Forecast &middot; Commit + Best Case</div><div class="fc-weighted-val">$410K</div></div><table class="fc-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody><tr><td>Central Arizona Project &middot; Additional Collections</td><td><span class="stage-av">B</span></td><td class="fc-close">Aug 1</td><td class="num">$10K</td><td><span class="pill commit">Commit</span></td></tr><tr><td>BMS &middot; Move to Collections / TQDF</td><td><span class="stage-av">D</span></td><td class="fc-close">Sep 30</td><td class="num">$150K</td><td><span class="pill best-case">Best Case</span></td></tr><tr><td>Amgen &middot; Reference Data Project</td><td><span class="stage-av">D</span></td><td class="fc-close">Sep 30</td><td class="num">$250K</td><td><span class="pill best-case">Best Case</span></td></tr></tbody></table><div class="fc-other-head">Other open &middot; Upsell + Expansion</div><table class="fc-table fc-other-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody><tr><td>JPMorgan Chase &middot; Upsell</td><td><span class="pill pipeline-stage">&mdash;</span></td><td class="fc-close">Sep 27</td><td class="num">$70K</td><td></td></tr><tr><td>J&amp;J &middot; ELN Signals</td><td><span class="pill pipeline-stage">D</span></td><td class="fc-close">Sep 11</td><td class="num">$25K</td><td></td></tr><tr><td>J&amp;J &middot; R&amp;D Global Development</td><td><span class="pill pipeline-stage">D</span></td><td class="fc-close">Aug 31</td><td class="num">$25K</td><td></td></tr><tr><td>Google &middot; TQ Migration</td><td><span class="pill pipeline-stage">&mdash;</span></td><td class="fc-close">Sep 14</td><td class="num">$20K</td><td></td></tr></tbody></table></div></div><div class="tile-row tile-row-4" style="margin-top:16px;">
- <div class="tile"><div class="tile-label">Forecast &middot; Commit</div><div class="tile-value">$175K</div><div class="tile-meta">New $165K &middot; U+E $10K</div></div>
- <div class="tile"><div class="tile-label">Forecast &middot; Best Case</div><div class="tile-value">$600K</div><div class="tile-meta">New $200K &middot; U+E $400K</div></div>
- <div class="tile projected-tile"><div class="tile-label">Commit + Best Case</div><div class="tile-value">$775K</div><div class="tile-meta">named deals only</div></div>
- <div class="tile"><div class="tile-label">Other open (not forecast)</div><div class="tile-value">$390K</div><div class="tile-meta">New $250K &middot; U+E $140K</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Q3 Bookings (B)</div><div class="tile-value" id="q3s1-bkb">$589,799</div><div class="tile-meta">budget plan total</div></div>
+ <div class="tile projected-tile"><div class="tile-label">New (B)</div><div class="tile-value" id="q3s1-newb">$334,356</div><div class="tile-meta">budget plan</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Upsell + Expansion (B)</div><div class="tile-value" id="q3s1-ueb">$255,443</div><div class="tile-meta" id="q3s1-ueb-m">Upsell $123,921 · Expansion $131,523</div></div>
 </div>
 
-<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-bookings-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Sales owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> have a clear point of view, triangulated against at least one other data source.</p><ul class="coaching-list"><li><em>The open deals that get us to the Q3 number, and the commitment behind each.</em></li></ul></div>
+<div class="q3fc-grid">
+ <div class="q3fc-head fc-card new-logo"><div class="fc-card-head"><div class="fc-card-title">New Logo</div><div class="fc-card-meta">Q3 Bookings (B) <strong id="q3s1-newb2">$334,356</strong></div></div><div class="fc-weighted-row"><div class="fc-weighted-lbl">Weighted (P) · won + open×stage</div><div class="fc-weighted-val" id="q3s1-new-w">$345,000</div></div></div>
+ <div class="q3fc-head fc-card upsell-expansion"><div class="fc-card-head"><div class="fc-card-title">Upsell + Expansion</div><div class="fc-card-meta">Q3 Bookings (B) <strong id="q3s1-ueb2">$255,443</strong></div></div><div class="fc-weighted-row"><div class="fc-weighted-lbl">Weighted (P) · won + open×stage</div><div class="fc-weighted-val" id="q3s1-ue-w">$368,500</div></div></div>
+ <div class="q3fc-fore fc-card new-logo"><div class="q3fc-sec-lbl">Forecast · Commit + Best Case + Closed <span id="q3s1-new-fsum" class="q3fc-sum">$320,000 weighted</span></div><table class="fc-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody id="q3s1-new-fbody"><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/40673206840">Vanguard - Q3'25</a></td><td><span class="stage-av">E</span></td><td class="fc-close">2026-07-31</td><td class="num">$100,000</td><td><span class="pill commit">Commit</span></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/56889183914">VERSANT MEDIA - Q1'26</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-08-31</td><td class="num">$125,000</td><td><span class="pill best-case">Best Case</span></td></tr><tr class="won-row"><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/55681537865">Healthstream - Taxonomy Mgt (pool party replacement) </a></td><td><span class="stage-av">F</span></td><td class="fc-close">2026-07-23</td><td class="num">$65,000</td><td><span class="pill commit">Closed</span></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61749837600">Qnity Electronics - Q2'26</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-08-31</td><td class="num">$75,000</td><td><span class="pill best-case">Best Case</span></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/53441772111">AWS - Q126</a></td><td><span class="stage-av">C</span></td><td class="fc-close">2026-09-30</td><td class="num">$150,000</td><td><span class="pill best-case">Best Case</span></td></tr></tbody></table></div>
+ <div class="q3fc-fore fc-card upsell-expansion"><div class="q3fc-sec-lbl">Forecast · Commit + Best Case + Closed <span id="q3s1-ue-fsum" class="q3fc-sum">$90,000 weighted</span></div><table class="fc-table"><thead><tr><th>Deal</th><th>Stage</th><th>Close</th><th class="num">$</th><th>Forecast</th></tr></thead><tbody id="q3s1-ue-fbody"><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/28786835380">IBMCCN - TQDF / SaaS Conversion</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-09-30</td><td class="num">$150,000</td><td><span class="pill best-case">Best Case</span></td></tr></tbody></table></div>
+ <div class="q3fc-oth fc-card new-logo"><div class="q3fc-sec-lbl q3fc-oth-lbl">Other open · pipeline <span id="q3s1-new-osum" class="q3fc-sum">$250,000 unweighted</span></div><table class="fc-table"><tbody id="q3s1-new-obody"><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/60076928365">KeyBank - Q2'26</a></td><td><span class="stage-av">B</span></td><td class="fc-close">2026-09-07</td><td class="num">$150,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/60239694990">HKS - Q2'26</a></td><td><span class="stage-av">B</span></td><td class="fc-close">2026-08-05</td><td class="num">$100,000</td><td></td></tr></tbody></table></div>
+ <div class="q3fc-oth fc-card upsell-expansion"><div class="q3fc-sec-lbl q3fc-oth-lbl">Other open · pipeline <span id="q3s1-ue-osum" class="q3fc-sum">$485,000 unweighted</span></div><table class="fc-table"><tbody id="q3s1-ue-obody"><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/57350813010">AMGEXX Amgen - Reference Data Project </a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-09-30</td><td class="num">$250,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/41438026508">BMS Move ref data to SaaS Collections/TQDF</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-09-30</td><td class="num">$150,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/60177469265">Johnson &amp; Johnson - ELN Signals (Martine Ghysels)</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-09-11</td><td class="num">$25,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/54615931712">Johnson &amp; Johnson - R&amp;D Global Development </a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-08-31</td><td class="num">$25,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/54615990576">Johnson &amp; Johnson - IM EMEA </a></td><td><span class="stage-av">B</span></td><td class="fc-close">2026-09-30</td><td class="num">$25,000</td><td></td></tr><tr><td class="fc-deal"><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/60177778538">CAPAZX Central Arizona Project - Additional Collections</a></td><td><span class="stage-av">D</span></td><td class="fc-close">2026-08-14</td><td class="num">$10,000</td><td></td></tr></tbody></table></div>
+</div>
+<div class="tile-row tile-row-4" style="margin-top:16px;">
+ <div class="tile"><div class="tile-label">Weighted (P) total</div><div class="tile-value" id="q3s1-wtot">$713,500</div><div class="tile-meta" id="q3s1-wtot-m">New + U+E, Q3 close</div></div>
+ <div class="tile"><div class="tile-label">Won (A) · Q3 close</div><div class="tile-value" id="q3s1-won">$408,514</div><div class="tile-meta" id="q3s1-won-m">closed-won so far</div></div>
+ <div class="tile"><div class="tile-label">Open (unwtd)</div><div class="tile-value" id="q3s1-open">$1,335,000</div><div class="tile-meta" id="q3s1-open-m">full pipeline value</div></div>
+ <div class="tile projected-tile"><div class="tile-label">vs plan (B)</div><div class="tile-value" id="q3s1-vsb">121%</div><div class="tile-meta">weighted (P) / plan</div></div>
+</div>
+<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-bookings-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Sales owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> a clear point of view, triangulated against another source.</p><ul class="coaching-list"><li><em>The open deals that get us to the Q3 number, and the commitment behind each.</em></li></ul></div>
 <details class="meta-toggle"><summary>Methodology and sources</summary><div class="meta-section"><ul class="notes">
- <li><span class="label">Budgeted target (B):</span> Q3 bookings plan from the Budget 2026 anchors &mdash; New $334K, Upsell $124K, Expansion $132K ($590K total).</li>
- <li><span class="label">Forecast:</span> hand-authored Commit / Best-Case named deals (the leadership call), not a live pull. Won deals counted here.</li>
- <li><span class="label">Other open:</span> remaining open Q3 close-date deals not in the named forecast; renewals live in the renewal book, Smartlogic (partner) excluded.</li>
- <li><span class="label">Layout:</span> forecast on top, other-open beneath, split New (left) / Upsell + Expansion (right).</li></ul></div></details></section>
+ <li><span class="label">Budgeted target (B):</span> Q3 bookings plan from the Budget 2026 anchors (New / Upsell / Expansion, Q3 quarterly).</li>
+ <li><span class="label">Weighted (P):</span> won Q3-close deals at full ARR + open Q3-close deals × stage weight (A0/B10/C30/D60/E90/F100). Same single weight set as every other bookings view.</li>
+ <li><span class="label">Scope:</span> deals with close date in 2026 Q3 (Jul–Sep). Renewals excluded (live in the renewal book); SmartLogic partner excluded.</li></ul></div></details></section>
 
 <section class="ebr-section"><div class="eyebrow">Section 2</div>
 <h3 class="sec-title">Q3 2026 renewals</h3><hr class="section-rule">
 <div class="tile-row tile-row-4">
- <div class="tile"><div class="tile-label">ARR up for renewal</div><div class="tile-value" id="q3s2-arr">&mdash;</div><div class="tile-meta" id="q3s2-arr-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Accounts resolved</div><div class="tile-value" id="q3s2-res">&mdash;</div><div class="tile-meta" id="q3s2-res-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Gross Renewals (A)/(P)</div><div class="tile-value" id="q3s2-grr">&mdash;</div><div class="tile-meta" id="q3s2-grr-meta">risk-weighted</div></div>
- <div class="tile projected-tile"><div class="tile-label">Gross Renewals (B)</div><div class="tile-value" id="q3s2-grrb">&mdash;</div><div class="tile-meta">plan</div></div>
+ <div class="tile"><div class="tile-label">ARR up for renewal</div><div class="tile-value" id="q3s2-arr">$435,144</div><div class="tile-meta" id="q3s2-arr-meta">7 accounts · software only</div></div>
+ <div class="tile"><div class="tile-label">Accounts resolved</div><div class="tile-value" id="q3s2-res">0 / 7</div><div class="tile-meta" id="q3s2-res-meta">7 open</div></div>
+ <div class="tile"><div class="tile-label">Gross Renewals (A)/(P)</div><div class="tile-value" id="q3s2-grr">100%</div><div class="tile-meta" id="q3s2-grr-meta">$435,144 of $435,144 (A)/(P) · 7 ungraded → Low</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Gross Renewals (B)</div><div class="tile-value" id="q3s2-grrb">91.2%</div><div class="tile-meta">plan</div></div>
 </div>
 <h4 class="subhead">Account breakout</h4>
-<div class="qtd-renewals-grid">
- <div class="qtd-renewals-col qtd-col-resolved"><div class="qtd-col-head"><div class="qtd-col-title">Resolved &middot; Q3</div><div class="qtd-col-val" id="q3s2-c1-val">&mdash;</div></div>
-  <table class="qtd-col-table"><thead><tr><th>Account</th><th class="num">2025 ARR (A)</th><th class="num">2026 ARR (A)</th><th>Outcome</th></tr></thead><tbody id="q3s2-c1-body"><tr><td colspan="4" class="muted">loading&hellip;</td></tr></tbody></table></div>
- <div class="qtd-renewals-col qtd-col-risk"><div class="qtd-col-head"><div class="qtd-col-title">Open &middot; High Risk + Prove-It</div><div class="qtd-col-val" id="q3s2-c2-val">&mdash;</div></div>
-  <table class="qtd-col-table"><thead><tr><th>Account</th><th>Renew</th><th class="num">ARR</th><th>Risk status</th></tr></thead><tbody id="q3s2-c2-body"><tr><td colspan="4" class="muted">loading&hellip;</td></tr></tbody></table></div>
- <div class="qtd-renewals-col qtd-col-other"><div class="qtd-col-head"><div class="qtd-col-title">Open &middot; Other</div><div class="qtd-col-val" id="q3s2-c3-val">&mdash;</div></div>
-  <table class="qtd-col-table"><thead><tr><th>Account</th><th>Renew</th><th class="num">ARR</th><th>Risk status</th></tr></thead><tbody id="q3s2-c3-body"><tr><td colspan="4" class="muted">loading&hellip;</td></tr></tbody></table></div>
-</div>
-<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-renewals-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">CS owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> have a clear point of view, triangulated against at least one other data source.</p><ul class="coaching-list"><li><em>The one at-risk Q3 renewal you are personally driving, and the save play.</em></li></ul></div>
+<div id="q3s2-breakout"><div class="qtd-renewals-grid"><div class="qtd-renewals-col qtd-col-resolved"><div class="qtd-col-head"><div class="qtd-col-title">Resolved · Q3 (0)</div><div class="qtd-col-val">$0</div></div><table class="qtd-col-table"><thead><tr><th>Account</th><th class="num">2025 ARR</th><th class="num">2026 ARR</th><th>Outcome</th></tr></thead><tbody><tr><td colspan="4" class="muted">None</td></tr></tbody></table></div><div class="qtd-renewals-col qtd-col-risk"><div class="qtd-col-head"><div class="qtd-col-title">Open · High Risk + Prove-It</div><div class="qtd-col-val">$0</div></div><table class="qtd-col-table"><thead><tr><th>Account</th><th>Renew</th><th class="num">ARR</th><th>Risk status</th></tr></thead><tbody><tr><td colspan="4" class="muted">None open</td></tr></tbody></table></div><div class="qtd-renewals-col qtd-col-other"><div class="qtd-col-head"><div class="qtd-col-title">Open · Other</div><div class="qtd-col-val">$435,144</div></div><table class="qtd-col-table"><thead><tr><th>Account</th><th>Renew</th><th class="num">ARR</th><th>Risk status</th></tr></thead><tbody><tr><td>Federal Reserve Bank of Cleveland</td><td class="muted"></td><td class="num">$39,930</td><td><span class="pill">ungraded</span></td></tr><tr><td>Reach</td><td class="muted"></td><td class="num">$77,916</td><td><span class="pill">ungraded</span></td></tr><tr><td>Vanderbilt University Medical Center</td><td class="muted"></td><td class="num">$10,827</td><td><span class="pill">ungraded</span></td></tr><tr><td>OECD</td><td class="muted"></td><td class="num">$47,575</td><td><span class="pill">ungraded</span></td></tr><tr><td>Iron Mountain</td><td class="muted"></td><td class="num">$100,485</td><td><span class="pill">ungraded</span></td></tr><tr><td>NBCUniversal</td><td class="muted"></td><td class="num">$70,000</td><td><span class="pill">ungraded</span></td></tr><tr><td>Bristol-Myers Squibb</td><td class="muted"></td><td class="num">$88,411</td><td><span class="pill">ungraded</span></td></tr></tbody></table></div></div></div>
+<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-renewals-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">CS owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> a clear point of view.</p><ul class="coaching-list"><li><em>The one at-risk Q3 renewal you are personally driving, and the save play.</em></li></ul></div>
 <details class="meta-toggle"><summary>Methodology and sources</summary><div class="meta-section"><ul class="notes">
- <li><span class="label">Scope:</span> multi-year locked accounts (the register &ldquo;locked&rdquo; flag &mdash; e.g. NZTA, Network Rail, Mayo Clinic, Adobe, OCLC, WebMD) are excluded so the book reflects only what is genuinely up for renewal this quarter.</li>
- <li><span class="label">Gross Renewals (A)/(P):</span> resolved retained ARR + open risk-weighted projected ARR &divide; Q3 renewable, capped at 100% per customer (EBR renewal register in this pack).</li>
- <li><span class="label">Risk status:</span> HubSpot CSM Health rating (Red = High, Yellow = Medium, Green = Low) plus the Prove-It account flag, joined by customer code. High Risk + Prove-It column = Red or Prove-It.</li>
- <li><span class="label">Gross Renewals (B):</span> budgeted 2026 ARR of the same Q3 accounts, from the Budget 2026 customer register.</li></ul></div></details></section>
+ <li><span class="label">Scope:</span> renewal-book rows with a Q3 2026 renewal quarter, software only; multi-year locked and partner excluded from the renewal base (partner shown separately).</li>
+ <li><span class="label">Gross Renewals (A)/(P):</span> resolved retained ARR + open risk-weighted (High 75% / Med 90% / Low 100%) ÷ Q3 renewable, capped at 100% per account.</li>
+ <li><span class="label">Gross Renewals (B):</span> budgeted 2026 ARR of the same Q3 accounts.</li></ul></div></details></section>
 
 <section class="ebr-section qtd-demand"><div class="eyebrow">Section 3</div>
 <h3 class="sec-title">Q3 2026 demand</h3><hr class="section-rule">
 <div class="tile-row tile-row-4">
- <div class="tile"><div class="tile-label">Pipeline Generated (A)</div><div class="tile-value" id="q3s3-pa">&mdash;</div><div class="tile-meta" id="q3s3-pa-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Pipe Generated New Logo (A)</div><div class="tile-value" id="q3s3-pna">&mdash;</div><div class="tile-meta" id="q3s3-pna-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Pipe Generated Upsell+Expansion (A)</div><div class="tile-value" id="q3s3-pua">&mdash;</div><div class="tile-meta" id="q3s3-pua-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">SAL meetings (A)</div><div class="tile-value" id="q3s3-sa">&mdash;</div><div class="tile-meta" id="q3s3-sa-meta">&mdash;</div></div>
+ <div class="tile"><div class="tile-label">Pipeline Generated (A)</div><div class="tile-value" id="q3s3-pa">$590K</div><div class="tile-meta" id="q3s3-pa-meta">132% of (B) pace</div></div>
+ <div class="tile"><div class="tile-label">Pipe Gen New Logo (A)</div><div class="tile-value" id="q3s3-pna">$450K</div><div class="tile-meta">Q3 created</div></div>
+ <div class="tile"><div class="tile-label">Pipe Gen Upsell+Expansion (A)</div><div class="tile-value" id="q3s3-pua">$140K</div><div class="tile-meta">Q3 created</div></div>
+ <div class="tile"><div class="tile-label">SAL meetings (A)</div><div class="tile-value" id="q3s3-sa">10</div><div class="tile-meta" id="q3s3-sa-meta">136% of (B) pace · Disco</div></div>
 </div>
 <div class="tile-row tile-row-4">
- <div class="tile projected-tile"><div class="tile-label">Pipeline Generated (B)</div><div class="tile-value" id="q3s3-pb">&mdash;</div><div class="tile-meta">(B) QTD</div></div>
- <div class="tile projected-tile"><div class="tile-label">Pipe Generated New Logo (B)</div><div class="tile-value" id="q3s3-pnb">&mdash;</div><div class="tile-meta">(B) QTD</div></div>
- <div class="tile projected-tile"><div class="tile-label">Pipe Generated Upsell+Expansion (B)</div><div class="tile-value" id="q3s3-pub">&mdash;</div><div class="tile-meta">(B) QTD</div></div>
- <div class="tile projected-tile"><div class="tile-label">SAL meetings (B)</div><div class="tile-value" id="q3s3-sb">&mdash;</div><div class="tile-meta">(B) QTD</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Pipeline Generated (B)</div><div class="tile-value" id="q3s3-pb">$1.52M</div><div class="tile-meta">(B) Q3</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Pipe Gen New Logo (B)</div><div class="tile-value" id="q3s3-pnb">$1.08M</div><div class="tile-meta">(B) Q3</div></div>
+ <div class="tile projected-tile"><div class="tile-label">Pipe Gen Upsell+Expansion (B)</div><div class="tile-value" id="q3s3-pub">$432K</div><div class="tile-meta">(B) Q3</div></div>
+ <div class="tile projected-tile"><div class="tile-label">SAL meetings (B)</div><div class="tile-value" id="q3s3-sb">25</div><div class="tile-meta">(B) Q3</div></div>
 </div>
 <h4 class="subhead">Pipeline created and SAL meetings by deal type</h4>
-<div class="bp-legend">Actual (A): <span class="bp-sw" style="background:#b54d4d;opacity:.88"></span>July <span class="bp-sw" style="background:#b54d4d;opacity:.62"></span>August <span class="bp-sw" style="background:#b54d4d;opacity:.40"></span>September &nbsp;&nbsp;&nbsp;Budget (B): <span class="bp-sw bp-sw-b"></span>monthly stack &nbsp;&nbsp;&nbsp;dashed line = (B) pace (on budget bar) &nbsp;&nbsp;&nbsp;<span class="muted">hover a bar for the deals/meetings behind it</span></div>
-<div class="bookings-pair"><div class="bookings-pair-head"><div class="bookings-pair-label">New Logo</div><div class="bookings-pair-meta" id="q3s3-new-meta">&mdash;</div></div>
-<div class="bp-charts"><div class="bp-panel"><div class="bp-panel-label">Pipeline created</div><div class="bp-chart-wrap" id="q3s3-chart-np"></div></div>
-<div class="bp-panel"><div class="bp-panel-label">SAL meetings</div><div class="bp-chart-wrap" id="q3s3-chart-ns"></div></div></div>
-<div class="bp-caller" id="q3s3-new-caller"></div></div>
-<div class="bookings-pair"><div class="bookings-pair-head"><div class="bookings-pair-label">Upsell + Expansion</div><div class="bookings-pair-meta" id="q3s3-ue-meta">&mdash;</div></div>
-<div class="bp-charts"><div class="bp-panel"><div class="bp-panel-label">Pipeline created</div><div class="bp-chart-wrap" id="q3s3-chart-up"></div></div>
-<div class="bp-panel"><div class="bp-panel-label">SAL meetings</div><div class="bp-chart-wrap" id="q3s3-chart-us"></div></div></div>
-<div class="bp-caller" id="q3s3-ue-caller"></div></div>
-<details class="quarter-detail meetings-dd"><summary id="q3s3-dd-sum">Disco meetings &middot; QTD</summary>
-<div class="tile-row"><div class="tile"><div class="tile-label">Total SAL meetings</div><div class="tile-value" id="q3s3-tm">&mdash;</div><div class="tile-meta" id="q3s3-tm-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Disco held rate</div><div class="tile-value" id="q3s3-conv">&mdash;</div><div class="tile-meta" id="q3s3-conv-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Source attributed</div><div class="tile-value" id="q3s3-attr">&mdash;</div><div class="tile-meta" id="q3s3-attr-meta">&mdash;</div></div></div>
-<table><thead><tr><th>Date</th><th>Meeting</th><th>Result</th><th>Associated deal</th><th>Source (channel)</th><th>True source</th></tr></thead><tbody id="q3s3-mt-body"><tr class="muted-row"><td colspan="6" class="muted small">loading&hellip;</td></tr></tbody></table>
+<div class="bp-legend">Live from HubSpot · <span class="bp-sw" style="background:#b54d4d;opacity:.88"></span>month 1 <span class="bp-sw" style="background:#b54d4d;opacity:.62"></span>month 2 <span class="bp-sw" style="background:#b54d4d;opacity:.40"></span>month 3 &nbsp;&nbsp; dashed line = (B) Q3 &nbsp;&nbsp;<span class="muted">hover a bar for detail</span></div>
+<div id="q3-demand-charts"><div class="bookings-pair"><div class="bookings-pair-head"><div class="bookings-pair-label">New Logo</div><div class="bookings-pair-meta">Pipeline $450K · SAL meetings 3</div></div><div class="bp-charts"><div class="bp-panel"><div class="bp-panel-label">PIPELINE CREATED</div><div class="bp-chart-wrap"><svg viewBox="0 0 360 210" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg"><line x1="44" y1="18" x2="44" y2="172" stroke="#d8d2c4"></line><line x1="44" y1="172" x2="352" y2="172" stroke="#d8d2c4"></line><text x="40" y="172" class="bp-axis" text-anchor="end">0</text><text x="40" y="98.0" class="bp-axis" text-anchor="end">$542K</text><rect x="79" y="108.0" width="62" height="64.0" fill="#b54d4d" opacity="0.88"><title>Jul — $450K
+• BMSQXX Bristol-Myers "Enterprise Semantic Layer"   $0K
+• UWV  (Dutch Govt Agency_Employment Insurance) - Qx'XX  $75K
+• Applied Materials - Q3'26  $75K
+• Wood Mackenzie - Q3'26  $100K
+• Itaú Unibanco - Q3'26  $100K
+• Navy Federal - Q3'26  $100K</title></rect><rect x="79" y="108.0" width="62" height="0.0" fill="#b54d4d" opacity="0.62"><title>Aug — $0K</title></rect><rect x="79" y="108.0" width="62" height="0.0" fill="#b54d4d" opacity="0.4"><title>Sep — $0K</title></rect><text x="110" y="104.0" class="bp-total" text-anchor="middle">$450K</text><text x="110" y="184" class="bp-barlabel" text-anchor="middle">QTD (A)</text><text x="110" y="194" class="bp-pct" text-anchor="middle">42% of (B) QTD</text><rect x="239" y="120.7" width="62" height="51.3" fill="#6b6b6b" opacity="0.55"><title>Budget — $361K</title></rect><rect x="239" y="69.3" width="62" height="51.3" fill="#6b6b6b" opacity="0.4"><title>Budget — $361K</title></rect><rect x="239" y="18.0" width="62" height="51.3" fill="#6b6b6b" opacity="0.28"><title>Budget — $361K</title></rect><text x="270" y="14.0" class="bp-total" text-anchor="middle">$1.08M</text><text x="270" y="184" class="bp-barlabel" text-anchor="middle">Q3 (B)</text><text x="270" y="194" class="bp-barlabel" text-anchor="middle" fill="#6b6b6b">benchmark</text><line x1="70" y1="126.6" x2="352" y2="126.6" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="5,3"></line><text x="350" y="123.6" class="bp-axis" text-anchor="end">(B) QTD: $319K</text></svg></div></div><div class="bp-panel"><div class="bp-panel-label">SAL MEETINGS</div><div class="bp-chart-wrap"><svg viewBox="0 0 360 210" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg"><line x1="44" y1="18" x2="44" y2="172" stroke="#d8d2c4"></line><line x1="44" y1="172" x2="352" y2="172" stroke="#d8d2c4"></line><text x="40" y="172" class="bp-axis" text-anchor="end">0</text><text x="40" y="98.0" class="bp-axis" text-anchor="end">7</text><rect x="79" y="139.0" width="62" height="33.0" fill="#b54d4d" opacity="0.88"><title>Jul — 3
+• TopQuadrant | Tech Mahindra
+• TopQuadrant | Tech Mahindra | Intro Call
+• TopQuadrant | Applied Materials</title></rect><rect x="79" y="139.0" width="62" height="0.0" fill="#b54d4d" opacity="0.62"><title>Aug — 0</title></rect><rect x="79" y="139.0" width="62" height="0.0" fill="#b54d4d" opacity="0.4"><title>Sep — 0</title></rect><text x="110" y="135.0" class="bp-total" text-anchor="middle">3</text><text x="110" y="184" class="bp-barlabel" text-anchor="middle">QTD (A)</text><text x="110" y="194" class="bp-pct" text-anchor="middle">21% of (B) QTD</text><rect x="239" y="120.7" width="62" height="51.3" fill="#6b6b6b" opacity="0.55"><title>Budget — 5</title></rect><rect x="239" y="69.3" width="62" height="51.3" fill="#6b6b6b" opacity="0.4"><title>Budget — 5</title></rect><rect x="239" y="18.0" width="62" height="51.3" fill="#6b6b6b" opacity="0.28"><title>Budget — 5</title></rect><text x="270" y="14.0" class="bp-total" text-anchor="middle">14</text><text x="270" y="184" class="bp-barlabel" text-anchor="middle">Q3 (B)</text><text x="270" y="194" class="bp-barlabel" text-anchor="middle" fill="#6b6b6b">benchmark</text><line x1="70" y1="126.6" x2="352" y2="126.6" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="5,3"></line><text x="350" y="123.6" class="bp-axis" text-anchor="end">(B) QTD: 4</text></svg></div></div></div></div><div class="bookings-pair"><div class="bookings-pair-head"><div class="bookings-pair-label">Upsell + Expansion</div><div class="bookings-pair-meta">Pipeline $140K · SAL meetings 7</div></div><div class="bp-charts"><div class="bp-panel"><div class="bp-panel-label">PIPELINE CREATED</div><div class="bp-chart-wrap"><svg viewBox="0 0 360 210" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg"><line x1="44" y1="18" x2="44" y2="172" stroke="#d8d2c4"></line><line x1="44" y1="172" x2="352" y2="172" stroke="#d8d2c4"></line><text x="40" y="172" class="bp-axis" text-anchor="end">0</text><text x="40" y="98.0" class="bp-axis" text-anchor="end">$216K</text><rect x="79" y="122.1" width="62" height="49.9" fill="#b54d4d" opacity="0.88"><title>Jul — $140K
+• NovoNordisk - TQDF Conversion  $40K
+• ELCAXX Electronic Arts - Enterprise Semantic Platform RFP (SaaS/TQDF conversion)  $100K</title></rect><rect x="79" y="122.1" width="62" height="0.0" fill="#b54d4d" opacity="0.62"><title>Aug — $0K</title></rect><rect x="79" y="122.1" width="62" height="0.0" fill="#b54d4d" opacity="0.4"><title>Sep — $0K</title></rect><text x="110" y="118.1" class="bp-total" text-anchor="middle">$140K</text><text x="110" y="184" class="bp-barlabel" text-anchor="middle">QTD (A)</text><text x="110" y="194" class="bp-pct" text-anchor="middle">32% of (B) QTD</text><rect x="239" y="120.7" width="62" height="51.3" fill="#6b6b6b" opacity="0.55"><title>Budget — $144K</title></rect><rect x="239" y="69.3" width="62" height="51.3" fill="#6b6b6b" opacity="0.4"><title>Budget — $144K</title></rect><rect x="239" y="18.0" width="62" height="51.3" fill="#6b6b6b" opacity="0.28"><title>Budget — $144K</title></rect><text x="270" y="14.0" class="bp-total" text-anchor="middle">$432K</text><text x="270" y="184" class="bp-barlabel" text-anchor="middle">Q3 (B)</text><text x="270" y="194" class="bp-barlabel" text-anchor="middle" fill="#6b6b6b">benchmark</text><line x1="70" y1="126.6" x2="352" y2="126.6" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="5,3"></line><text x="350" y="123.6" class="bp-axis" text-anchor="end">(B) QTD: $127K</text></svg></div></div><div class="bp-panel"><div class="bp-panel-label">SAL MEETINGS</div><div class="bp-chart-wrap"><svg viewBox="0 0 360 210" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg"><line x1="44" y1="18" x2="44" y2="172" stroke="#d8d2c4"></line><line x1="44" y1="172" x2="352" y2="172" stroke="#d8d2c4"></line><text x="40" y="172" class="bp-axis" text-anchor="end">0</text><text x="40" y="98.0" class="bp-axis" text-anchor="end">6</text><rect x="79" y="130.0" width="62" height="42.0" fill="#b54d4d" opacity="0.88"><title>Jul — 3
+• TopQuadrant / GSK R&amp;D EDG Use Case Discussion
+• TQ / JPMC CCB Working Session
+• TQ / EA: SaaS RFP Update / Review</title></rect><rect x="79" y="74.0" width="62" height="56.0" fill="#b54d4d" opacity="0.62"><title>Aug — 4
+• TQ/ TRowe Sharepoint Connector Demo
+• TQ/ TRowe Sharepoint Demo
+• EA / TQ - Final RFP Review
+• HOLD: GSK / TopQuadrant SaaS Capabilities Demo w/ Ankit</title></rect><rect x="79" y="74.0" width="62" height="0.0" fill="#b54d4d" opacity="0.4"><title>Sep — 0</title></rect><text x="110" y="70.0" class="bp-total" text-anchor="middle">7</text><text x="110" y="184" class="bp-barlabel" text-anchor="middle">QTD (A)</text><text x="110" y="194" class="bp-pct" text-anchor="middle">64% of (B) QTD</text><rect x="239" y="120.7" width="62" height="51.3" fill="#6b6b6b" opacity="0.55"><title>Budget — 4</title></rect><rect x="239" y="69.3" width="62" height="51.3" fill="#6b6b6b" opacity="0.4"><title>Budget — 4</title></rect><rect x="239" y="18.0" width="62" height="51.3" fill="#6b6b6b" opacity="0.28"><title>Budget — 4</title></rect><text x="270" y="14.0" class="bp-total" text-anchor="middle">11</text><text x="270" y="184" class="bp-barlabel" text-anchor="middle">Q3 (B)</text><text x="270" y="194" class="bp-barlabel" text-anchor="middle" fill="#6b6b6b">benchmark</text><line x1="70" y1="126.6" x2="352" y2="126.6" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="5,3"></line><text x="350" y="123.6" class="bp-axis" text-anchor="end">(B) QTD: 3</text></svg></div></div></div></div></div>
+<h4 class="subhead" style="margin-top:20px">Meetings held · Q3 (Disco / SAL)</h4>
+<div id="q3-meetings-table"><details class="quarter-detail"><summary>Meetings held · 26Q3 (10 Disco / SAL)</summary><table class="fc-table"><thead><tr><th>Meeting</th><th>Date</th><th>Deal type</th><th>Outcome</th></tr></thead><tbody><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61741377136/">TQ / JPMC CCB Working Session</a></td><td>2026-07-13</td><td><span class="pill">Expansion</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/62852806312/">TopQuadrant | Tech Mahindra | Intro Call</a></td><td>2026-07-13</td><td><span class="pill">New Logo</span></td><td>Completed</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/62619527714/">TopQuadrant | Applied Materials</a></td><td>2026-07-13</td><td><span class="pill">New Logo</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-47/112878242641/">TQ / EA: SaaS RFP Update / Review</a></td><td>2026-07-23</td><td><span class="pill">Upsell</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/62852806312/">TopQuadrant | Tech Mahindra</a></td><td>2026-07-24</td><td><span class="pill">New Logo</span></td><td>Rescheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61355701539/">TopQuadrant / GSK R&amp;D EDG Use Case Discussion</a></td><td>2026-07-31</td><td><span class="pill">Expansion</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/62616654740/">EA / TQ - Final RFP Review</a></td><td>2026-08-04</td><td><span class="pill">Upsell</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/57982520979/">HOLD: GSK / TopQuadrant SaaS Capabilities Demo w/ Ankit</a></td><td>2026-08-04</td><td><span class="pill">Upsell</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61475190340/">TQ/ TRowe Sharepoint Demo</a></td><td>2026-08-05</td><td><span class="pill">Upsell</span></td><td>Scheduled</td></tr><tr><td><a class="deal-link" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61475190340/">TQ/ TRowe Sharepoint Connector Demo</a></td><td>2026-08-19</td><td><span class="pill">Upsell</span></td><td>Scheduled</td></tr></tbody></table></details></div>
 <details class="meta-toggle"><summary>Methodology and sources</summary><div class="meta-section"><ul class="notes">
- <li><span class="label">Source:</span> tq_deal_channel_source of each meeting&rsquo;s associated deal (resolved live via HubSpot association).</li>
- <li><span class="label">True source:</span> referral_source on the associated deal. Meeting links open the HubSpot deal record.</li></ul></div></details></details>
-<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-demand-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">Demand owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> have a clear point of view, triangulated against at least one other data source.</p><ul class="coaching-list"><li><em>The lever &mdash; meeting volume or conversion &mdash; Q3 pipeline generation turns on.</em></li></ul></div>
-<details class="meta-toggle"><summary>Methodology and sources</summary><div class="meta-section"><ul class="notes">
- <li><span class="label">Pipeline generated:</span> deal entered Stage B in Q3 (hs_v2_date_entered_5863320), live at open.</li>
- <li><span class="label">SAL:</span> a Q3 disco meeting (hs_activity_type = Disco - New Logo / Upsell / Expansion). SQL/SUL outcome is not yet tracked in HubSpot; “held” = meeting outcome COMPLETED — an outcome-tracking gap to close. Both charts show the monthly Q3 (B) stack on the right; the dashed line is (B) QTD (elapsed months + current month prorated by day).</li></ul></div></details></section>
+ <li><span class="label">Pipeline Generated (A):</span> sum of deal amount for deals created in Q3 2026 (staged HubSpot set), split New vs Upsell+Expansion by deal type.</li>
+ <li><span class="label">SAL meetings (A):</span> HubSpot meetings with activity type "Disco - New Logo / Upsell / Expansion" and a Q3 2026 start date. Each meeting is one SAL; deal type from the activity type; outcome from the meeting outcome (SQL / SUL linked when it converts).</li>
+ <li><span class="label">Budget (B):</span> Q3 pipeline-generation and SAL plan from the Budget 2026 / marketing anchors.</li>
+ <li><span class="label">Meetings held table:</span> every Disco meeting scheduled in Q3, with outcome and a link to the HubSpot meeting record.</li></ul></div></details></section>
 
-<section class="ebr-section"><div class="eyebrow">Section 4</div>
-<h3 class="sec-title">Q3 2026 channel</h3><hr class="section-rule">
-<div class="tile-row">
- <div class="tile"><div class="tile-label">SALs (A)</div><div class="tile-value" id="q3s4-a">&mdash;</div><div class="tile-meta" id="q3s4-a-meta">&mdash;</div></div>
- <div class="tile"><div class="tile-label">Top Channel</div><div class="tile-value tile-value-sm" id="q3s4-top">&mdash;</div><div class="tile-meta" id="q3s4-top-meta">&mdash;</div></div>
+
 </div>
-<div class="tile-row">
- <div class="tile projected-tile"><div class="tile-label">SALs (B)</div><div class="tile-value" id="q3s4-b">&mdash;</div><div class="tile-meta" id="q3s4-b-meta">Q3 plan</div></div>
-</div>
-<div class="callout callout-warn" id="q3s4-callout" style="display:none;"><div class="callout-title" id="q3s4-callout-title"></div>
-<p>Channel inherits from each meeting&rsquo;s associated deal (tq_deal_channel_source). These break the chain and are excluded from the split:</p>
-<ul style="margin:6px 0 0;padding-left:18px;" id="q3s4-callout-list"></ul></div>
-<h4 class="subhead">SALs by Channel detail</h4>
-<div class="channel-chart-legend"><span class="channel-legend-item"><span class="swatch sql"></span> SQL</span><span class="channel-legend-item"><span class="swatch sul"></span> SUL</span><span class="channel-legend-item"><span class="swatch faded"></span> Q3 plan</span><span class="channel-legend-item"><span class="marker"></span> (B)</span></div>
-<div class="channel-chart" id="q3s4-chart"><div class="channel-row"><div class="channel-label muted">loading&hellip;</div></div></div>
-<p class="small muted">Per-channel SAL detail is in the <strong>Meetings held</strong> toggle under the Q3 demand charts.</p>
-<div class="notes-block insights-block coaching" contenteditable="true" data-editable="true" data-section="q3p-channel-insights"><h5 class="notes-title">Insights &amp; Decisions <span><span class="edit-hint">click to edit</span> &nbsp; <span class="owner-tag">RevOps owner</span></span></h5><p class="coaching-intro coaching-hierarchy"><strong>Ideally:</strong> commit to a decision today, grounded in evidence. <strong>At minimum:</strong> have a clear point of view, triangulated against at least one other data source.</p><ul class="coaching-list"><li><em>The channel bet Q3 pipeline generation rides on, and the evidence behind it.</em></li></ul></div>
-<details class="meta-toggle"><summary>Methodology and sources</summary><div class="meta-section"><ul class="notes">
- <li><span class="label">Channel:</span> each Q3 SAL inherits tq_deal_channel_source of its associated deal (resolved live via association).</li>
- <li><span class="label">Sources:</span> HubSpot Meetings (Q3 disco meetings) joined to associated deal channel; per-channel Q3 plan from Budget 2026 anchors.</li></ul></div></details></section>
-<script>
-(function(){
- "use strict";
- var HS_TOOL="mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__search_crm_objects";
- var PLAN={"book_new":334356,"book_up":123921,"book_ex":131522,"book_ue":255443,"book_total":589799,"ann_new":1052172,"ann_ue":702757,"grr_plan_pct":91.2,"nrr_plan_pct":107.3,"pipe_new_m":[528000,306000,249000],"pipe_ue_m":[137750,90250,204250],"sal_new_m":[7.45,3.75,2.8],"sal_ue_m":[3.55,2.25,5.2],"sal_ch":{"Inbound":6,"Customer":4,"Outbound - Sales":6,"Events":4,"Referral":3,"Outbound - Marketing":0,"Paid":2,"Outbound - Joint":0},"sal_total":25.0,"reg":{"BSCHXX":75502,"SWORXX":27000,"GOOGTP":94600,"NORTHE":85000,"TAXNSH":79508,"IBMCCN":29796,"AMGEXX":62401,"ELSECN":0,"NORWXX":30083,"TEMPXX":79014,"EXPRSI":116887,"VIASOR":11269,"CRNGXX":42139,"BCMEXX":0,"TMRUXX":76184,"TRACGA":86843,"SLBDSG":49548,"ELCAXX":42501,"SPOTON":94609,"CRNLXX":14658,"MVHHTI":104548,"TAXNWL":86394,"EXPDXX":113547,"BAYRLG":226263,"PLTOTV":80850,"NOVOXX":232000,"NETWXX":137812,"FRBCDS":19965,"REACXX":81812,"VUMCXX":11368,"ADOBEL":180000,"OECDXX":47575,"MAYOXX":223440,"NZTADS":125000,"NBCUXX":0,"IRONXX":105509,"BMSQXX":92832,"HEALXX":87840,"BOLDCE":157500,"DOFIXX":472500,"GSKXDP":80800,"CAP1XX":132747,"JPMCCB":75000,"DPRVDC":59400,"TROWXX":91239,"OCLCMQ":45496,"Mizuho Services Americas LLC":236250,"JNJEXE":369786,"CAPAZX":26250,"SFCRMX":167475,"ADOBTA":16000,"BAYRCG":28760}};
- var OWNERS={"12868286":"Cody Pierson","47910976":"Lisa Latour","48518954":"Umair Aziz","76642126":"Youssef Kamel","77604409":"Robyn Dixon","79109829":"Chris Roth","79190826":"Christian Sanchez","81292990":"Ingrid Ramos","82716096":"Harrison Luce","89141181":"Shifanamol Karakkattil","90051119":"Shruti Saha","91020164":"Rodion Cebotari","91471000":"Jim Crews","92143327":"Brenda Cass","92405913":"Shivil S","93980548":"Ammar Khan","107252759":"Nimit Mehta","110658140":"Amar Doshi","113760612":"Jesse Lambert","116173483":"James Koban","140523153":"Nick Abston","140523157":"Brandy Bednorz","140523158":"Nuno Lopes","140523159":"David Price","140523165":"Richard Cyganiak","233318315":"John Murphy","288497248":"Kris McGlinn","508151454":"Allan Chan","648855862":"Steve Hedden","720943960":"Laurie Nelsen","785360964":"Renuka halappa","896953684":"Mary Kate McLaughlin","1003037686":"Thomas Sainsbury"};
- var Q3S="2026-07-01", Q3E="2026-09-30";
- var MONTHS=["July","August","September"], MABBR=["Jul","Aug","Sep"], MDAYS=[31,31,30];
- var STAGE={"5863320":"B","qualifiedtobuy":"C","5863322":"D","decisionmakerboughtin":"E","closedwon":"W"};
- var FW={"commit":1.0,"bestcase":0.7,"pipeline":0.3};
- function unwrap(r){ if(!r) return null; if(r.structuredContent) return r.structuredContent; if(r.content&&r.content[0]&&r.content[0].text){ try{return JSON.parse(r.content[0].text);}catch(e){return null;} } return r; }
- function amt(p){ var v=p.amount_in_home_currency||p.amount; var n=parseFloat(v); return isFinite(n)?n:0; }
- function esc(s){ return s==null?"":String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
- function dol(n){ n=Number(n); if(!isFinite(n)) return "—"; return "$"+Math.round(n).toLocaleString("en-US"); }
- function dolK(n){ n=Number(n)||0; return "$"+Math.round(n/1e3)+"K"; }
- function dolKM(n){ n=Number(n)||0; if(Math.abs(n)>=1e6) return "$"+(n/1e6).toFixed(2)+"M"; return dolK(n); }
- function dolAxis(n){ n=Number(n)||0; if(Math.abs(n)>=1e6) return "$"+(n/1e6).toFixed(1)+"M"; return "$"+Math.round(n/1e3)+"K"; }
- function set(id,t){ var e=document.getElementById(id); if(e) e.textContent=t; }
- function setH(id,h){ var e=document.getElementById(id); if(e) e.innerHTML=h; }
- function cls(id,c){ var e=document.getElementById(id); if(e){ e.className=e.className.replace(/ (good|warn|bad)$/,"")+(c?" "+c:""); } }
- function band(p){ return p>=95?"good":(p>=65?"warn":"bad"); }
- function inQ3(s){ if(!s||s.length<7) return false; var m=s.slice(0,7); return m>="2026-07"&&m<="2026-09"; }
- function mIdx(s){ return parseInt(s.slice(5,7),10)-7; }
- function initials(id){ var n=OWNERS[String(id)]||""; if(!n) return "?"; var p=n.trim().split(/\s+/); return (p[0][0]+(p.length>1?p[p.length-1][0]:"")).toUpperCase(); }
- function fmtClose(s){ if(!s||s.length<10) return "—"; return MABBR[mIdx(s)]!==undefined&&s.slice(0,4)==="2026"&&mIdx(s)>=0&&mIdx(s)<=2 ? MABBR[mIdx(s)]+" "+parseInt(s.slice(8,10),10) : s.slice(0,10); }
- function elapsedFrac(){ var now=new Date(); var y=now.getFullYear(), mo=now.getMonth(); var f=[0,0,0];
-   for(var i=0;i<3;i++){ var mm=6+i; if(y>2026||(y===2026&&mo>mm)) f[i]=1; else if(y===2026&&mo===mm) f[i]=Math.min(1,now.getDate()/MDAYS[i]); }
-   return f; }
- function qtdB(arr){ var f=elapsedFrac(), s=0; for(var i=0;i<3;i++) s+=arr[i]*f[i]; return s; }
- function sum(a){ return a.reduce(function(s,x){return s+x;},0); }
- function call(args){ return window.cowork.callMcpTool(HS_TOOL,args).then(unwrap); }
-
- // ---- static plan fills ----
- set("q3-book-goal","goal "+dolKM(PLAN.book_total));
- set("q3-grr-goal","plan "+PLAN.grr_plan_pct+"%");
- set("q3-nrr-p",PLAN.nrr_plan_pct+"%");
- set("q3-pipe-goal",dolKM(sum(PLAN.pipe_new_m)+sum(PLAN.pipe_ue_m)));
- set("q3s4-b",String(Math.round(PLAN.sal_total)));
- // ---- Section 2: renewals from __RB + HubSpot risk ----
- function riskInfo(compsByKey,d){
-   var key=String(d.code||"").toUpperCase(); var c=null;
-   if(key){ c=compsByKey[key]||null; }
-   if(!c){ var an=String(d.account||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,12);
-     for(var k in compsByKey){ var cn=compsByKey[k]._norm; if(an&&cn&&(cn.indexOf(an)>=0||an.indexOf(cn.slice(0,10))>=0)){ c=compsByKey[k]; break; } } }
-   var rating=c?(c.rating||""):""; var prove=c?!!c.prove:false;
-   var lvl=(d.risk==="High")?"High":((d.risk==="Medium")?"Medium":((d.risk==="Low")?"Low":(rating==="Red"?"High":(rating==="Yellow"?"Medium":(rating==="Green"?"Low":"—")))));
-   return { level:lvl, prove:prove, matched:!!c };
- }
- function riskPill(ri){
-   var parts=[];
-   if(ri.level==="High") parts.push("<span class='pill high-risk'>High</span>");
-   else if(ri.level==="Medium") parts.push("<span class='pill mid-risk'>Medium</span>");
-   else if(ri.level==="Low") parts.push("<span class='pill on-track'>Low</span>");
-   else parts.push("<span class='pill other'>—</span>");
-   if(ri.prove) parts.push(" <span class='pill prove-it'>Prove-It</span>");
-   return parts.join("");
- }
- function renewals(comps){
-   var rb=window.__RB;
-   if(!Array.isArray(rb)){ set("q3-status","Renewal register not loaded — reload the pack."); return; }
-   rb.forEach(function(d){ if(!d.renewal_date){ var y=d.yr||(2000+(parseInt(String(d.qtr||"").slice(0,2),10)||26)); if(d.ann) d.renewal_date=y+"-"+d.ann; } if(d.arr_26p===undefined&&d.grr_26!==undefined) d.arr_26p=d.grr_26; });
-   var compsByKey={};
-   (comps||[]).forEach(function(c){ var p=c.properties||{}; var nm=String(p.name||"");
-     var m=nm.match(/[A-Z0-9]{6}/); var key=m?m[0]:null;
-     var rec={ rating:p.csm_health_rating||"", prove:String(p.prove_it_account)==="true", _norm:nm.toUpperCase().replace(/[^A-Z0-9]/g,"") };
-     if(key) compsByKey[key]=rec; else compsByKey[nm.toUpperCase().slice(0,14)]=rec; });
-   var isLocked=function(d){ return d.locked===true||d.locked==="true"; };
-   var isSmartlogic=function(d){ var s=((d.account||"")+" "+(d.code||"")).toLowerCase(); return s.indexOf("smartlogic")>=0; }; var inScope=rb.filter(function(d){ return inQ3(String(d.renewal_date||""))&&!isSmartlogic(d); }); // Smartlogic is a partner, excluded from renewal book/sections
-   var locked=inScope.filter(isLocked);
-   var lockedArr=locked.reduce(function(s,d){ return s+(d.arr_25||0); },0);
-   var q=inScope.filter(function(d){ return !isLocked(d); }) // multi-year locked excluded so we don't overstate the active renewal book
-           .sort(function(a,b){ return String(a.renewal_date).localeCompare(String(b.renewal_date)); });
-   var res=q.filter(function(d){ return /Resolved/.test(d.status||""); });
-   var open=q.filter(function(d){ return !/Resolved/.test(d.status||""); });
-   var s25=function(a){ return a.reduce(function(s,d){ return s+(d.arr_25||0); },0); };
-   var s26=function(a){ return a.reduce(function(s,d){ return s+Math.min(d.arr_26p||0,d.arr_25||0); },0); }; // GRR capped at 100% per customer
-   var s26u=function(a){ return a.reduce(function(s,d){ return s+(d.arr_26p||0); },0); };
-   var t25=s25(q), t26=s26(q);
-   open.forEach(function(d){ d._ri=riskInfo(compsByKey,d); });
-   var hi=open.filter(function(d){ return d._ri.level==="High"||d._ri.prove; });
-   var ot=open.filter(function(d){ return !(d._ri.level==="High"||d._ri.prove); });
-   set("q3s2-arr",dol(t25)); set("q3s2-arr-meta",q.length+" accounts in scope"+(locked.length?" · "+locked.length+" multi-year locked excluded ("+dol(lockedArr)+")":""));
-   set("q3s2-res",res.length+" / "+q.length); set("q3s2-res-meta",open.length+" open · "+hi.length+" at risk");
-   var grrP=t25>0?100*t26/t25:0;
-   set("q3s2-grr",Math.round(grrP)+"% · "+dol(t26)); cls("q3s2-grr",band(grrP)); cls("q3s2-grr-meta",band(grrP));
-   var tB=q.reduce(function(s,d){ return s+(PLAN.reg[d.code]||0); },0);
-   var grrB=t25>0?100*tB/t25:0;
-   set("q3s2-grrb",Math.round(grrB)+"% · "+dol(tB));
-   set("q3-grr-p",grrP.toFixed(1)+"%");
-   set("q3s2-c1-val","GRR (A): "+(s25(res)>0?(100*s26(res)/s25(res)).toFixed(1):"—")+"%");
-   set("q3s2-c2-val","GRR projection: "+(s25(hi)>0?Math.round(100*s26(hi)/s25(hi)):100)+"%");
-   set("q3s2-c3-val","GRR projection: "+(s25(ot)>0?Math.round(100*s26(ot)/s25(ot)):100)+"%");
-   setH("q3s2-c1-body", res.length?res.map(function(d){
-     var up=(d.arr_26p||0)>(d.arr_25||0);
-     return "<tr><td>"+esc(d.account)+"</td><td class='num'>"+dol(d.arr_25)+"</td><td class='num'>"+dol(d.arr_26p)+"</td><td><span class='pill on-track'>"+(up?"upsell":"renewed")+"</span></td></tr>"; }).join("")
-     :"<tr><td colspan='4' class='muted'>None resolved yet</td></tr>");
-   var openRow=function(d){ return "<tr><td>"+esc(d.account)+"</td><td class='muted'>"+esc(String(d.renewal_date||"").slice(0,10))+"</td><td class='num'>"+dol(d.arr_25)+"</td><td>"+riskPill(d._ri)+"</td></tr>"; };
-   setH("q3s2-c2-body", hi.length?hi.map(openRow).join(""):"<tr><td colspan='4' class='muted'>None open</td></tr>");
-   setH("q3s2-c3-body", ot.length?ot.map(openRow).join(""):"<tr><td colspan='4' class='muted'>None open</td></tr>");
- }
-
- // ---- Section 1: bookings ----
- function fcat(p){ var c=String(p.hs_forecast_category||"").toLowerCase(); if(c.indexOf("commit")>=0) return "commit"; if(c.indexOf("best")>=0) return "bestcase"; return "pipeline"; }
- function fPill(d){ if(d.stage==="W") return "<span class='pill commit'>Closed-Won</span>";
-   if(d.fc==="commit") return "<span class='pill commit'>Commit</span>";
-   if(d.fc==="bestcase") return "<span class='pill best-case'>Best Case</span>";
-   return "<span class='pill pipeline-stage'>Pipeline</span>"; }
- function dealRow(d){
-   var nm=d.name||"(unnamed)";
-   return "<tr><td class='fc-deal' title='"+esc(nm)+"'><span class='deal-av' title='"+esc(d.av)+"'>"+esc(d.av)+"</span>"+esc(nm.slice(0,30))+"</td><td><span class='stage-av'>"+esc(d.stage)+"</span></td><td class='fc-close'>"+fmtClose(d.close)+"</td><td>"+fPill(d)+"</td><td class='num'>"+dolK(d.amount)+"</td></tr>"; }
- function bookings(deals){
-   deals=deals.filter(function(d){ return String(d.type).toLowerCase()!=="renewal"; });
-   var isNew=function(d){ return d.type==="newbusiness"; };
-   var typ=function(d){ return d.type==="Upsell"?"up":(d.type==="existingbusiness"?"ex":"new"); };
-   var won=deals.filter(function(d){ return d.stage==="W"; });
-   var opn=deals.filter(function(d){ return d.stage!=="W"; });
-   var closedA=sum(won.map(function(d){ return d.amount; }));
-   var weightedP=sum(opn.map(function(d){ return d.w; }));
-   var bookP=closedA+weightedP;
-   var comp={new:0,up:0,ex:0};
-   won.forEach(function(d){ comp[typ(d)]+=d.amount; });
-   opn.forEach(function(d){ comp[typ(d)]+=d.w; });
-   var pPct=100*bookP/PLAN.book_total;
-   set("q3s1-p",dolK(bookP)); cls("q3s1-p",band(pPct));
-   set("q3s1-p-meta",Math.round(pPct)+"% of (B)"); cls("q3s1-p-meta",band(pPct));
-   set("q3s1-a",dolK(closedA)); set("q3s1-a-meta",won.length+" deals closed-won QTD");
-   set("q3s1-w",dolK(weightedP)); set("q3s1-w-meta",opn.length+" deals · Commit + Best Case + Pipeline");
-   var scale=Math.max(bookP,PLAN.book_total)||1;
-   var e=document.getElementById("q3s1-p-fill"); if(e) e.style.width=(100*bookP/scale).toFixed(1)+"%";
-   var eb=document.getElementById("q3s1-b-fill"); if(eb) eb.style.width=(100*PLAN.book_total/scale).toFixed(1)+"%";
-   var tot=comp.new+comp.up+comp.ex||1;
-   ["new","up","ex"].forEach(function(k){ var el=document.getElementById("q3s1-p-"+k); if(el) el.style.width=(100*comp[k]/tot).toFixed(1)+"%"; });
-   set("q3s1-p-legend","New "+dolK(comp.new)+" · Upsell "+dolK(comp.up)+" · Expansion "+dolK(comp.ex));
-   var nw=deals.filter(isNew), ue=deals.filter(function(d){ return !isNew(d); });
-   var srt=function(a,b){ return (a.stage==="W"?0:1)-(b.stage==="W"?0:1)||String(a.close).localeCompare(String(b.close)); };
-   nw.sort(srt); ue.sort(srt);
-   var wexp=function(a){ return sum(a.map(function(d){ return d.stage==="W"?d.amount:d.w; })); };
-   set("q3s1-new-wv",dolK(wexp(nw))); set("q3s1-ue-wv",dolK(wexp(ue)));
-   setH("q3s1-new-body", nw.length?nw.map(dealRow).join(""):"<tr class='muted-row'><td colspan='5' class='muted small'>No Q3 new-logo deals.</td></tr>");
-   setH("q3s1-ue-body", ue.length?ue.map(dealRow).join(""):"<tr class='muted-row'><td colspan='5' class='muted small'>No Q3 upsell/expansion deals.</td></tr>");
-   set("q3-book-p",dolK(bookP));
-   set("q3-pipe-open","open Q3 pipeline "+dolKM(sum(opn.map(function(d){ return d.amount; }))));
-   return deals.length;
- }
-
- // ---- Section 3: demand charts ----
- function bpChart(elId,aM,aTips,bM,isMoney){
-   var totA=sum(aM), totB=sum(bM), bq=qtdB(bM);
-   var scale=Math.max(totA,totB,1);
-   var H=150, Y0=170, X0=40;
-   var fmt=isMoney?dolAxis:function(n){ return String(Math.round(n*10)/10); };
-   var fmtT=isMoney?function(n){ return Math.abs(n)>=1e6?"$"+(n/1e6).toFixed(1)+"M":"$"+Math.round(n/1e3)+"K"; }:function(n){ return String(Math.round(n)); };
-   var s='<svg viewBox="0 0 360 200" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg" class="bp-svg">';
-   s+='<line x1="40" y1="20" x2="40" y2="170" stroke="#d8d2c4"></line><line x1="40" y1="170" x2="340" y2="170" stroke="#d8d2c4"></line>';
-   s+='<text x="35" y="174" class="bp-axis" text-anchor="end">'+(isMoney?"$0":"0")+'</text>';
-   s+='<text x="35" y="'+(Y0-H/2+4)+'" class="bp-axis" text-anchor="end">'+fmt(scale/2)+'</text>';
-   var ops=[0.88,0.62,0.40], y=Y0, i;
-   for(i=0;i<3;i++){ var h=H*aM[i]/scale; if(aM[i]>0&&h<1) h=1;
-     if(h>0){ y-=h; s+='<rect x="80" y="'+y.toFixed(1)+'" width="60" height="'+h.toFixed(1)+'" fill="#b54d4d" opacity="'+ops[i]+'"><title>'+esc(MONTHS[i]+" - "+(aTips[i]||fmtT(aM[i])))+'</title></rect>'; } }
-   if(totA>0) s+='<text x="110" y="'+(y-4).toFixed(1)+'" class="bp-total" text-anchor="middle">'+fmtT(totA)+'</text>';
-   var yq=Y0-H*Math.min(bq,scale)/scale;
-   s+='<line x1="230" y1="'+yq.toFixed(1)+'" x2="310" y2="'+yq.toFixed(1)+'" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="4,3"></line><text x="226" y="'+(yq+3).toFixed(1)+'" class="bp-axis" text-anchor="end">(B) pace: '+fmtT(bq)+'</text>';
-   var bops=[0.75,0.55,0.35]; y=Y0;
-   for(i=0;i<3;i++){ var hb=H*bM[i]/scale;
-     if(hb>0){ y-=hb; s+='<rect x="240" y="'+y.toFixed(1)+'" width="60" height="'+hb.toFixed(1)+'" fill="#6b6b6b" opacity="'+bops[i]+'"><title>'+esc(MONTHS[i]+" budget - "+fmtT(bM[i]))+'</title></rect>'; } }
-   s+='<text x="270" y="'+(y-4).toFixed(1)+'" class="bp-total" text-anchor="middle">'+fmtT(totB)+'</text>';
-   var pctQ=bq>0?Math.round(100*totA/bq):0;
-   s+='<text x="110" y="187" class="bp-barlabel" text-anchor="middle">QTD (A)</text><text x="110" y="198" class="bp-pct" text-anchor="middle">'+pctQ+'% of (B) QTD</text>';
-   s+='<text x="270" y="187" class="bp-barlabel" text-anchor="middle">Q3 (B)</text><text x="270" y="198" class="bp-axis" text-anchor="middle">benchmark</text></svg>';
-   var el=document.getElementById(elId); if(el) el.innerHTML=s;
- }
- function demand(stageB,sals){
-   var isNew=function(t){ return t==="newbusiness"; };
-   var pN=[0,0,0], pU=[0,0,0], tN=[[],[],[]], tU=[[],[],[]];
-   stageB.forEach(function(d){ var p=d.properties||{}; var dt=String(p.hs_v2_date_entered_5863320||"").slice(0,10);
-     if(!inQ3(dt)) return; var i=mIdx(dt); if(i<0||i>2) return; var a=amt(p);
-     var line="• "+(p.dealname||"(unnamed)").slice(0,40)+"  "+dol(a);
-     if(isNew(p.dealtype)){ pN[i]+=a; tN[i].push(line); } else { pU[i]+=a; tU[i].push(line); } });
-   var sN=[0,0,0], sU=[0,0,0], mN=[[],[],[]], mU=[[],[],[]];
-   sals.forEach(function(m){ var i=m.mi; if(i<0||i>2) return;
-     var line="• "+(m.title||"(untitled)").slice(0,42)+"  "+m.date;
-     if(m.bucket==="new"){ sN[i]+=1; mN[i].push(line); } else { sU[i]+=1; mU[i].push(line); } });
-   var tipD=function(tot,list,i,money){ return (money?dolK(tot[i]):tot[i])+" · "+list[i].length+(money?" deal(s)":" SAL meeting(s)")+"\n"+list[i].join("\n"); };
-   var totPA=sum(pN)+sum(pU), totSA=sum(sN)+sum(sU);
-   var bPq=qtdB(PLAN.pipe_new_m)+qtdB(PLAN.pipe_ue_m), bNq=qtdB(PLAN.pipe_new_m), bUq=qtdB(PLAN.pipe_ue_m);
-   var bSq=qtdB(PLAN.sal_new_m)+qtdB(PLAN.sal_ue_m);
-   var pc=function(a,b){ return b>0?Math.round(100*a/b):0; };
-   set("q3s3-pa",dolKM(totPA)); set("q3s3-pa-meta",pc(totPA,bPq)+"% of (B) QTD"); cls("q3s3-pa",band(pc(totPA,bPq))); cls("q3s3-pa-meta",band(pc(totPA,bPq)));
-   set("q3s3-pna",dolK(sum(pN))); set("q3s3-pna-meta",pc(sum(pN),bNq)+"% of (B) QTD"); cls("q3s3-pna",band(pc(sum(pN),bNq))); cls("q3s3-pna-meta",band(pc(sum(pN),bNq)));
-   set("q3s3-pua",dolK(sum(pU))); set("q3s3-pua-meta",pc(sum(pU),bUq)+"% of (B) QTD"); cls("q3s3-pua",band(pc(sum(pU),bUq))); cls("q3s3-pua-meta",band(pc(sum(pU),bUq)));
-   set("q3s3-sa",String(totSA)); set("q3s3-sa-meta",pc(totSA,bSq)+"% of (B) QTD"); cls("q3s3-sa",band(pc(totSA,bSq))); cls("q3s3-sa-meta",band(pc(totSA,bSq)));
-   set("q3s3-pb",dolKM(bPq)); set("q3s3-pnb",dolK(bNq)); set("q3s3-pub",dolK(bUq)); set("q3s3-sb",String(Math.round(bSq*10)/10));
-   set("q3s3-new-meta","Pipeline "+dolK(sum(pN))+" · SAL meetings "+sum(sN));
-   set("q3s3-ue-meta","Pipeline "+dolK(sum(pU))+" · SAL meetings "+sum(sU));
-   bpChart("q3s3-chart-np",pN,pN.map(function(_,i){ return tipD(pN,tN,i,true); }),PLAN.pipe_new_m,true);
-   bpChart("q3s3-chart-ns",sN,sN.map(function(_,i){ return tipD(sN,mN,i,false); }),PLAN.sal_new_m,false);
-   bpChart("q3s3-chart-up",pU,pU.map(function(_,i){ return tipD(pU,tU,i,true); }),PLAN.pipe_ue_m,true);
-   bpChart("q3s3-chart-us",sU,sU.map(function(_,i){ return tipD(sU,mU,i,false); }),PLAN.sal_ue_m,false);
-   set("q3s3-new-caller","New logo pipeline "+dolK(sum(pN))+" vs "+dolK(bNq)+" (B) QTD ("+pc(sum(pN),bNq)+"%); "+sum(sN)+" new-logo SALs vs "+(Math.round(qtdB(PLAN.sal_new_m)*10)/10)+" planned.");
-   set("q3s3-ue-caller","U+E pipeline "+dolK(sum(pU))+" vs "+dolK(bUq)+" (B) QTD ("+pc(sum(pU),bUq)+"%); "+sum(sU)+" U+E SALs vs "+(Math.round(qtdB(PLAN.sal_ue_m)*10)/10)+" planned.");
- }
-
- // ---- Sections 3 drilldown + 4: meetings, channel ----
- function meetingsTable(sals){
-   var sql=sals.filter(function(m){ return m.sql; }).length;
-   set("q3s3-dd-sum","Disco meetings · QTD — "+sals.length+" SALs ("+sql+" held · "+(sals.length-sql)+" scheduled)");
-   var e=document.getElementById("q3s3-dd-sum"); if(e) e.textContent="Disco meetings · QTD — "+sals.length+" SALs ("+sql+" held · "+(sals.length-sql)+" scheduled)";
-   set("q3s3-tm",String(sals.length)); set("q3s3-tm-meta",sql+" held · "+(sals.length-sql)+" scheduled");
-   var conv=sals.length?Math.round(100*sql/sals.length):0;
-   set("q3s3-conv",sals.length?conv+"%":"—"); cls("q3s3-conv",sals.length?band(conv):""); set("q3s3-conv-meta",sql+" of "+sals.length+" qualified");
-   var attr=sals.filter(function(m){ return m.channel; }).length;
-   set("q3s3-attr",attr+"/"+sals.length); set("q3s3-attr-meta",(sals.length-attr)+" have no deal/channel");
-   setH("q3s3-mt-body", sals.length?sals.map(function(m){
-     return "<tr><td class='muted'>"+esc(m.date.slice(5))+"</td><td>"+(m.dealId?"<a class='deal-link' target='_blank' rel='noopener' href='https://app.hubspot.com/contacts/20765725/record/0-3/"+m.dealId+"'>"+esc(m.title)+"</a>":esc(m.title))+"</td><td><span class='pill "+(m.sql?"good":"warn")+"'>"+(m.sql?"Held":"Scheduled")+"</span></td><td class='muted'>"+esc(m.dealName||"—")+"</td><td class='muted'>"+(m.channel?esc(m.channel):"<span class='muted'>unattributed</span>")+"</td><td class='muted'>"+esc(m.trueSource||"—")+"</td></tr>"; }).join("")
-     :"<tr class='muted-row'><td colspan='6' class='muted small'>No SAL meetings held in Q3 yet.</td></tr>");
- }
- function channel(sals){
-   var attr=sals.filter(function(m){ return m.channel; });
-   set("q3s4-a",String(sals.length)); set("q3s4-a-meta",attr.length+" attributed · "+(sals.length-attr.length)+" unattributed");
-   var counts={};
-   attr.forEach(function(m){ var c=m.channel; counts[c]=counts[c]||{n:0,sql:0}; counts[c].n++; if(m.sql) counts[c].sql++; });
-   var top=null; for(var c in counts){ if(!top||counts[c].n>counts[top].n) top=c; }
-   set("q3s4-top",top||"—"); set("q3s4-top-meta",top?counts[top].n+" SALs · "+counts[top].sql+" held / "+(counts[top].n-counts[top].sql)+" scheduled":"no attributed SALs yet");
-   var att=100*sals.length/Math.max(PLAN.sal_total,1);
-   set("q3s4-b-meta","Q3 plan · "+Math.round(att)+"% attained");
-   var noDeal=sals.filter(function(m){ return !m.dealName; }).map(function(m){ return m.title||"(untitled)"; });
-   var noCh=sals.filter(function(m){ return m.dealName&&!m.channel; }).map(function(m){ return m.dealName; });
-   var gaps=noDeal.length+noCh.length;
-   var co=document.getElementById("q3s4-callout");
-   if(gaps>0&&co){ co.style.display="";
-     set("q3s4-callout-title",gaps+" of "+sals.length+" SALs are missing channel attribution");
-     setH("q3s4-callout-list",(noDeal.length?"<li>No associated deal: "+esc(noDeal.join(", "))+"</li>":"")+(noCh.length?"<li>Associated deal with no channel set: "+esc(noCh.join(", "))+"</li>":"")); }
-   var chans=Object.keys(PLAN.sal_ch);
-   for(var k in counts){ if(chans.indexOf(k)<0) chans.push(k); }
-   chans.sort(function(a,b){ var ca=counts[a]?counts[a].n:0, cb=counts[b]?counts[b].n:0; return cb-ca||(PLAN.sal_ch[b]||0)-(PLAN.sal_ch[a]||0); });
-   var maxPlan=Math.max.apply(null,chans.map(function(c){ return PLAN.sal_ch[c]||0; }).concat([1]));
-   var rows=chans.map(function(c){
-     var plan=PLAN.sal_ch[c]||0, n=counts[c]?counts[c].n:0, sq=counts[c]?counts[c].sql:0, su=n-sq;
-     if(plan===0&&n===0) return "";
-     var wrapW=100*Math.max(plan,0.001)/maxPlan;
-     var sqW=plan>0?100*sq/plan:(n>0?100:0), suW=plan>0?100*su/plan:0;
-     var p=plan>0?Math.round(100*n/plan):(n>0?999:0);
-     var pctTxt=plan>0?("<span class='pct "+band(p)+"'>"+p+"%</span>"):"<span class='pct'>—</span>";
-     return "<div class='channel-row'><div class='channel-label'>"+esc(c)+"</div><div class='channel-track'><div class='channel-bar-wrap' style='width:"+wrapW.toFixed(1)+"%;'><div class='channel-bar-sql' style='width:"+sqW.toFixed(1)+"%;'></div><div class='channel-bar-sul' style='left:"+sqW.toFixed(1)+"%;width:"+suW.toFixed(1)+"%;'></div><div class='channel-bar-marker' style='left:100.0%;'></div></div></div><div class='channel-meta'><strong>"+n+"</strong> / "+(Math.round(plan*10)/10)+" "+pctTxt+"</div></div>"; }).join("");
-   var planTot=sum(chans.map(function(c){ return PLAN.sal_ch[c]||0; }));
-   rows+="<div class='channel-total-row'><div class='channel-label'>Attributed</div><div class='channel-track'><div class='channel-bar-wrap' style='width:100%;'><div class='channel-bar-sql' style='width:"+(planTot>0?(100*attr.length/planTot).toFixed(1):0)+"%;'></div><div class='channel-bar-marker' style='left:100.0%;'></div></div></div><div class='channel-meta'><strong>"+attr.length+"</strong> / "+Math.round(planTot)+" · "+(sals.length-attr.length)+" gaps</div></div>";
-   setH("q3s4-chart",rows);
- }
-
- // ---- orchestration ----
- function main(){
-   if(!(window.cowork&&window.cowork.callMcpTool)){ set("q3-status","Open in the Cowork app to load the live Q3 view."); return; }
-   var ci=function(){ return { userIntent:"Render 26Q3(P) board tab", satisfaction:"NEUTRAL" }; };
-   var pDeals=call({ objectType:"deals",
-     properties:["dealname","amount","amount_in_home_currency","deal_currency_code","dealstage","closedate","hubspot_owner_id","dealtype","hs_forecast_category"],
-     filterGroups:[{filters:[{propertyName:"closedate",operator:"BETWEEN",value:Q3S,highValue:Q3E},{propertyName:"dealstage",operator:"IN",values:["5863320","qualifiedtobuy","5863322","decisionmakerboughtin","closedwon"]}]}],
-     limit:200, chatInsights:ci() });
-   var pStageB=call({ objectType:"deals",
-     properties:["dealname","amount","amount_in_home_currency","deal_currency_code","dealtype","hs_v2_date_entered_5863320"],
-     filterGroups:[{filters:[{propertyName:"hs_v2_date_entered_5863320",operator:"BETWEEN",value:Q3S,highValue:Q3E}]}],
-     limit:200, chatInsights:ci() });
-   var pMeet=call({ objectType:"meetings",
-     properties:["hs_meeting_title","hs_timestamp","hs_meeting_outcome","hs_activity_type"],
-     filterGroups:[{filters:[{propertyName:"hs_timestamp",operator:"BETWEEN",value:Q3S,highValue:Q3E},{propertyName:"hs_activity_type",operator:"IN",values:["Disco - New Logo","Disco - Upsell","Disco - Expansion"]}]}],
-     limit:200, chatInsights:ci() });
-   var pComp=call({ objectType:"companies",
-     properties:["name","csm_health_rating","prove_it_account"],
-     filterGroups:[{filters:[{propertyName:"customer__status",operator:"EQ",value:"Active"}]}],
-     limit:200, chatInsights:ci() });
-   Promise.all([pDeals,pStageB,pMeet,pComp]).then(function(r){
-     var deals=((r[0]&&r[0].results)||[]).map(function(d){ var p=d.properties||{};
-       var stg=STAGE[p.dealstage]||"?"; var fc=fcat(p); var a=amt(p);
-       return { name:p.dealname||"(unnamed)", amount:a, type:p.dealtype||"", stage:stg, fc:fc,
-                close:String(p.closedate||"").slice(0,10), av:initials(p.hubspot_owner_id),
-                w:stg==="W"?0:a*(FW[fc]||0.3) }; })
-       .filter(function(d){ return inQ3(d.close); });
-     var nDeals=bookings(deals);
-     renewals((r[3]&&r[3].results)||[]);
-     var sals=((r[2]&&r[2].results)||[]).map(function(m){ var p=m.properties||{};
-       var ts=String(p.hs_timestamp||"").slice(0,10);
-       var act=String(p.hs_activity_type||"");
-       var bucket=act==="Disco - New Logo"?"new":(act==="Disco - Upsell"||act==="Disco - Expansion"?"ue":"?");
-       return { id:m.id, title:p.hs_meeting_title||"(untitled)", date:ts, mi:mIdx(ts),
-                sql:String(p.hs_meeting_outcome||"").toUpperCase()==="COMPLETED", outcome:String(p.hs_meeting_outcome||""), bucket:bucket,
-                dealId:null, dealName:null, channel:null, trueSource:null, dealType:null }; })
-       .filter(function(m){ return inQ3(m.date); });
-     var chain=Promise.resolve();
-     sals.slice(0,40).forEach(function(m){
-       chain=chain.then(function(){
-         return call({ objectType:"deals", properties:["dealname","tq_deal_channel_source","referral_source","dealtype"],
-           filterGroups:[{associatedWith:[{objectType:"meetings",operator:"EQUAL",objectIdValues:[Number(m.id)]}]}],
-           limit:2, chatInsights:ci() }).then(function(res){
-             var d=res&&res.results&&res.results[0];
-             if(d){ var p=d.properties||{}; m.dealId=d.id; m.dealName=p.dealname||null;
-               m.channel=p.tq_deal_channel_source||null; m.trueSource=p.referral_source||null; m.dealType=p.dealtype||null;
-               if(m.bucket==="?") m.bucket=(p.dealtype==="Upsell"||p.dealtype==="existingbusiness")?"ue":"new"; }
-             else if(m.bucket==="?") m.bucket="new";
-           }).catch(function(){ if(m.bucket==="?") m.bucket="new"; });
-       }); });
-     chain.then(function(){
-       demand((r[1]&&r[1].results)||[],sals);
-       meetingsTable(sals);
-       channel(sals);
-       set("q3-status","Snapshot ("+(window.__SNAPSHOT_AT||"")+") · "+nDeals+" Q3 deals · "+sals.length+" SALs · mirrors the Q2 tab, computed at "+new Date().toLocaleString());
-     });
-   }).catch(function(e){ set("q3-status","Live load failed: "+((e&&e.message)||e)); });
- }
- if(document.readyState==="complete") main(); else window.addEventListener("load",main);
-})();
-</script>
-</div>
-<!-- BOARD-OWNED:q3p END -->
+<!-- EBR-DERIVED:q3p END -->
 
 <!-- EBR-DERIVED:pipeline START -->
 <div class="tab-panel" id="panel-pipeline"><style>
@@ -1645,184 +1326,7 @@ table.pl-table a.dl{color:var(--accent);text-decoration:none;border-bottom:1px s
 <div class="rb-qchips" id="rb-qchips" style="margin:2px 0 8px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;"><span style="font-size:11px;color:var(--muted);">Quarter:</span></div><div class="rb-controls"><span class="rb-count" id="rb-count">54 of 54 renewals shown</span><button class="rb-dl" onclick="rbDownloadCSV()">⇩ Download raw data (CSV)</button></div>
 <table><thead><tr><th id="th-code" class=""><span class="th-lab" onclick="rbSort('code','txt')">Code</span><span class="ar" id="ar-code"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'code','txt')">▾</span></th><th id="th-partner" class=""><span class="th-lab" onclick="rbSort('partner','txt')">Partner</span><span class="ar" id="ar-partner"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'partner','txt')">▾</span></th><th id="th-account" class=""><span class="th-lab" onclick="rbSort('account','txt')">Account</span><span class="ar" id="ar-account"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'account','txt')">▾</span></th><th id="th-ann" class=""><span class="th-lab" onclick="rbSort('ann','txt')">Renewal</span><span class="ar" id="ar-ann"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'ann','txt')">▾</span></th><th id="th-yr" class=""><span class="th-lab" onclick="rbSort('yr','num')">Yr</span><span class="ar" id="ar-yr"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'yr','num')">▾</span></th><th id="th-qtr" class=""><span class="th-lab" onclick="rbSort('qtr','txt')">Qtr</span><span class="ar" id="ar-qtr">▲</span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'qtr','txt')">▾</span></th><th id="th-arr_25" class="num"><span class="th-lab" onclick="rbSort('arr_25','num')">25 EOY ARR (A)</span><span class="ar" id="ar-arr_25"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'arr_25','num')">▾</span></th><th id="th-ap" class=""><span class="th-lab" onclick="rbSort('ap','txt')">26 Status</span><span class="ar" id="ar-ap"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'ap','txt')">▾</span></th><th id="th-risk" class=""><span class="th-lab" onclick="rbSort('risk','txt')">HS Risk</span><span class="ar" id="ar-risk"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'risk','txt')">▾</span></th><th id="th-grr_26" class="num"><span class="th-lab" onclick="rbSort('grr_26','num')">26 EOY GRR</span><span class="ar" id="ar-grr_26"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'grr_26','num')">▾</span></th><th id="th-uplift" class="num"><span class="th-lab" onclick="rbSort('uplift','num')">26 Uplift</span><span class="ar" id="ar-uplift"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'uplift','num')">▾</span></th><th id="th-upsell" class="num"><span class="th-lab" onclick="rbSort('upsell','num')">26 Upsell</span><span class="ar" id="ar-upsell"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'upsell','num')">▾</span></th><th id="th-deals" class=""><span class="th-lab" onclick="rbSort('deals','num')">Pipeline (open)</span><span class="ar" id="ar-deals"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'deals','txt')">▾</span></th><th id="th-stage" class=""><span class="th-lab" onclick="rbSort('stage','txt')">Stage</span><span class="ar" id="ar-stage"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'stage','txt')">▾</span></th><th id="th-dealnames" class=""><span class="th-lab" onclick="rbSort('dealnames','txt')">Associated deal</span><span class="ar" id="ar-dealnames"></span><span class="fx" title="sort / filter" onclick="rbFilterUI(event,'dealnames','txt')">▾</span></th></tr></thead><tbody id="rb-body"><tr><td class="muted">AMGEXX</td><td></td><td>Amgen</td><td>01-06</td><td>2026</td><td>26Q1</td><td class="num">$139K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$62K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill stage-D">D</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/57350813010">AMGEXX Amgen - Reference Data Project </a></td></tr><tr><td class="muted">ELSECN</td><td></td><td>Elsevier (CN)</td><td>01-09</td><td>2026</td><td>26Q1</td><td class="num">$16K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$0</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">NORWXX</td><td></td><td>Norwegian Maritime Authority</td><td>02-09</td><td>2026</td><td>26Q1</td><td class="num">$29K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$29K</td><td class="num">$2K</td><td class="num">$15K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/41193718401">NORWXX Premium Support</a></td></tr><tr><td class="muted">TEMPXX</td><td></td><td>Tempus AI, Inc.</td><td>02-10</td><td>2026</td><td>26Q1</td><td class="num">$75K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$75K</td><td class="num">$4K</td><td class="num">$95K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/49776555054">TEMPXX Tempus - Q1'26</a></td></tr><tr><td class="muted">EXPRSI</td><td></td><td>Expeditors</td><td>02-20</td><td>2026</td><td>26Q1</td><td class="num">$111K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$111K</td><td class="num">$3K</td><td class="num">$115K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/49756523187">EXPRSI Expeditors - Q1'26</a></td></tr><tr><td class="muted">VIASOR</td><td><span class="pill other" title="partner revenue (TAXN/VIAS/SMRT) — added back for GRR/NRR">P</span></td><td>Orange</td><td>02-28</td><td>2026</td><td>26Q1</td><td class="num">$11K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$11K</td><td class="num">$338</td><td class="num">$12K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/49649067863">VIASOR Orange - Q1'26</a></td></tr><tr><td class="muted">CRNGXX</td><td></td><td>Corning</td><td>03-05</td><td>2026</td><td>26Q1</td><td class="num">$40K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$40K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">BCMEXX</td><td></td><td>British Columbia Ministry of Education</td><td>03-19</td><td>2026</td><td>26Q1</td><td class="num">$39K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$0</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">TMRUXX</td><td></td><td>Thomson Reuters</td><td>03-30</td><td>2026</td><td>26Q1</td><td class="num">$73K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$73K</td><td class="num">$5K</td><td class="num">$93K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/47879895561">TMRUXX Thomson Reuters 2026 EDG Renewal</a></td></tr><tr><td class="muted">SLBDSG</td><td></td><td>Schlumberger (SLB)</td><td>03-30</td><td>2026</td><td>26Q1</td><td class="num">$87K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$50K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill on-track">W</span><br><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/49531072865">SLBDSG SLB - Q1'26</a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/18508574006">SLBDSG 2025 EDG renewal</a></td></tr><tr><td class="muted">ELCAXX</td><td></td><td>Electronic Arts</td><td>03-31</td><td>2026</td><td>26Q1</td><td class="num">$40K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$40K</td><td class="num">$5K</td><td class="num">$60K</td><td class="num"></td><td><span class="pill on-track">W</span><br><span class="pill stage-B">B</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/54351374631">ELCAXX Electronic Arts March 2026 EDG Renewal </a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/62616654740">ELCAXX Electronic Arts - Enterprise Semantic Platform RFP (SaaS/TQDF conversion)</a></td></tr><tr><td class="muted">SPOTON</td><td></td><td>Spotify</td><td>04-03</td><td>2026</td><td>26Q2</td><td class="num">$90K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$90K</td><td class="num"></td><td class="num">$192K</td><td class="num"></td><td><span class="pill on-track">W</span><br><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/54263848755">SPOTON Spotify - Q2'26 Renewal (License Conversion- SaaS sub to collections)</a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/18428037719">Spotify SPOTON 2025 EDG renewal</a></td></tr><tr><td class="muted">CRNLXX</td><td></td><td>Cornelsen</td><td>04-27</td><td>2026</td><td>26Q2</td><td class="num">$14K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$14K</td><td class="num">$698</td><td class="num">$15K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/55299391283">CRNLXX Cornelsen - 2026 Renewal</a></td></tr><tr><td class="muted">MVHHTI</td><td></td><td>Mars Vet Health</td><td>05-11</td><td>2026</td><td>26Q2</td><td class="num">$100K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$100K</td><td class="num"></td><td class="num">$119K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/57506393474">MVHHTI Mars Vet Health 2026 Renewal</a></td></tr><tr><td class="muted">TAXNWL</td><td><span class="pill other" title="partner revenue (TAXN/VIAS/SMRT) — added back for GRR/NRR">P</span></td><td>Waterschap Limburg</td><td>05-21</td><td>2026</td><td>26Q2</td><td class="num">$82K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$82K</td><td class="num">$11K</td><td class="num">$86K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/56214347140">TAXNWL Waterschap Limburg - 2026 Renewal</a></td></tr><tr><td class="muted">EXPDXX</td><td></td><td>Expedia</td><td>05-31</td><td>2026</td><td>26Q2</td><td class="num">$108K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$108K</td><td class="num"></td><td class="num">$29K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/28784086848">EXPDXX Premium Support</a></td></tr><tr><td class="muted">PLTOTV</td><td></td><td>Pluto TV</td><td>06-28</td><td>2026</td><td>26Q2</td><td class="num">$77K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$77K</td><td class="num"></td><td class="num">$78K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/59186396760">PLTOTV Pluto TV - Upsell 2026 Renewal</a></td></tr><tr><td class="muted">SMRTXX</td><td><span class="pill other" title="partner revenue (TAXN/VIAS/SMRT) — added back for GRR/NRR">P</span></td><td>SmartLogic / Marklogic</td><td>06-30</td><td>2026</td><td>26Q2</td><td class="num">$562K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$545K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">FRBCDS</td><td></td><td>Federal Reserve Bank of Cleveland</td><td>08-08</td><td>2026</td><td>26Q3</td><td class="num">$40K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$40K</td><td class="num">$2K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">REACXX</td><td></td><td>Reach</td><td>08-28</td><td>2026</td><td>26Q3</td><td class="num">$78K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$78K</td><td class="num">$4K</td><td class="num">$73K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/21800001864">REACXX Reach  2025 renewal</a></td></tr><tr><td class="muted">VUMCXX</td><td></td><td>Vanderbilt University Medical Center</td><td>08-30</td><td>2026</td><td>26Q3</td><td class="num">$11K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$11K</td><td class="num">$324</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">OECDXX</td><td></td><td>OECD</td><td>09-04</td><td>2026</td><td>26Q3</td><td class="num">$48K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$24K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">IRONXX</td><td></td><td>Iron Mountain</td><td>09-20</td><td>2026</td><td>26Q3</td><td class="num">$100K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$0</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">NBCUXX</td><td></td><td>NBCUniversal</td><td>09-20</td><td>2026</td><td>26Q3</td><td class="num">$70K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$0</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">BMSQXX</td><td></td><td>Bristol-Myers Squibb</td><td>09-24</td><td>2026</td><td>26Q3</td><td class="num">$88K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$88K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill stage-B">B</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/63186776593">BMSQXX Bristol-Myers "Enterprise Semantic Layer" </a></td></tr><tr><td class="muted">BOLDCE</td><td></td><td>BOLD LLC</td><td>10-16</td><td>2026</td><td>26Q4</td><td class="num">$150K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$150K</td><td class="num">$8K</td><td class="num">$150K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/22395231071">BOLDCE 2025 Renewal</a></td></tr><tr><td class="muted">VIDLXX</td><td></td><td>Vidal Group</td><td>10-22</td><td>2026</td><td>26Q4</td><td class="num">$24K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$24K</td><td class="num">$1K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">JNJEXE</td><td></td><td>Johnson &amp; Johnson</td><td>10-30</td><td>2026</td><td>26Q4</td><td class="num">$352K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$352K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">DOFIXX</td><td></td><td>U.S. Interior / OIG (DOI)</td><td>10-31</td><td>2026</td><td>26Q4</td><td class="num">$450K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$450K</td><td class="num">$50K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">GSKXDP</td><td></td><td>GSK</td><td>11-21</td><td>2026</td><td>26Q4</td><td class="num">$162K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$162K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill stage-B">B</span><br><span class="pill stage-C">C</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61355701539">GSKXDP GSK - R&amp;D asia expansion</a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/57982520979">GSKXDP GSK: Nov 2026 Renewal </a></td></tr><tr><td class="muted">ADOBTA</td><td></td><td>Adobe - TaaS</td><td>11-27</td><td>2026</td><td>26Q4</td><td class="num">$69K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$69K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">CAPAZX</td><td></td><td>Central Arizona Project</td><td>12-01</td><td>2026</td><td>26Q4</td><td class="num">$25K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$25K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill stage-D">D</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/60177778538">CAPAZX Central Arizona Project - Additional Collections</a></td></tr><tr><td class="muted">CAP1XX</td><td></td><td>Capital One</td><td>12-03</td><td>2026</td><td>26Q4</td><td class="num">$126K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$63K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">SWORXX</td><td></td><td>Sword Group</td><td>12-06</td><td>2026</td><td>26Q4</td><td class="num">$26K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$26K</td><td class="num">$1K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">BAYRCG</td><td></td><td>Bayer CG</td><td>12-20</td><td>2026</td><td>26Q4</td><td class="num">$29K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$0</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">TAXNSH</td><td><span class="pill other" title="partner revenue (TAXN/VIAS/SMRT) — added back for GRR/NRR">P</span></td><td>Royal Schiphol Group</td><td>12-30</td><td>2026</td><td>26Q4</td><td class="num">$70K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$70K</td><td class="num">$10K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">JPMCCB</td><td></td><td>JPMorgan Chase</td><td>12-30</td><td>2026</td><td>26Q4</td><td class="num">$150K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$150K</td><td class="num">$8K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">IBMCCN</td><td></td><td>IBM Central</td><td>12-30</td><td>2026</td><td>26Q4</td><td class="num">$31K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$31K</td><td class="num"></td><td class="num">$46K</td><td class="num"></td><td><span class="pill on-track">W</span><br><span class="pill stage-D">D</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/49635832837">IBMCCN IBM 2025 EDG Renewal</a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/28786835380">IBMCCN - TQDF / SaaS Conversion</a></td></tr><tr><td class="muted">DPRVDC</td><td></td><td>DPR Construction</td><td>12-31</td><td>2026</td><td>26Q4</td><td class="num">$90K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$59K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">TROWXX</td><td></td><td>T. Rowe Price</td><td>03-22</td><td>2027</td><td>27Q1</td><td class="num">$82K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$82K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">ADOBEL</td><td></td><td>Adobe</td><td>08-31</td><td>2027</td><td>27Q3</td><td class="num">$175K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$175K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$5K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/51315680116">ADOBEL Adobe - 2026 Professional Service Hours</a></td></tr><tr data-locked="1"><td class="muted">NZTADS</td><td></td><td>New Zealand Transport Agency</td><td>09-13</td><td>2027</td><td>27Q3</td><td class="num">$125K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$125K</td><td class="num"></td><td class="num">$3K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/43739929888">NZTADS Professional Services SOW</a></td></tr><tr data-locked="1"><td class="muted">OCLCMQ</td><td></td><td>OCLC</td><td>07-07</td><td>2027</td><td>27Q3</td><td class="num">$44K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$44K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">GOOGTP</td><td></td><td>Google</td><td>12-21</td><td>2027</td><td>27Q4</td><td class="num">$86K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$86K</td><td class="num"></td><td class="num">$86K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/45197672990">GOOGTP Google - Q4'25 (Two Year)</a></td></tr><tr><td class="muted">NORTHE</td><td></td><td>Northell - Additional Collections</td><td>12-30</td><td>2027</td><td>27Q4</td><td class="num">$85K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$85K</td><td class="num"></td><td class="num">$73K</td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/52473478766">NORTHE Northell 64 GB Server Upgrade + Collections + Test/dev env</a></td></tr><tr><td class="muted">TRACGA</td><td></td><td>Tracegains</td><td>03-30</td><td>2028</td><td>28Q1</td><td class="num">$109K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$109K</td><td class="num"></td><td class="num"></td><td class="num"></td><td><span class="pill on-track">W</span><br><span class="pill stage-B">B</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/35342565659">TRACGA25 - Q1'26</a><br><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/61035332437">TRACGA TraceGains - Prod Server Upgrade (32 to 64gb) </a></td></tr><tr data-locked="1"><td class="muted">BAYRLG</td><td></td><td>Bayer LG</td><td>06-11</td><td>2028</td><td>28Q2</td><td class="num">$225K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$225K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$827<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td><span class="pill on-track">W</span></td><td><a class="dl" target="_blank" rel="noopener" href="https://app.hubspot.com/contacts/20765725/record/0-3/19189496659">BAYRLG 2025 EDG Renewal Target Account Deal</a></td></tr><tr data-locked="1"><td class="muted">MAYOXX</td><td></td><td>Mayo Clinic</td><td>09-04</td><td>2028</td><td>28Q3</td><td class="num">$200K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$200K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$24K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">BSCHXX</td><td></td><td>Bosch</td><td>11-18</td><td>2028</td><td>28Q4</td><td class="num">$73K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$73K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$3K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">SFCRMX</td><td></td><td>Salesforce</td><td>12-14</td><td>2028</td><td>28Q4</td><td class="num">$160K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$160K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$17K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">MIZUFG</td><td></td><td>Mizuho</td><td>12-30</td><td>2028</td><td>28Q4</td><td class="num">$225K</td><td><span class="pill inflight">In flight</span></td><td></td><td class="num">$225K</td><td class="num">$50K</td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">NOVOSM</td><td></td><td>Novo Nordisk</td><td>06-29</td><td>2029</td><td>29Q2</td><td class="num">$203K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$203K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$29K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr><td class="muted">HEALXX</td><td></td><td>Healthwise</td><td>09-29</td><td>2029</td><td>29Q3</td><td class="num">$73K</td><td><span class="pill resolved">Resolved</span></td><td></td><td class="num">$73K</td><td class="num"></td><td class="num"></td><td class="num"></td><td></td><td></td></tr><tr data-locked="1"><td class="muted">NETWXX</td><td></td><td>Network Rail</td><td>07-06</td><td>2029</td><td>29Q3</td><td class="num">$131K</td><td><span class="pill onboarding">Multi-year</span></td><td></td><td class="num">$131K</td><td class="num"><span title="contracted step-up (multi-year), hits on anniversary">$7K<span class="micro" style="color:var(--muted);"> ⧉</span></span></td><td class="num"></td><td class="num"></td><td></td><td></td></tr></tbody></table>
 <details class="rb-method"><summary>Methodology &amp; sources</summary><p>Rows pulled from the renewal-book-master tab. 25 EOY ARR (A) = column H, software only. Qtr computed from renewal year + date. 26 EOY GRR = 25 EOY ARR (SW) + Contraction/Churn (gross renewed only — no uplift/upsell). 26 Uplift = column X, separate. 26 Upsell = HubSpot won deals, exact. 26 Pipe = HubSpot open deals, unweighted, excludes won. HS Risk from HubSpot.</p></details></section></div>
-<script>
-window.whenCoworkReady=function(cb,tries){tries=(tries==null?40:tries);if(window.cowork&&window.cowork.callMcpTool){try{cb();}catch(e){console.error("whenCoworkReady cb",e);}return;}if(tries<=0){try{cb(true);}catch(e){}return;}setTimeout(function(){window.whenCoworkReady(cb,tries-1);},250);};
-window.__RB=[]; /* live-only: populated by rbLiveLoad() from renewal-book-master */</script><script>(function(){
-var RB=window.__RB||[];var FILT={};var sortK="qkey",sortDir=1;
-var QSEL={};
-function qgroup(r){return (r.yr&&r.yr>=2027)?"27+":(r.qtr||"?");}
-function buildChips(){RB=window.__RB||RB||[];var box=document.getElementById("rb-qchips");if(!box)return;
-  box.querySelectorAll("button").forEach(function(b){b.remove();});
-  var gs={};RB.forEach(function(r){gs[qgroup(r)]=1;});
-  var order=["26Q1","26Q2","26Q3","26Q4","27+"];Object.keys(gs).forEach(function(g){if(order.indexOf(g)<0)order.push(g);});
-  order.forEach(function(g){if(!gs[g])return;var b=document.createElement("button");b.className="toggle-pill"+(QSEL[g]?" active":"");b.textContent=g;
-    b.onclick=function(){if(QSEL[g])delete QSEL[g];else QSEL[g]=1;buildChips();rbRender();};box.appendChild(b);});
-}
-function money(n){n=n||0;var neg=n<0;n=Math.abs(n);var s=n>=1e6?("$"+(n/1e6).toFixed(2)+"M"):(n>=1e3?("$"+Math.round(n/1e3)+"K"):("$"+Math.round(n)));return neg?("-"+s):s;}
-function esc(s){return (""+(s===null||s===undefined?"":s)).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function dealsText(r){return (r.deals||[]).map(function(d){return d.name;}).join("; ")||"(none)";}
-function stageText(r){if(!(r.deals&&r.deals.length))return "(none)";return r.deals.map(function(d){return d.stage||(d.won?"W":"B");}).join("; ");}
-function cellVal(r,k){if(k==="dealnames")return dealsText(r);if(k==="partner")return r.partner?"Partner":"EDG";if(k==="ap")return r.ap==="A"?"Resolved":(r.locked?"Multi-year":"In flight");if(k==="deals")return dealsText(r);if(k==="stage")return stageText(r);var v=r[k];return (v===null||v===undefined||v==="")?"(blank)":(""+v);}
-function setArrow(){document.querySelectorAll(".rbtab .ar").forEach(function(e){e.textContent="";});var a=document.getElementById("ar-"+(sortK==="qkey"?"qtr":sortK));if(a)a.textContent=sortDir>0?"▲":"▼";}
-window.rbSort=function(k,t){var kk=(k==="qtr"||k==="ann")?(k==="qtr"?"qkey":"ann"):k;if(sortK===kk){sortDir=-sortDir;}else{sortK=kk;sortDir=(t==="num"?-1:1);}setArrow();rbRender();};
-function distinct(k){var seen={},out=[];RB.forEach(function(r){var v=cellVal(r,k);if(!(v in seen)){seen[v]=1;out.push(v);}});return out.sort(function(a,b){var na=parseFloat(a),nb=parseFloat(b);if(!isNaN(na)&&!isNaN(nb))return na-nb;return a<b?-1:a>b?1:0;});}
-function closePop(){var p=document.querySelector(".rb-pop");if(p)p.remove();}
-document.addEventListener("click",function(e){if(!e.target.closest(".rb-pop")&&!e.target.closest(".fx"))closePop();});
-window.rbFilterUI=function(ev,k,t){ev.stopPropagation();closePop();
-  var vals=distinct(k),sel=FILT[k];var pop=document.createElement("div");pop.className="rb-pop";
-  var items=vals.map(function(v){var c=(!sel||sel.indexOf(v)>=0)?"checked":"";var e2=esc(v);return '<label><input type="checkbox" value="'+e2.replace(/"/g,"&quot;")+'" '+c+'>'+e2+'</label>';}).join("");
-  pop.innerHTML='<div class="srt"><button data-s="1">Sort ↑</button><button data-s="-1">Sort ↓</button></div><input class="sr" placeholder="Search values"><div class="vals">'+items+'</div><div class="act"><button class="all">Toggle all</button><button class="ok">Apply</button></div>';
-  document.body.appendChild(pop);var r=ev.target.getBoundingClientRect();
-  pop.style.left=Math.max(8,window.scrollX+r.left-190)+"px";pop.style.top=(window.scrollY+r.bottom+3)+"px";
-  pop.querySelectorAll(".srt button").forEach(function(b){b.onclick=function(){sortK=(k==="qtr"?"qkey":k);sortDir=+b.getAttribute("data-s");setArrow();rbRender();};});
-  pop.querySelector(".sr").oninput=function(){var q=this.value.toLowerCase();pop.querySelectorAll(".vals label").forEach(function(l){l.style.display=l.textContent.toLowerCase().indexOf(q)>=0?"":"none";});};
-  pop.querySelector(".all").onclick=function(){var cbs=pop.querySelectorAll(".vals input");var anyOff=false;cbs.forEach(function(c){if(!c.checked)anyOff=true;});cbs.forEach(function(c){c.checked=anyOff;});};
-  pop.querySelector(".ok").onclick=function(){var chosen=[];pop.querySelectorAll(".vals input:checked").forEach(function(c){chosen.push(c.value);});
-    var total=pop.querySelectorAll(".vals input").length;
-    if(chosen.length===total){delete FILT[k];}else{FILT[k]=chosen;}
-    var th=document.getElementById("th-"+k);if(th)th.classList.toggle("filtered",!!FILT[k]);closePop();rbRender();};
-};
-function passes(r){for(var k in FILT){if(FILT[k].indexOf(cellVal(r,k))<0)return false;}return true;}
-window.rbRender=function(){
-  RB=window.__RB||[];
-  var qs=Object.keys(QSEL);
-  var rows=RB.filter(function(r){return (qs.length===0||QSEL[qgroup(r)])&&passes(r);});
-  var numCols={yr:1,arr_25:1,grr_26:1,uplift:1,upsell:1,qkey:1};
-  rows.sort(function(a,b){var x=a[sortK],y=b[sortK];
-    if(numCols[sortK]){x=+x||0;y=+y||0;return (x-y)*sortDir;}
-    x=(""+(x===undefined?cellVal(a,sortK):x)).toLowerCase();y=(""+(y===undefined?cellVal(b,sortK):y)).toLowerCase();return (x<y?-1:x>y?1:0)*sortDir;});
-  var hstr=rows.map(function(r){
-    var deals=(r.deals&&r.deals.length)?r.deals.map(function(d){return '<a class="dl" target="_blank" rel="noopener" href="'+d.url+'">'+esc(d.name)+'</a>';}).join("<br>"):'';
-    var pipeOpen=(r.deals||[]).filter(function(d){return !d.won&&d.stage!=="W"&&d.stage!=="L"&&d.amount;}).reduce(function(s,d){return s+(+d.amount||0);},0);var dealwtd=pipeOpen?money(pipeOpen):"";
-    var stage=(r.deals&&r.deals.length)?r.deals.map(function(d){var s=d.stage||(d.won?"W":"B");var cls=s==="W"?"on-track":(s==="L"?"high-risk":("stage-"+(s==="A"?"B":s)));var late=(d.close&&d.close.slice(0,10)>"2026-12-31"&&"ABCDEF".indexOf(s)>=0)?'<sup style="color:#b54d4d;font-weight:700;" title="close date '+d.close+' — outside FY26">27+</sup>':'';return '<span class="pill '+cls+'">'+s+'</span>'+late;}).join("<br>"):'';
-    var yr=r.yr?(r.yr_known?(""+r.yr):'<span style="color:#b54d4d;font-weight:700;" title="multi-year: actual renewal year unverified">'+r.yr+' ?</span>'):'<span style="color:#b54d4d;font-weight:700;">?</span>';
-    var ap=r.ap==="A"?'<span class="pill resolved">Resolved</span>':(r.locked?'<span class="pill onboarding">Multi-year</span>':'<span class="pill inflight">In flight</span>');
-    var risk=r.risk?('<span class="pill '+(r.risk==="High"?"high-risk":(r.risk==="Medium"?"mid-risk":(r.risk==="Low"?"on-track":"other")))+'">'+r.risk+'</span>'):'';
-    var upl=(r.uplift?(r.locked?'<span title="contracted step-up (multi-year), hits on anniversary">'+money(r.uplift)+'<span class="micro" style="color:var(--muted);"> ⧉</span></span>':money(r.uplift)):'');
-    return '<tr'+(r.locked?' data-locked="1"':'')+'><td class="muted">'+r.code+'</td><td>'+(r.partner?'<span class="pill other" title="partner revenue (TAXN/VIAS/SMRT) — added back for GRR/NRR">P</span>':'')+'</td><td>'+esc(r.account)+'</td><td>'+(r.ann||'')+'</td><td>'+yr+'</td><td>'+(r.qtr||'')+'</td><td class="num">'+money(r.arr_25)+'</td><td>'+ap+'</td><td>'+risk+'</td><td class="num">'+money(r.grr_26)+'</td><td class="num">'+upl+'</td><td class="num">'+(r.upsell?money(r.upsell):'')+'</td><td class="num">'+dealwtd+'</td><td>'+stage+'</td><td>'+deals+'</td></tr>';
-  }).join("");
-  document.getElementById("rb-body").innerHTML=hstr||'<tr><td colspan="13" class="muted">No rows match the filters.</td></tr>';
-  document.getElementById("rb-count").textContent=rows.length+" of "+RB.length+" renewals shown";
-  var base=0,edg=0,prt=0,book=0,gross=0,grBase26=0,grGross26=0,upl=0,acc=0;rows.forEach(function(r){base+=(+r.arr_25||0);if(r.partner)prt+=(+r.arr_25||0);else{edg+=(+r.arr_25||0);if(!r.locked)book+=(+r.arr_25||0);}gross+=(+r.grr_26||0);if(!r.partner&&(+r.yr)===2026){grBase26+=(+r.arr_25||0);grGross26+=(+r.grr_26||0);}upl+=(+r.uplift||0);if(r.ap==="A")acc++;});
-  function _m(n){return n>=1e6?("$"+(n/1e6).toFixed(2)+"M"):("$"+Math.round(n/1e3)+"K");}
-  var el;if(el=document.getElementById("rbt-ret"))el.textContent=_m(base);
-  if(el=document.getElementById("rbt-acc"))el.textContent=acc+" / "+rows.length;
-  if(el=document.getElementById("rbt-book"))el.textContent=_m(book);
-  if(el=document.getElementById("rbt-gross"))el.textContent=_m(grGross26)+" · "+(grBase26?(grGross26/grBase26*100).toFixed(1):"0")+"% of base";
-  if(el=document.getElementById("rbt-gross-m"))el.textContent="Gross renewed · 2026 software renewal book (in view)";
-  if(el=document.getElementById("rbt-uplift"))el.textContent=_m(upl);
-};
-window.rbDownloadCSV=function(){
-  var head=["Code","Partner","Account","Renewal (MM-DD)","Renewal year","Year verified","Renewal qtr","25 EOY ARR (A)","26 EOY GRR","26 Uplift","Status","26 Upsell","Deal stages","Deals"];
-  function q(s){s=(s===null||s===undefined)?"":(""+s);return '"'+s.replace(/"/g,'""')+'"';}
-  var lines=[head.map(q).join(",")];
-  RB.forEach(function(r){lines.push([r.code,(r.partner?"Partner":"EDG"),r.account,r.ann,r.yr,r.yr_known?"yes":"NO",r.qtr,r.arr_25,r.grr_26,r.uplift,(r.ap==="A"?"Resolved":(r.locked?"Multi-year":"In flight")),r.upsell,(r.deals||[]).map(function(d){return d.stage||(d.won?"W":"B");}).join(" | "),(r.deals||[]).map(function(d){return d.name;}).join(" | ")].map(q).join(","));});
-  var blob=new Blob([lines.join("\n")],{type:"text/csv"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="renewal-book-master.csv";document.body.appendChild(a);a.click();document.body.removeChild(a);
-};
-var HS_SEARCH="mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__search_crm_objects";
-var HS_GET="mcp__bbbcaa78-9729-4158-b90d-585b7843f1d1__get_crm_objects";
-var STG={"83529996":"A","5863320":"B","qualifiedtobuy":"C","5863322":"D","decisionmakerboughtin":"E","31833606":"F","closedwon":"W","closedlost":"L","114128210":"Z","12951825":"W","12936516":"L"};
-function _typ(dt){dt=(dt||"").toLowerCase();if(dt.indexOf("renewal")>=0)return "R";if(dt.indexOf("upsell")>=0)return "U";if(dt.indexOf("existing")>=0||dt.indexOf("expansion")>=0)return "E";if(dt.indexOf("newbusiness")>=0||dt==="new business"||dt==="new")return "N";return "";}
-function _deal(o){var p=o.properties||{};return {id:""+o.id,name:p.dealname||"",amount:+(((p.amount||"0")+"").replace(/,/g,""))||0,stage:STG[p.dealstage]||"B",close:(p.closedate||"").slice(0,10),t:_typ(p.dealtype)};}
-async function rbDeals(){
-  var st=document.getElementById("rb-deals-badge");
-  if(!(window.cowork&&window.cowork.callMcpTool))return;
-  try{
-    if(st)st.textContent="deals: pulling live…";
-    var r=await window.cowork.callMcpTool(HS_SEARCH,{objectType:"deals",
-      filterGroups:[{filters:[{propertyName:"dealstage",operator:"IN",values:["83529996","5863320","qualifiedtobuy","5863322","decisionmakerboughtin","31833606"]}]},{filters:[{propertyName:"dealstage",operator:"IN",values:["closedwon","12951825"]},{propertyName:"closedate",operator:"BETWEEN",value:"2026-01-01",highValue:"2026-12-31T23:59:59Z"}]}],
-      properties:["dealname","dealstage","amount","closedate","dealtype","deal_currency_code"],limit:200,
-      chatInsights:{userIntent:"refresh EBR renewal book deal joins",satisfaction:"NEUTRAL"}});
-    var sc=r&&r.structuredContent;var data=sc&&sc.results?sc:null;
-    if(!data&&r&&r.content&&r.content[0]&&r.content[0].text){try{data=JSON.parse(r.content[0].text);}catch(e){}}
-    var res=(data&&data.results)||[];
-    if(!res.length)throw new Error("0 deals returned");
-    var all=res.map(_deal);var byId={};all.forEach(function(d){byId[d.id]=d;});
-    var open=all.filter(function(d){return "ABCDEF".indexOf(d.stage)>=0;});
-    window.__HSWON=all.filter(function(d){return d.stage==="W";});
-    var known=[];RB.forEach(function(rw){(rw.deals||[]).forEach(function(d){var id=d.url.split("/").pop();if(!byId[id])known.push(+id);});});
-    if(known.length){
-      var r2=await window.cowork.callMcpTool(HS_GET,{objectType:"deals",objectIds:known.slice(0,100),properties:["dealname","dealstage","amount","closedate","dealtype"]});
-      var sc2=r2&&r2.structuredContent;var d2=sc2&&sc2.objects?sc2:null;
-      if(!d2&&r2&&r2.content&&r2.content[0]&&r2.content[0].text){try{d2=JSON.parse(r2.content[0].text);}catch(e){}}
-      ((d2&&d2.objects)||[]).forEach(function(o){var d=_deal(o);byId[d.id]=d;});
-    }
-    window.__HSOPEN=open;window.__HSBYID=byId;
-    if(st){st.textContent="deals LIVE · HubSpot · "+open.length+" open · "+(window.__HSWON||[]).length+" won 26";st.className="pill on-track";}
-  }catch(e){if(st){st.textContent="deals · session snapshot (live pull failed)";st.className="pill mid-risk";}}
-}
-function mergeDeals(code,account,ds){
-  var byId=window.__HSBYID;var open=window.__HSOPEN;
-  if(!byId)return ds;
-  ds=(ds||[]).map(function(d){var id=d.url.split("/").pop();var u=byId[id];
-    if(u){return {name:u.name||d.name,amount:u.amount||d.amount,url:d.url,stage:u.stage,won:u.stage==="W",t:u.t||d.t,close:u.close};}
-    return d;});
-  var tok=(account.split(" ")[0]||"").toLowerCase();
-  (open||[]).forEach(function(u){
-    if(u.t!=="U"&&u.t!=="E")return;
-    if(ds.some(function(d){return d.url.split("/").pop()===u.id;}))return;
-    var nm=u.name.toUpperCase();
-    if(nm.indexOf(code)>=0||(tok.length>4&&u.name.toLowerCase().indexOf(tok)>=0)){
-      ds.push({name:u.name,amount:u.amount,url:"https://app.hubspot.com/contacts/20765725/record/0-3/"+u.id,stage:u.stage,won:false,t:u.t,close:u.close});
-    }});
-  return ds;
-}
-var RB_FILE="1tWs5hvJyatIN6w1Jxu0-FcTB_Rb8z72OVPuM-giqeGM";
-var RB_TOOL="mcp__b15bd21d-1712-4bd0-9ab8-f2005e5d598e__read_file_content";
-var LOCKYR={"TROWXX":2027,"TRACGA":2028,"BAYRLG":2028,"NOVOSM":2029,"NETWXX":2029,"OCLCMQ":2027,"ADOBEL":2027,"MAYOXX":2028,"NZTADS":2027,"HEALXX":2029,"GOOGTP":2027,"NORTHE":2027};
-var RW={"High":0.75,"Red":0.75,"Medium":0.9,"Yellow":0.9,"Low":1.0,"Green":1.0};
-function _money(s){s=(""+(s||"")).replace(/\$|,/g,"").replace(/\(/,"-").replace(/\)/,"").trim();if(s===""||s==="-")return 0;var v=parseFloat(s);return isNaN(v)?0:v;}
-function parseMaster(txt){var lines=txt.split("\n"),hi=-1;
-  for(var i=0;i<lines.length;i++){if(lines[i].indexOf("Annual Renewal date")>=0){hi=i;break;}}
-  if(hi<0)return [];var out=[];
-  for(var j=hi+1;j<lines.length;j++){var L=lines[j];if(L.indexOf("|")!==0)break;
-    var cs=L.replace(/^\||\|$/g,"").split("|").map(function(x){return x.replace(/\\/g,"").trim();});
-    if(cs.length<20)break;if(cs[1]==="TOTAL")break;out.push(cs);}
-  return out;}
-async function rbLive(){
-  var badge=document.getElementById("rb-src-badge");
-  if(!(window.cowork&&window.cowork.callMcpTool)){if(badge)badge.textContent="snapshot · open in Cowork for live";return;}
-  try{
-    if(badge)badge.textContent="pulling live…";
-    var r=await window.cowork.callMcpTool(RB_TOOL,{fileId:RB_FILE});
-    var sc=r&&r.structuredContent;var txt=(sc&&(sc.fileContent||sc.text))||(r&&r.content&&r.content[0]&&r.content[0].text)||"";
-    var cs=parseMaster(txt);if(cs.length<20)throw new Error("parse "+cs.length+" rows");
-    var byCode={};RB.forEach(function(x){byCode[x.code]=x;});
-    var out=[];
-    cs.forEach(function(c){
-      var code=(c[0]||"").toUpperCase(),cust=c[1],rd=c[2],my=(c[3]||"").toLowerCase()==="y";
-      var bSW=_money(c[5]);if(bSW<=0)return;
-      var bkSW=_money(c[12]),bkSvc=_money(c[13]),bkTot=(c[14]||"").trim(),booked=(bkTot!==""&&bkTot!=="-")||((c[15]||"")!=="");
-      var risk=c[16]||"",fSW=_money(c[18]);var bSvc=_money(c[6]);
-      var mm=rd.split("/"),ann=null,mo=null;
-      if(mm.length===3){mo=+mm[0];ann=("0"+mm[0]).slice(-2)+"-"+("0"+mm[1]).slice(-2);}
-      var known=(!my)||!!LOCKYR[code];var yr=LOCKYR[code]||(my?2027:(ann?2026:null));
-      var qtr=(yr&&mo)?((yr%100)+"Q"+(Math.floor((mo-1)/3)+1)):null;
-      var w=my?1.0:(RW[risk]||0);
-      var a26=booked?bkSW:w*fSW;
-      var g26=booked?Math.min(bkSW,bSW):w*Math.min(fSW,bSW);
-      var delta=Math.max(a26-bSW,0),cap=0.10*bSW;
-      var prev=byCode[code]||{};
-      var pd=mergeDeals(code,cust,prev.deals||[]);
-      var hasW=pd.some(function(d){return d.stage==="W";});
-      var hasOpen=pd.some(function(d){return "ABCDEF".indexOf(d.stage||"")>=0;});
-      var qual=booked?hasW:(hasW||hasOpen);
-      var vUpsell=(delta>cap&&qual)?(delta-cap):0;
-      var vUplift=delta-vUpsell;
-      out.push({code:code,partner:/^(TAXN|VIAS|SMRT)/.test(code),account:cust,ann:ann,yr:yr,yr_known:known,qtr:qtr,qkey:(yr||9999)*10+(mo?Math.floor((mo-1)/3)+1:9),
-        arr_25:Math.round(bSW),grr_26:Math.round(g26),ap:booked?"A":"P",svc:Math.round(booked?bkSvc:bSvc),growA:Math.round(booked?Math.max(bkSW-bSW,0):0),
-        uplift:Math.round(vUplift),upsell:Math.round(vUpsell),
-        risk:risk||(my?"Locked":""),locked:my,deals:pd});
-    });
-    if(out.length<20)throw new Error("built "+out.length);
-    /* deprecated: Renewal Book now owned by rbLiveLoad (renewal-book-master live). */ buildChips();
-    if(badge){badge.textContent="LIVE · Master file";badge.className="pill on-track";}
-  }catch(e){if(badge){badge.textContent="snapshot · live pull failed";badge.className="pill mid-risk";}
-    var n=document.getElementById("rb-src-note");if(n)n.textContent+=" · "+((e&&e.message)||e);}
-}
-setArrow();buildChips();rbRender();
-(async function(){ await rbDeals(); if(window.rbLiveLoad) await rbLiveLoad(); })();
-})();</script></div>
+</div>
 <!-- EBR-DERIVED:renewal END -->
 
 <!-- BOARD-OWNED:exec START -->
