@@ -1927,14 +1927,14 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 .nv-datagroup{display:flex;flex-direction:column;gap:8px}
 .nv-grouplabel{font-family:var(--nv-mono);font-size:9px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--nv-d-muted)}
-/* fixed 3-up grid: every category's tiles occupy the same slots, so the
-   rows across all five categories line up regardless of how many marks each has */
-.nv-logos{display:grid;grid-template-columns:repeat(3,34px);gap:6px;justify-content:start}
-.nv-logo{display:grid;place-items:center;width:34px;height:34px;background:var(--nv-d-node);
-  border:1px solid rgba(255,255,255,.22)}
-.nv-logo img{width:19px;height:19px;display:block}
+/* 3-up grid sized to the column, not to a fixed tile width - a fixed width
+   overflowed the narrow category columns and pushed tiles into the next one */
+.nv-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.nv-logo{display:grid;place-items:center;width:100%;max-width:36px;aspect-ratio:1;
+  background:var(--nv-d-node);border:1px solid rgba(255,255,255,.22)}
+.nv-logo img{width:58%;height:58%;display:block;object-fit:contain}
 /* no open-licensed mark available - same tile, brand initials */
-.nv-logo-mono span{font-family:var(--nv-mono);font-size:10px;font-weight:700;
+.nv-logo-mono span{font-family:var(--nv-mono);font-size:11px;font-weight:700;
   letter-spacing:.04em;color:var(--nv-d-muted)}
 
 /* the category names stay visible even when the layer is closed */
@@ -1942,7 +1942,7 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 .nv-slot[data-slot="data"] .nv-logos{max-height:0;overflow:hidden;opacity:0;
   transition:max-height .85s cubic-bezier(.2,.7,.2,1),opacity .55s ease}
 .nv-slot[data-slot="data"].is-open .nv-layer-body{max-height:420px}
-.nv-slot[data-slot="data"].is-open .nv-logos{max-height:120px;opacity:1}
+.nv-slot[data-slot="data"].is-open .nv-logos{max-height:130px;opacity:1}
 
 /* ---- seams, lit at step 5 ---- */
 .nv-seam{display:grid;grid-template-columns:repeat(5,1fr);height:14px;padding:0 12%;
