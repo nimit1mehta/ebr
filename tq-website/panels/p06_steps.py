@@ -74,7 +74,7 @@ CSS = """
 /* The diagram follows the step you are reading. The stack builds bottom-up, so
    the active layer is slid to the reader's eye line rather than making them hunt
    for it at the bottom. It moves on its own easing, slower than the scroll. */
-.nv-stepvis{position:sticky;top:0;height:100vh;display:flex;align-items:center;
+.nv-stepvis{position:sticky;top:0;height:100vh;display:flex;align-items:flex-start;
   overflow:hidden;
   -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
   mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
@@ -107,19 +107,41 @@ JS = """
     slots[el.dataset.slot] = el;
   });
 
-  // Slide the stack so the open layer sits at the reader's eye line.
-  function centreOn(name) {
+  // Slide the stack so the layer under discussion sits level with the step text
+  // being read. Runs continuously, but eased, so it trails the scroll rather
+  // than locking to it.
+  var shift = 0, queued = false;
+
+  function align() {
     if (!frame) return;
-    var target = name && slots[name] ? slots[name].querySelector('.nv-layer') : null;
-    if (!target) { box.style.transform = ''; return; }
-    var bt = box.getBoundingClientRect(), tt = target.getBoundingClientRect();
-    var current = box.style.transform.match(/-?[\d.]+/);
-    var applied = current ? parseFloat(current[0]) : 0;
-    // where the layer sits inside the stack, independent of the current shift
-    var offsetInBox = (tt.top - bt.top) + tt.height / 2;
-    var shift = (bt.height / 2) - offsetInBox;
-    box.style.transform = 'translateY(' + (applied + (shift - applied)) + 'px)';
+    var step = null;
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i].classList.contains('is-on')) { step = steps[i]; break; }
+    }
+    if (!step) step = steps[0];
+
+    var openSlot = box.querySelector('.nv-slot.is-open');
+    // no open layer (step 5) - line the whole stack up with the step
+    var target = openSlot ? openSlot.querySelector('.nv-layer') : box;
+    if (!target) return;
+
+    var sr = step.getBoundingClientRect(), tr = target.getBoundingClientRect();
+    // relative correction: reading rects mid-transition is self-correcting
+    shift += (sr.top + sr.height / 2) - (tr.top + tr.height / 2);
+
+    // never let the stack wander out of its frame
+    var limit = frame.clientHeight;
+    shift = Math.max(-limit, Math.min(limit, shift));
+    box.style.transform = 'translateY(' + shift + 'px)';
   }
+
+  function scheduleAlign() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function () { queued = false; align(); });
+  }
+  window.addEventListener('scroll', scheduleAlign, { passive: true });
+  window.addEventListener('resize', scheduleAlign);
 
   window.nvTrack(steps, function (idx) {
     steps.forEach(function (s, i) { s.classList.toggle('is-on', i === idx); });
@@ -132,8 +154,10 @@ JS = """
       slots[k].classList.toggle('is-open', k === plan.open);
     });
 
-    // let the slot heights settle before measuring for the eye-line shift
-    setTimeout(function () { centreOn(plan.open || 'authoritative'); }, 380);
+    // let the slot heights settle, then re-align to the new open layer
+    setTimeout(align, 120);
+    setTimeout(align, 480);
+    setTimeout(align, 900);
   });
 })();
 """

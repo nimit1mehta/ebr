@@ -127,7 +127,7 @@ def render(scope, mode="static"):
 CSS = """
 .nv-arch{position:relative;display:flex;flex-direction:column;
   border:1px solid var(--nv-d-line);background:rgba(8,15,26,.72);padding:14px;
-  transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+  transition:transform .5s cubic-bezier(.22,.61,.36,1)}
 .nv-arch-glow{position:absolute;inset:-1px;pointer-events:none;opacity:0;
   transition:opacity 1s ease;
   background:radial-gradient(70% 60% at 50% 50%,rgba(241,90,34,.18),transparent 70%)}
