@@ -58,13 +58,14 @@ def html(ctx):
 
 CSS = """
 .nv-steps-sec{padding-bottom:0}
+.nv-steps-sec .nv-head-full{margin-bottom:0}
 .nv-steps{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:56px;
   align-items:start}
 /* Lead-in and run-out. A sticky frame is not pinned at the very start or end of
    its container, which left step 1's diagram low and step 5's clipped. Padding
    the step list means the frame is already pinned by the time step 1 is read,
    and still pinned through step 5. */
-.nv-steplist{display:flex;flex-direction:column;padding-top:30vh;padding-bottom:20vh}
+.nv-steplist{display:flex;flex-direction:column;padding-top:16vh;padding-bottom:20vh}
 .nv-step{padding:56px 0;border-top:1px solid var(--nv-d-line);opacity:.3;
   transition:opacity .45s ease}
 .nv-step:first-child{border-top:0;padding-top:8px}
