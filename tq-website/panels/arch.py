@@ -23,12 +23,18 @@ F = "./TQ Data Foundation — Power the Context Your AI Needs _ TopQuadrant_file
 SEQUENCE = ["data", "inferred", "authoritative", "agentic"]
 
 # Category names stay put; the logos blow out underneath them.
+# (label, asset). Asset is a saved-page file, "logos/x.svg" for a mark sourced
+# from npm, or None where no open-licensed mark exists - those render as a
+# monogram tile of the same size so the grid still lines up.
 DATA_GROUPS = [
-    ("Lakes",     [("Snowflake", "logos_snowflake-icon.svg")]),
-    ("Catalogs",  [("PostgreSQL", "logos_postgresql.svg")]),
+    ("Lakes",     [("Snowflake", "logos_snowflake-icon.svg"),
+                   ("Databricks", "logos/databricks.svg")]),
+    ("Catalogs",  [("Collibra", None), ("Informatica", "logos/informatica.svg"),
+                   ("Alation", None)]),
     ("Cloud",     [("AWS", "logos_aws.svg"), ("Azure", "logos_microsoft-azure.svg"),
                    ("Google Cloud", "logos_google-cloud.svg")]),
-    ("Databases", [("Neo4j", "logos_neo4j.svg")]),
+    ("Databases", [("Neo4j", "logos_neo4j.svg"),
+                   ("PostgreSQL", "logos_postgresql.svg")]),
     ("Analytics", [("Tableau", "logos_tableau-icon.svg"),
                    ("Power BI", "logos_microsoft-power-bi.svg")]),
 ]
@@ -44,13 +50,22 @@ def _chips(items, extra=""):
         f'<span>{i}</span></span>' for i in items)
 
 
+def _mark(label, asset):
+    """One 34px tile. Same footprint whether it holds a logo or a monogram."""
+    if asset is None:
+        mono = "".join(w[0] for w in label.split())[:2].upper()
+        return (f'<span class="nv-logo nv-logo-mono" title="{label}">'
+                f'<span>{mono}</span></span>')
+    src = asset if asset.startswith("logos/") else F + asset
+    src = "./" + src if asset.startswith("logos/") else src
+    return f'<span class="nv-logo" title="{label}"><img src="{src}" alt="{label}"></span>'
+
+
 def _data_body():
     """Category names always visible; logo marks expand beneath each."""
     return '<div class="nv-datagrid">' + "".join(
         f'<div class="nv-datagroup"><span class="nv-grouplabel">{name}</span>'
-        f'<div class="nv-logos">'
-        + "".join(f'<span class="nv-logo" title="{l}">'
-                  f'<img src="{F}{i}" alt="{l}"></span>' for l, i in items)
+        f'<div class="nv-logos">' + "".join(_mark(l, i) for l, i in items)
         + '</div></div>'
         for name, items in DATA_GROUPS) + "</div>"
 
@@ -155,10 +170,15 @@ CSS = """
 .nv-datagroup{display:flex;flex-direction:column;gap:8px}
 .nv-grouplabel{font-family:var(--nv-mono);font-size:9px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--nv-d-muted)}
-.nv-logos{display:flex;flex-wrap:wrap;gap:6px}
+/* fixed 3-up grid: every category's tiles occupy the same slots, so the
+   rows across all five categories line up regardless of how many marks each has */
+.nv-logos{display:grid;grid-template-columns:repeat(3,34px);gap:6px;justify-content:start}
 .nv-logo{display:grid;place-items:center;width:34px;height:34px;background:var(--nv-d-node);
   border:1px solid rgba(255,255,255,.22)}
 .nv-logo img{width:19px;height:19px;display:block}
+/* no open-licensed mark available - same tile, brand initials */
+.nv-logo-mono span{font-family:var(--nv-mono);font-size:10px;font-weight:700;
+  letter-spacing:.04em;color:var(--nv-d-muted)}
 
 /* the category names stay visible even when the layer is closed */
 .nv-slot[data-slot="data"] .nv-layer-body{max-height:34px;opacity:1;margin-top:11px}
@@ -172,8 +192,21 @@ CSS = """
   position:relative;z-index:1}
 .nv-seam span{width:1px;margin:0 auto;background:rgba(255,255,255,.2);
   transition:background .7s ease,box-shadow .7s ease}
+/* step 5: the connections pulse, and the rim of the whole plane breathes with them */
+@keyframes nv-seam-pulse{
+  0%,100%{opacity:.3;box-shadow:0 0 0 rgba(241,90,34,0)}
+  50%    {opacity:1;box-shadow:0 0 9px rgba(241,90,34,.95)}}
+@keyframes nv-rim-pulse{
+  0%,100%{box-shadow:0 0 0 1px rgba(241,90,34,.28),0 0 20px rgba(241,90,34,.08)}
+  50%    {box-shadow:0 0 0 1px rgba(241,90,34,.85),0 0 40px rgba(241,90,34,.28)}}
 .nv-arch[data-stage="governed"] .nv-seam span{background:var(--nv-accent);
-  box-shadow:0 0 7px rgba(241,90,34,.85)}
+  animation:nv-seam-pulse 2.4s ease-in-out infinite}
+.nv-arch[data-stage="governed"] .nv-seam span:nth-child(2){animation-delay:.12s}
+.nv-arch[data-stage="governed"] .nv-seam span:nth-child(3){animation-delay:.24s}
+.nv-arch[data-stage="governed"] .nv-seam span:nth-child(4){animation-delay:.36s}
+.nv-arch[data-stage="governed"] .nv-seam span:nth-child(5){animation-delay:.48s}
+.nv-arch[data-stage="governed"]{border-color:rgba(241,90,34,.5);
+  animation:nv-rim-pulse 2.4s ease-in-out infinite}
 
 /* ---- build: dim what is not the current step ---- */
 .nv-arch-build .nv-layer{opacity:.42;transition:opacity .6s ease,border-color .5s ease}

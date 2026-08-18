@@ -9,7 +9,8 @@ and your agents" panel.
 """
 ID, TITLE = "pillars", "Truth is built from four components (scroll axis)"
 
-HEADING = "Truth is built from four components"
+HEADING = ("Your truth is an accumulation of key decisions you\u2019ve made "
+           "\u2014 captured in four authoritative assets")
 
 PILLARS = [
     dict(n="1", name="References", q="What are the core things?",

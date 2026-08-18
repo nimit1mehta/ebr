@@ -13,6 +13,7 @@ D    = "/sessions/keen-magical-turing/mnt/TQ Data Foundation — Power the Conte
 SRC  = sys.argv[1] if len(sys.argv) > 1 else "original.html"
 OUT  = sys.argv[2] if len(sys.argv) > 2 else "tq-data-foundation-selfcontained.html"
 FONT = "fonts"
+LOGOS = "logos"   # brand marks sourced from npm, embedded like any other asset
 F    = "./TQ Data Foundation — Power the Context Your AI Needs _ TopQuadrant_files/"
 
 # JS that actually drives rendering / interaction. Everything else is dropped.
@@ -44,6 +45,11 @@ def disk(name):
         if os.path.isfile(p):
             return p
     return None
+
+
+def local_logo(name):
+    p = os.path.join(LOGOS, name)
+    return p if os.path.isfile(p) else None
 
 
 def read_text(name):
@@ -165,6 +171,18 @@ def main():
 
     s = re.sub(r'(<img[^>]*\bsrc=")' + re.escape(F) + r'([^"]*)"', inline_img, s)
     s = re.sub(r'(\bposter=")' + re.escape(F) + r'([^"]*)"', inline_img, s)
+
+    def inline_logo(m):
+        p = local_logo(m.group(2))
+        if not p:
+            log["missing"].append("logos/" + m.group(2))
+            return m.group(1) + '"'
+        raw = open(p, "rb").read()
+        log["img"] += 1; log["img_bytes"] += len(raw)
+        return (m.group(1) + "data:image/svg+xml;base64,"
+                + base64.b64encode(raw).decode() + '"')
+
+    s = re.sub(r'(<img[^>]*\bsrc=")\./logos/([^"]*)"', inline_logo, s)
 
     # Webflow ships responsive variants (-p-500/-p-800...) via srcset, pointing at
     # absolute CDN URLs that Chrome never saved. The browser prefers srcset over

@@ -67,7 +67,7 @@ CSS = """
 @media (prefers-reduced-motion:reduce){
   .nv [data-track],.nv [data-tier]{opacity:1!important;transform:none!important;
     filter:none!important}
-  .nv *{transition:none!important}
+  .nv *{transition:none!important;animation:none!important}
 }
 """
 
