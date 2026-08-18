@@ -25,7 +25,7 @@ STEPS = [
     dict(n="04", title="Wire it into agents", lede="Serve it where AI is built.",
          body="Deliver approved context to your agents, copilots, and apps through MCP, SDKs, "
               "and your existing stack, living context, not a static export.",
-         stage="agents"),
+         stage="agentic"),
     dict(n="05", title="Keep it true, automatically", lede="Authoritative stays authoritative.",
          body="The Foundation watches for drift and new context across your systems, flags "
               "what changed, and proposes updates.",
@@ -71,9 +71,14 @@ CSS = """
 .nv-stepbody{font-family:var(--nv-body);font-size:.99rem;line-height:1.6;
   color:var(--nv-d-muted);margin:0;max-width:52ch}
 .nv-stepvis{position:sticky;top:96px;height:max-content}
-/* The diagram follows the step you are reading: the active layer opens to full
-   detail, the layers you have scrolled past collapse to their summary line. */
-.nv-stepvis{position:sticky;top:96px;height:max-content}
+/* The diagram follows the step you are reading. The stack builds bottom-up, so
+   the active layer is slid to the reader's eye line rather than making them hunt
+   for it at the bottom. It moves on its own easing, slower than the scroll. */
+.nv-stepvis{position:sticky;top:0;height:100vh;display:flex;align-items:center;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+.nv-stepvis .nv-arch{width:100%}
 @media (max-width:1040px){
   .nv-steps{grid-template-columns:1fr;gap:40px}
   .nv-stepvis{position:static;order:-1}
@@ -85,25 +90,50 @@ JS = """
 (function () {
   var steps = [].slice.call(document.querySelectorAll('.nv-step'));
   var box   = document.getElementById('nv-arch-steps');
+  var frame = document.querySelector('.nv-stepvis');
   if (!steps.length || !box) return;
-  // bottom-up build order; step 5 ("governed") lights the seams instead
-  var ORDER = ['data', 'inferred', 'authoritative', 'agents', 'governed'];
+
+  // Which slots exist, and which one is blown out, at each step.
+  var PLAN = [
+    { stage: 'data',          present: ['data'],                                        open: 'data' },
+    { stage: 'inferred',      present: ['data', 'context', 'inferred', 'authoritative'], open: 'inferred' },
+    { stage: 'authoritative', present: ['data', 'context', 'inferred', 'authoritative'], open: 'authoritative' },
+    { stage: 'agentic',       present: ['data', 'context', 'inferred', 'authoritative', 'agentic'], open: 'agentic' },
+    { stage: 'governed',      present: ['data', 'context', 'inferred', 'authoritative', 'agentic'], open: null }
+  ];
+
+  var slots = {};
+  [].slice.call(box.querySelectorAll('[data-slot]')).forEach(function (el) {
+    slots[el.dataset.slot] = el;
+  });
+
+  // Slide the stack so the open layer sits at the reader's eye line.
+  function centreOn(name) {
+    if (!frame) return;
+    var target = name && slots[name] ? slots[name].querySelector('.nv-layer') : null;
+    if (!target) { box.style.transform = ''; return; }
+    var bt = box.getBoundingClientRect(), tt = target.getBoundingClientRect();
+    var current = box.style.transform.match(/-?[\d.]+/);
+    var applied = current ? parseFloat(current[0]) : 0;
+    // where the layer sits inside the stack, independent of the current shift
+    var offsetInBox = (tt.top - bt.top) + tt.height / 2;
+    var shift = (bt.height / 2) - offsetInBox;
+    box.style.transform = 'translateY(' + (applied + (shift - applied)) + 'px)';
+  }
 
   window.nvTrack(steps, function (idx) {
     steps.forEach(function (s, i) { s.classList.toggle('is-on', i === idx); });
 
-    var stage = ORDER[idx] || ORDER[0];
-    var upto  = ORDER.indexOf(stage);
-    box.setAttribute('data-stage', stage);
+    var plan = PLAN[idx] || PLAN[0];
+    box.setAttribute('data-stage', plan.stage);
 
-    ORDER.forEach(function (name, i) {
-      if (name === 'governed') return;
-      var el = box.querySelector('[data-layer="' + name + '"]');
-      if (!el) return;
-      // live once reached; detailed only while it is the current step
-      el.classList.toggle('is-live', i <= upto || stage === 'governed');
-      el.classList.toggle('is-active', name === stage);
+    Object.keys(slots).forEach(function (k) {
+      slots[k].classList.toggle('is-present', plan.present.indexOf(k) !== -1);
+      slots[k].classList.toggle('is-open', k === plan.open);
     });
+
+    // let the slot heights settle before measuring for the eye-line shift
+    setTimeout(function () { centreOn(plan.open || 'authoritative'); }, 380);
   });
 })();
 """
