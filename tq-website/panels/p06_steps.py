@@ -13,7 +13,7 @@ STEPS = [
     dict(n="01", title="Point at your data", lede="Start from what you already know.",
          body="Point the Foundation at your databases, catalogs, repos, and documents. It "
               "surfaces the models, terms, and relationships already living inside them.",
-         stage="sources"),
+         stage="data"),
     dict(n="02", title="Generate with AI", lede="Let the platform propose the first version.",
          body="AI turns what it found into draft models and definitions your team can react "
               "to. The hard part, a first structure, is already done.",
@@ -25,7 +25,7 @@ STEPS = [
     dict(n="04", title="Wire it into agents", lede="Serve it where AI is built.",
          body="Deliver approved context to your agents, copilots, and apps through MCP, SDKs, "
               "and your existing stack, living context, not a static export.",
-         stage="consumers"),
+         stage="agents"),
     dict(n="05", title="Keep it true, automatically", lede="Authoritative stays authoritative.",
          body="The Foundation watches for drift and new context across your systems, flags "
               "what changed, and proposes updates.",
@@ -50,7 +50,7 @@ def html(ctx):
     </div>
     <div class="nv-steps">
       <div class="nv-steplist">{steps}</div>
-      <div class="nv-stepvis">{arch.render("nv-arch-steps", simple=False)}</div>
+      <div class="nv-stepvis">{arch.render("nv-arch-steps", mode="build")}</div>
     </div>
   </div>
 </section>'''
@@ -71,29 +71,9 @@ CSS = """
 .nv-stepbody{font-family:var(--nv-body);font-size:.99rem;line-height:1.6;
   color:var(--nv-d-muted);margin:0;max-width:52ch}
 .nv-stepvis{position:sticky;top:96px;height:max-content}
-/* The architecture builds itself: each tier starts as a collapsed sliver and
-   grows to full size as its step arrives, so the diagram assembles on scroll. */
-.nv-steps-sec .nv-arch [data-tier]{opacity:.2;filter:saturate(.25);
-  transition:opacity .55s ease,filter .55s ease,border-color .55s ease,
-             padding .6s cubic-bezier(.2,.7,.2,1)}
-.nv-steps-sec .nv-arch [data-tier]{padding-top:9px;padding-bottom:9px}
-.nv-steps-sec .nv-arch [data-tier] .nv-tierlabel{margin-bottom:0;
-  transition:margin-bottom .6s cubic-bezier(.2,.7,.2,1)}
-.nv-steps-sec .nv-arch [data-tier] .nv-tierbody{max-height:0;overflow:hidden;opacity:0;
-  transform:translateY(-6px);
-  transition:max-height .65s cubic-bezier(.2,.7,.2,1),opacity .45s ease .1s,
-             transform .5s ease .1s}
-.nv-steps-sec .nv-arch [data-tier].is-on{opacity:1;filter:none;
-  padding-top:13px;padding-bottom:13px}
-.nv-steps-sec .nv-arch [data-tier].is-on .nv-tierlabel{margin-bottom:10px}
-.nv-steps-sec .nv-arch [data-tier].is-on .nv-tierbody{max-height:420px;opacity:1;
-  transform:none}
-.nv-steps-sec .nv-arch [data-tier].is-focus{border-color:var(--nv-accent)}
-/* connectors draw themselves once both ends exist */
-.nv-steps-sec .nv-arch .nv-wires{height:0;opacity:0}
-.nv-steps-sec .nv-arch[data-stage="authoritative"] .nv-wires,
-.nv-steps-sec .nv-arch[data-stage="consumers"] .nv-wires,
-.nv-steps-sec .nv-arch[data-stage="governed"] .nv-wires{height:16px;opacity:.5}
+/* The diagram follows the step you are reading: the active layer opens to full
+   detail, the layers you have scrolled past collapse to their summary line. */
+.nv-stepvis{position:sticky;top:96px;height:max-content}
 @media (max-width:1040px){
   .nv-steps{grid-template-columns:1fr;gap:40px}
   .nv-stepvis{position:static;order:-1}
@@ -106,7 +86,8 @@ JS = """
   var steps = [].slice.call(document.querySelectorAll('.nv-step'));
   var box   = document.getElementById('nv-arch-steps');
   if (!steps.length || !box) return;
-  var ORDER = ['sources', 'inferred', 'authoritative', 'consumers', 'governed'];
+  // bottom-up build order; step 5 ("governed") lights the seams instead
+  var ORDER = ['data', 'inferred', 'authoritative', 'agents', 'governed'];
 
   window.nvTrack(steps, function (idx) {
     steps.forEach(function (s, i) { s.classList.toggle('is-on', i === idx); });
@@ -116,11 +97,12 @@ JS = """
     box.setAttribute('data-stage', stage);
 
     ORDER.forEach(function (name, i) {
-      if (name === 'governed') return;          // backdrop glow, not a tier
-      var el = box.querySelector('[data-tier="' + name + '"]');
+      if (name === 'governed') return;
+      var el = box.querySelector('[data-layer="' + name + '"]');
       if (!el) return;
-      el.classList.toggle('is-on', i <= upto || stage === 'governed');
-      el.classList.toggle('is-focus', name === stage);
+      // live once reached; detailed only while it is the current step
+      el.classList.toggle('is-live', i <= upto || stage === 'governed');
+      el.classList.toggle('is-active', name === stage);
     });
   });
 })();

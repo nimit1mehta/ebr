@@ -23,7 +23,7 @@ def html(ctx):
       <p class="nv-standards">Built entirely on open knowledge-graph standards
         <span>&middot;</span> RDF <span>&middot;</span> OWL <span>&middot;</span> SHACL</p>
     </div>
-    <div class="nv-hero-vis" aria-hidden="true">{arch.render("nv-arch-hero", simple=True)}</div>
+    <div class="nv-hero-vis" aria-hidden="true">{arch.render("nv-arch-hero", mode="static")}</div>
   </div>
 </section>'''
 
@@ -37,9 +37,7 @@ CSS = """
 .nv-standards{font-family:var(--nv-mono);font-size:10px;letter-spacing:.11em;
   text-transform:uppercase;color:var(--nv-d-muted);margin:34px 0 0}
 .nv-standards span{color:var(--nv-accent);margin:0 2px}
-/* the hero instance reads as a silhouette, not a working control */
-.nv-hero-vis .nv-arch{transform:scale(.93);transform-origin:center right}
-.nv-hero-vis .nv-chip,.nv-hero-vis .nv-node,.nv-hero-vis .nv-pill{color:var(--nv-d-muted)}
+.nv-hero-vis .nv-arch{transform:scale(.95);transform-origin:center right}
 @media (max-width:1040px){
   .nv-hero-grid{grid-template-columns:1fr;gap:44px}
   .nv-hero-copy{max-width:none}
