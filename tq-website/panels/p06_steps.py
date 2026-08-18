@@ -7,7 +7,7 @@ from . import arch
 
 ID, TITLE = "steps", "Platform built for the challenge (steps + arch build)"
 
-HEADING = "A platform custom built for the challenge"
+HEADING = "A platform that makes your context authoritative"
 
 STEPS = [
     dict(n="01", title="Point at your data", lede="Start from what you already know.",
