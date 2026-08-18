@@ -125,13 +125,24 @@ JS = """
     var target = openSlot ? openSlot.querySelector('.nv-layer') : box;
     if (!target) return;
 
-    var sr = step.getBoundingClientRect(), tr = target.getBoundingClientRect();
-    // relative correction: reading rects mid-transition is self-correcting
-    shift += (sr.top + sr.height / 2) - (tr.top + tr.height / 2);
+    var fr = frame.getBoundingClientRect();
+    var br = box.getBoundingClientRect();
+    var tr = target.getBoundingClientRect();
 
-    // never let the stack wander out of its frame
-    var limit = frame.clientHeight;
-    shift = Math.max(-limit, Math.min(limit, shift));
+    // Differences between rects inside the same transformed element are
+    // transform-invariant, so this stays correct mid-animation. Solving for an
+    // absolute shift (rather than accumulating deltas) means no over-correction
+    // while the CSS transition is still catching up.
+    var offsetInBox = (tr.top - br.top) + tr.height / 2;
+    var untransformedTop = br.top - shift;
+    var wanted = (step.getBoundingClientRect().top + step.offsetHeight / 2)
+                 - (untransformedTop + offsetInBox);
+
+    // keep the stack inside its frame
+    var topInFrame = untransformedTop - fr.top;
+    var lo = -topInFrame;
+    var hi = Math.max(lo, fr.height - br.height - topInFrame);
+    shift = Math.max(lo, Math.min(hi, wanted));
     box.style.transform = 'translateY(' + shift + 'px)';
   }
 
