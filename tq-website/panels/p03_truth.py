@@ -9,7 +9,7 @@ components.
 """
 ID, TITLE = "truth", "Agents need truth (Truth + Judgement)"
 
-HEADING = "Your agents need truth so you can evaluate their judgement"
+HEADING = "Agents take leaps. Give them your truth and narrow their guesswork."
 
 
 def html(ctx):
@@ -18,19 +18,20 @@ def html(ctx):
   <div class="nv-container">
     <div class="nv-head-full">
       <h2 class="nv-h2">{HEADING}</h2>
-      <p class="nv-lede nv-lede-wide">Every decision an agent makes is two things at once.
-        What it held to be true, and what it chose to do about it. Confuse the two and you
-        cannot review either.</p>
+      <p class="nv-lede nv-lede-full">Every answer an agent gives is two things at once &mdash;
+        what it took to be true, and the leap it made from there. Confuse the two and you can
+        review neither.</p>
     </div>
 
     <div class="nv-split">
       <div class="nv-halfcard nv-halfcard-origin">
         <span class="nv-kicker">Truth</span>
-        <h3 class="nv-h3">What is so</h3>
-        <p>The concepts, relationships, rules and processes of your business, governed by
-          the people accountable for them. It does not vary by prompt, by model, or by
-          which team happened to build the agent.</p>
-        <p class="nv-note">Owned by your experts &middot; Versioned &middot; Citable</p>
+        <h3 class="nv-h3">What you know to be true</h3>
+        <p>What a customer is. What a contract commits you to. Which offers someone actually
+          qualifies for. The things everyone in the business has to be able to rely on &mdash;
+          agreed once by the people accountable for them, then used by everyone and
+          everything downstream.</p>
+        <p class="nv-note">Settled by your experts &middot; Same answer every time</p>
 
         <span class="nv-flow" aria-hidden="true">
           <span class="nv-flow-track"><span class="nv-flow-fill"></span></span>
@@ -39,10 +40,11 @@ def html(ctx):
 
       <div class="nv-halfcard">
         <span class="nv-kicker">Judgement</span>
-        <h3 class="nv-h3">What it decided</h3>
-        <p>The reasoning: what the agent weighed, what it prioritised, the call it made.
-          This is the part you actually want to assess, coach and improve.</p>
-        <p class="nv-note">Owned by the model &middot; Variable by design</p>
+        <h3 class="nv-h3">Educated guesses</h3>
+        <p>Everything the agent infers on top of that &mdash; what it weighs, what it
+          prioritises, the call it makes when the answer is not written down anywhere. This is
+          the part worth reviewing and coaching, and it is allowed to vary.</p>
+        <p class="nv-note">Made by the model &middot; Only as good as what it started from</p>
       </div>
     </div>
   </div>
@@ -66,6 +68,8 @@ CSS = """
 .nv-flow-track{position:absolute;inset:0;background:var(--nv-line)}
 .nv-flow-fill{position:absolute;top:0;left:0;width:1px;height:0;background:var(--nv-accent);
   transition:height .2s linear}
+
+.nv-lede-full{max-width:none}
 
 @media (max-width:1040px){.nv-flow{display:none}}
 @media (max-width:720px){.nv-split{grid-template-columns:1fr}}
