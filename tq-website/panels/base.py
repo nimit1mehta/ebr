@@ -8,6 +8,8 @@ match the design system rather than approximating it:
 """
 
 CSS = """
+/* mirrored on :root so scripts can read it without a .nv element */
+:root{--nv-axis:32px}
 .nv{
   --nv-accent:#f15a22; --nv-ink:#0e1a2e; --nv-muted:#5c6b7f;
   --nv-line:#e6e3db; --nv-paper:#fdfcf9;

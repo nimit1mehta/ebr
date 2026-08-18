@@ -53,7 +53,6 @@ def html(ctx):
 
     <div class="nv-truthgrid">
       <div class="nv-halfcard nv-halfcard-origin">
-        <span class="nv-kicker">Truth</span>
         <h3 class="nv-h3">What you know to be true</h3>
         <p>What a customer is. What a contract commits you to. Which offers someone actually
           qualifies for. The things everyone in the business has to be able to rely on &mdash;
@@ -64,7 +63,7 @@ def html(ctx):
 
       <div class="nv-figures">
         <div class="nv-figures-head">
-          <span class="nv-kicker">With machine-readable truth</span>{illus}
+          <span class="nv-kicker">Impact</span>{illus}
         </div>
         {figures}
       </div>
@@ -82,11 +81,13 @@ CSS = """
 .nv-truth-sec{position:relative}
 
 .nv-truthgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:48px;margin-top:36px;align-items:start}
+  gap:48px;margin-top:36px;align-items:stretch}
+.nv-figures{display:flex;flex-direction:column}
+.nv-figure:last-child{flex:1}
 
 /* the definition stays the one object on the page here */
-.nv-halfcard{border:1px solid var(--nv-line);background:#fff;padding:30px}
-.nv-halfcard .nv-h3{margin:10px 0 12px}
+.nv-halfcard{border:1px solid var(--nv-line);background:#fff;padding:30px;height:100%}
+.nv-halfcard .nv-h3{margin:0 0 12px}
 .nv-halfcard p{font-family:var(--nv-body);font-size:.99rem;line-height:1.6;
   color:var(--nv-muted);margin:0 0 10px}
 .nv-kicker{color:var(--nv-accent)}
@@ -113,7 +114,7 @@ CSS = """
   color:var(--nv-muted);margin:10px 0 0;max-width:46ch}
 
 /* spine: leaves the definition and carries down into the four assets */
-.nv-flow{position:absolute;left:calc((100% - 1180px) / 2 + 32px);top:0;width:1px;height:0}
+.nv-flow{position:absolute;left:0;top:0;width:1px;height:0}
 .nv-flow-track{position:absolute;inset:0;background:var(--nv-line)}
 .nv-flow-fill{position:absolute;top:0;left:0;width:1px;height:0;background:var(--nv-accent);
   transition:height .2s linear}
@@ -134,10 +135,20 @@ JS = """
 
   // span from the bottom of the definition to the bottom of the section, so the
   // line visibly carries truth into the four assets below
+  var box = sec.querySelector('.nv-container');
+
   function size() {
     var sr = sec.getBoundingClientRect(), cr = card.getBoundingClientRect();
     flow.style.top = (cr.bottom - sr.top) + 'px';
     flow.style.height = Math.max(0, sr.bottom - cr.bottom) + 'px';
+    // The pillars axis sits at (container content left + --nv-axis). Measure the
+    // same origin here rather than recomputing it from viewport maths, so the two
+    // segments read as one line at any width.
+    var cs = getComputedStyle(box);
+    var axis = parseFloat(getComputedStyle(document.documentElement)
+                 .getPropertyValue('--nv-axis')) || 32;
+    var contentLeft = box.getBoundingClientRect().left + parseFloat(cs.paddingLeft);
+    flow.style.left = (contentLeft - sr.left + axis) + 'px';
   }
   function draw() {
     var r = flow.getBoundingClientRect();
