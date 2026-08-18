@@ -74,10 +74,10 @@ CSS = """
 /* The diagram follows the step you are reading. The stack builds bottom-up, so
    the active layer is slid to the reader's eye line rather than making them hunt
    for it at the bottom. It moves on its own easing, slower than the scroll. */
-.nv-stepvis{position:sticky;top:0;height:100vh;display:flex;align-items:flex-start;
+.nv-stepvis{position:sticky;top:0;height:100vh;display:flex;align-items:center;
   overflow:hidden;
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
-  mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 5%,#000 95%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
 .nv-stepvis .nv-arch{width:100%}
 @media (max-width:1040px){
   .nv-steps{grid-template-columns:1fr;gap:40px}
@@ -107,52 +107,27 @@ JS = """
     slots[el.dataset.slot] = el;
   });
 
-  // Slide the stack so the layer under discussion sits level with the step text
-  // being read. Runs continuously, but eased, so it trails the scroll rather
-  // than locking to it.
-  var shift = 0, queued = false;
+  // The frame is centred in the viewport and nvTrack activates whichever step is
+  // nearest the viewport centre, so the active step's text is already at centre.
+  // All that is left is to bring the OPEN layer to the centre of the stack, so it
+  // lands level with that text instead of wherever it happens to sit in the pile.
+  // Bounded by the stack's own height, so it can never wander out of frame.
+  var shift = 0;
 
   function align() {
-    if (!frame) return;
-    var step = null;
-    for (var i = 0; i < steps.length; i++) {
-      if (steps[i].classList.contains('is-on')) { step = steps[i]; break; }
-    }
-    if (!step) step = steps[0];
-
     var openSlot = box.querySelector('.nv-slot.is-open');
-    // no open layer (step 5) - line the whole stack up with the step
-    var target = openSlot ? openSlot.querySelector('.nv-layer') : box;
+    // step 5 has nothing open: leave the whole stack centred, which lines it up
+    if (!openSlot) { shift = 0; box.style.transform = ''; return; }
+    var target = openSlot.querySelector('.nv-layer');
     if (!target) return;
 
-    var fr = frame.getBoundingClientRect();
-    var br = box.getBoundingClientRect();
-    var tr = target.getBoundingClientRect();
-
-    // Differences between rects inside the same transformed element are
-    // transform-invariant, so this stays correct mid-animation. Solving for an
-    // absolute shift (rather than accumulating deltas) means no over-correction
-    // while the CSS transition is still catching up.
+    var br = box.getBoundingClientRect(), tr = target.getBoundingClientRect();
+    // rect differences within one transformed element are transform-invariant,
+    // so this is correct even mid-animation
     var offsetInBox = (tr.top - br.top) + tr.height / 2;
-    var untransformedTop = br.top - shift;
-    var wanted = (step.getBoundingClientRect().top + step.offsetHeight / 2)
-                 - (untransformedTop + offsetInBox);
-
-    // keep the stack inside its frame
-    var topInFrame = untransformedTop - fr.top;
-    var lo = -topInFrame;
-    var hi = Math.max(lo, fr.height - br.height - topInFrame);
-    shift = Math.max(lo, Math.min(hi, wanted));
+    shift = (br.height / 2) - offsetInBox;
     box.style.transform = 'translateY(' + shift + 'px)';
   }
-
-  function scheduleAlign() {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(function () { queued = false; align(); });
-  }
-  window.addEventListener('scroll', scheduleAlign, { passive: true });
-  window.addEventListener('resize', scheduleAlign);
 
   window.nvTrack(steps, function (idx) {
     steps.forEach(function (s, i) { s.classList.toggle('is-on', i === idx); });
@@ -165,10 +140,10 @@ JS = """
       slots[k].classList.toggle('is-open', k === plan.open);
     });
 
-    // let the slot heights settle, then re-align to the new open layer
-    setTimeout(align, 120);
-    setTimeout(align, 480);
-    setTimeout(align, 900);
+    // let the slot heights settle, then bring the open layer to centre
+    setTimeout(align, 200);
+    setTimeout(align, 700);
+    setTimeout(align, 1100);
   });
 })();
 """
