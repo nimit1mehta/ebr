@@ -1580,7 +1580,7 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 
     <div class="nv-truthgrid">
       <div class="nv-halfcard nv-halfcard-origin">
-        <h3 class="nv-h3">What you know to be true</h3>
+        <h3 class="nv-h3">Ground truth</h3>
         <p>What a customer is. What a contract commits you to. Which offers someone actually
           qualifies for. The things everyone in the business has to be able to rely on &mdash;
           agreed once by the people accountable for them, then used by everyone and
@@ -1590,7 +1590,7 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 
       <div class="nv-figures">
         <div class="nv-figures-head">
-          <span class="nv-kicker">Impact</span><span class="nv-illus">Illustrative</span>
+          <span class="nv-kicker">Impact</span>
         </div>
         
         <div class="nv-figure" data-dir="up">
@@ -2023,15 +2023,15 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 /* ---- truth ---- */
 
 .nv-lede-full{max-width:none}
-.nv-truth-sec{position:relative}
+.nv-truth-sec{position:relative;padding:76px 0}
 
 .nv-truthgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:48px;margin-top:36px;align-items:stretch}
+  gap:44px;margin-top:28px;align-items:stretch}
 .nv-figures{display:flex;flex-direction:column}
 .nv-figure:last-child{flex:1}
 
 /* the definition stays the one object on the page here */
-.nv-halfcard{border:1px solid var(--nv-line);background:#fff;padding:30px;height:100%}
+.nv-halfcard{border:1px solid var(--nv-line);background:#fff;padding:26px;height:100%}
 .nv-halfcard .nv-h3{margin:0 0 12px}
 .nv-halfcard p{font-family:var(--nv-body);font-size:.99rem;line-height:1.6;
   color:var(--nv-muted);margin:0 0 10px}
@@ -2042,21 +2042,21 @@ body:has([data-dark-hero]) [data-tq-navbar="true"] .nav:not(.tq-theme-ready):not
 /* figures sit on the page itself - no cards, hairlines only */
 .nv-figures{padding-top:4px}
 .nv-figures-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-  padding-bottom:18px}
+  padding-bottom:12px}
 .nv-illus{font-family:var(--nv-mono);font-size:9px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;color:var(--nv-muted);border:1px solid var(--nv-line);
   padding:3px 7px}
-.nv-figure{padding:22px 0;border-top:1px solid var(--nv-line)}
+.nv-figure{padding:16px 0;border-top:1px solid var(--nv-line)}
 .nv-figure:last-child{padding-bottom:0}
 .nv-figure-top{display:flex;align-items:baseline;gap:10px}
-.nv-figure-arrow{font-size:11px;line-height:1;color:var(--nv-accent)}
+.nv-figure-arrow{font-size:9px;line-height:1;color:var(--nv-accent)}
 .nv-figure[data-dir="down"] .nv-figure-arrow{color:#1f9d55}
-.nv-figure-value{font-family:var(--nv-display);font-size:clamp(1.9rem,3.1vw,2.6rem);
-  font-weight:700;letter-spacing:-.02em;color:var(--nv-ink);line-height:1}
+.nv-figure-value{font-family:var(--nv-display);font-size:clamp(1.3rem,1.9vw,1.6rem);
+  font-weight:700;letter-spacing:-.015em;color:var(--nv-ink);line-height:1}
 .nv-figure-label{font-family:var(--nv-mono);font-size:10px;font-weight:600;
   letter-spacing:.13em;text-transform:uppercase;color:var(--nv-muted)}
-.nv-figure-note{font-family:var(--nv-body);font-size:.93rem;line-height:1.55;
-  color:var(--nv-muted);margin:10px 0 0;max-width:46ch}
+.nv-figure-note{font-family:var(--nv-body);font-size:.88rem;line-height:1.5;
+  color:var(--nv-muted);margin:7px 0 0;max-width:46ch}
 
 /* spine: leaves the definition and carries down into the four assets */
 .nv-flow{position:absolute;left:0;top:0;width:1px;height:0}
